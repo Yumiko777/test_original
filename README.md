@@ -12,8 +12,8 @@
 
 ## カリキュラムで学んでいない技術
 
--simple calender
--Docker
+- simple calender
+- Docker
 
 ## 実行手順
 
