@@ -1,24 +1,44 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 開発言語
 
-Things you may want to cover:
+- Ruby 2.6.5
+- Ruby on Rails 5.2.6
 
-* Ruby version
+## 就業Termで学んだ技術
 
-* System dependencies
+- devise
+- Vue.js
 
-* Configuration
+## カリキュラムで学んでいない技術
 
-* Database creation
+-simple calender
+-Docker
 
-* Database initialization
+## 実行手順
 
-* How to run the test suite
+```
+$ git clone git@github.com:Yumiko777/test_original.git
+$ cd test_original
+$ bundle install
+$ rails db:create db:migrate
+$ rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## カタログ設計とテーブル定義書
 
-* Deployment instructions
+https://docs.google.com/spreadsheets/d/1R46RoTnxCjTJYMhK6GcQ1dz1FEVFkan8_gA_oo3zCmw/edit?usp=sharing
 
-* ...
+## ER図
+
+https://cacoo.com/diagrams/byFTtCQ3HKtdB07W/19398
+![ER図](https://user-images.githubusercontent.com/82217866/121276701-20ad0d00-c90a-11eb-8c71-533599c8f514.png)
+
+## 画面遷移図
+
+https://cacoo.com/diagrams/dj12UCBd5EJO88UZ/B3478
+![画面遷移図](https://user-images.githubusercontent.com/82217866/121277684-1986fe80-c90c-11eb-8d89-07790adee448.png)
+
+## ワイヤーフレーム
+
+https://cacoo.com/diagrams/IUvs4UAAj9RIth6n/8780F
