@@ -8,7 +8,7 @@
 ## 就業Termで学んだ技術
 
 - devise
-- Vue.js
+- お気に入り機能
 
 ## カリキュラムで学んでいない技術
 
@@ -32,12 +32,12 @@ https://docs.google.com/spreadsheets/d/1R46RoTnxCjTJYMhK6GcQ1dz1FEVFkan8_gA_oo3z
 ## ER図
 
 https://cacoo.com/diagrams/byFTtCQ3HKtdB07W/19398
-![ER図](https://user-images.githubusercontent.com/82217866/121610241-875c3300-ca90-11eb-8c52-5fa7290bb387.png)
+![ER図](https://user-images.githubusercontent.com/82217866/121705750-ee6cfc80-cb0f-11eb-8623-93f2d69e7e53.png)
 
 ## 画面遷移図
 
 https://cacoo.com/diagrams/dj12UCBd5EJO88UZ/B3478
-![画面遷移図](https://user-images.githubusercontent.com/82217866/121277684-1986fe80-c90c-11eb-8d89-07790adee448.png)
+![画面遷移図](https://user-images.githubusercontent.com/82217866/121706002-2c6a2080-cb10-11eb-9c62-fa1d317060a8.png)
 
 ## ワイヤーフレーム
 
