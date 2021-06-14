@@ -36,16 +36,6 @@
 <%= paginate @works %>
 
 <%= form_with(model: @work, local: true) do |form| %>
-  <% if @work.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @work.errors.count %>件のエラーがあります。</h2>
-      <ul>
-      <% @work.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="title">
     <div class="form-tag">タイトル</div>
@@ -66,6 +56,11 @@
 		<div class="form-tag">状態</div>
       <%= check_box_tag :status , false, true, {}%>
 			<%= label_tag :status, '未済' %>
+  </div>
+
+  <div class="remarks">
+    <div class="form-tag">備考</div>
+      <%= form.text_field :remarks %>
   </div>
 
 	 <div class="submit">

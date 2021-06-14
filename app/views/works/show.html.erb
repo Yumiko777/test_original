@@ -20,6 +20,11 @@
   <%= @work.status %>
 </p>
 
+<p>
+  <strong>備考</strong>
+  <%= @work.remarks %>
+</p>
+
 <%= link_to '編集', edit_work_path(@work) %>
 <%= link_to '削除',work_path(@work.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } %>
 <%= link_to '戻る', works_path %>

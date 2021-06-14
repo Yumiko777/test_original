@@ -1,3 +1,12 @@
+<% if @work.errors.any? %>
+  <h2><%= pluralize(@work.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <ul>
+      <% @work.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+<% end %>
+
 <%= form_with(model: @work, local: true) do |form| %>
 
   <div class="title">
@@ -16,13 +25,18 @@
   </div>
 
   <div class="status">
-    <div class="form-label">状態</div>
+    <div class="form-tag">状態</div>
       <%= form.radio_button :status, "未済" %>未済<%= form.radio_button :status, "済" %>済
+  </div>
+
+  <div class="remarks">
+    <div class="form-tag">備考</div>
+      <%= form.text_field :remarks %>
   </div>
 
   <br>
   <div class="submit">
-    <%= form.submit "編集"%>
-    <%= link_to '戻る', works_path %>
+    <%= form.submit "編集" %>
+    <%= link_to "戻る", works_path %>
   </div>
 <% end %>
