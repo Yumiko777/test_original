@@ -64,3 +64,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'simple_calendar', '~> 2.0', '>= 2.0.6'
 gem 'kaminari'
 gem 'bootstrap'
+gem 'devise'
