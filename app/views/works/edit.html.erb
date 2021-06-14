@@ -1,2 +1,28 @@
-<h1>Works#edit</h1>
-<p>Find me in app/views/works/edit.html.erb</p>
+<%= form_with(model: @work, local: true) do |form| %>
+
+  <div class="title">
+    <div class="form-tag">タイトル</div>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="content">
+    <div class="form-tag">内容</div>
+    <%= form.text_field :content %>
+  </div>
+
+  <div class="time">
+    <div class="form-tag">日程</div>
+    <%= form.date_select :start_time %>
+  </div>
+
+  <div class="status">
+    <div class="form-label">状態</div>
+      <%= form.radio_button :status, "未済" %>未済<%= form.radio_button :status, "済" %>済
+  </div>
+
+  <br>
+  <div class="submit">
+    <%= form.submit "編集"%>
+    <%= link_to '戻る', works_path %>
+  </div>
+<% end %>

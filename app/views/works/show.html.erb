@@ -1,2 +1,26 @@
-<h1>Works#show</h1>
-<p>Find me in app/views/works/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+<div class="show">
+<p>
+  <strong>タイトル</strong>
+  <%= @work.title %>
+</p>
+
+<p>
+  <strong>内容</strong>
+  <%= @work.content %>
+</p>
+
+<p>
+  <strong>日程</strong>
+  <%= @work.start_time.strftime("%Y-%m-%d") %>
+</p>
+
+<p>
+  <strong>状態</strong>
+  <%= @work.status %>
+</p>
+
+<%= link_to '編集', edit_work_path(@work) %>
+<%= link_to '削除',work_path(@work.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } %>
+<%= link_to '戻る', works_path %>
+</div>
