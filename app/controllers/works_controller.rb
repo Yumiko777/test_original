@@ -2,7 +2,7 @@ class WorksController < ApplicationController
   before_action :set_work, only: [:show, :edit, :update, :destroy]
 
   def index
-    @works = Work.where(status: "未済" ).order(start_time: "ASC").page(params[:page]).per(5)
+    @works = Work.where(status: "未済" ).order(start_time: "ASC").page(params[:page]).per(3)
     @work = Work.new
   end
 
@@ -40,7 +40,7 @@ class WorksController < ApplicationController
 
   private
   def work_params
-    params.require(:work).permit(:title, :content, :start_time, :status)
+    params.require(:work).permit(:title, :content, :start_time, :status, :remarks)
   end
 
   def set_work
