@@ -9,17 +9,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/1741c2b470.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
 
     <% if flash[:notice] %>
-      <div class="alert alert-primary" role="alert"><strong><%= notice %></strong></div>
+      <div class="alert alert-warning" role="alert"><strong><%= notice %></strong></div>
     <% end %>
     <% if flash[:alert] %>
       <div class="alert alert-danger" role="alert"><strong><%= alert %></strong></div>
     <% end %>
-
 
     <nav class="navbar navbar-light mb-2" style="background-color:#e3f2fd;">
       <div class="navbar-brand">
