@@ -1,0 +1,41 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h2>新規投稿works#new</h2>
+
+      <%= form_with(model: @work, local: true) do |form| %>
+
+      <div class="title">
+        <div class="form-tag">タイトル</div>
+          <%= form.text_field :title %>
+      </div>
+
+      <div class="content">
+        <div class="form-tag">内容</div>
+          <%= form.text_field :content %>
+      </div>
+
+      <div class="time">
+        <div class="form-tag">日程</div>
+          <%= form.date_select :start_time %>
+      </div>
+
+    	<div class="status">
+    		<div class="form-tag">状態</div>
+          <%= check_box_tag :status , false, true, {}%>
+    			<%= label_tag :status, '未済' %>
+      </div>
+
+      <div class="remarks">
+        <div class="form-tag">備考</div>
+          <%= form.text_field :remarks %>
+      </div>
+      <br>
+    	 <div class="submit">
+    	    <%= form.submit "新規作成", class: "btn btn-success" %>
+    	 </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

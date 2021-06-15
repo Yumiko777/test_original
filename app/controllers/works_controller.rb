@@ -2,7 +2,7 @@ class WorksController < ApplicationController
   before_action :set_work, only: [:show, :edit, :update, :destroy]
 
   def index
-    @works = Work.where(status: "未済" ).order(start_time: "ASC").page(params[:page]).per(3)
+    @works = Work.where(status: "未済" ).page(params[:page]).order(start_time: "DESC").per(3)
     @work = Work.new
   end
 
@@ -14,9 +14,11 @@ class WorksController < ApplicationController
   end
 
   def create
-    @work = Work.create(work_params)
+    @work = current_user.works.build(work_params)
+    # @work = Work.new(work_params)
+    # @work.user_id = current_user.id
     if @work.save
-      redirect_to works_path, notice: "作成しました！"
+      redirect_to works_path(@work), notice: "作成しました！"
     else
       render :index
     end
@@ -27,7 +29,7 @@ class WorksController < ApplicationController
 
   def update
     if @work.update(work_params)
-      redirect_to works_path, notice: "更新しました！"
+      redirect_to works_path(@work), notice: "更新しました！"
     else
       render :edit
     end
