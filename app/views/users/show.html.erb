@@ -1,0 +1,8 @@
+<h1>マイページUsers#show</h1>
+
+<strong><%= @user.username %></strong>
+
+<% if @user.id == current_user.id %>
+  <%= @user.email %>
+    <%= link_to "編集", edit_user_path(@user), class: "button is-primary" %>
+<% end %>
