@@ -26,6 +26,9 @@ class WorksController < ApplicationController
   end
 
   def edit
+    if @work.user != current_user
+      redirect_to works_path, alert: "不正なアクセスです!"
+    end
   end
 
   def update
