@@ -1,42 +1,29 @@
 <p id="notice"><%= notice %></p>
 <div class="show">
 
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-6 mx-auto">
-        <h2>作業内容詳細works#show</h2>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h2>作業内容詳細works#show</h2>
 
-        <p>
-          <strong>タイトル</strong>
-          <%= @work.title %>
-        </p>
-        <p>
-          <strong>内容</strong>
-          <%= @work.content %>
-        </p>
-        <p>
-          <strong>日程</strong>
-          <%= @work.start_time.strftime("%Y-%m-%d") %>
-        </p>
-        <p>
-          <strong>状態</strong>
-          <%= @work.status %>
-        </p>
-        <p>
-          <strong>備考</strong>
-          <%= @work.remarks %>
-        </p>
+<table class="table table-striped">
+      <tr><td><strong>タイトル</strong></td><td><%= @work.title %></td></tr>
+      <tr><td><strong>内容</strong></td><td><%= @work.content %></td></tr>
+      <tr><td><strong>日程</strong></td><td><%= @work.start_time.strftime("%m-%d") %></td></tr>
+      <tr><td><strong>状態</strong></td><td><%= @work.status %></td></tr>
+      <tr><td><strong>備考</strong></td><td><%= @work.remarks %></td></tr>
+</table>
 
-        <% if @work.user.id == current_user.id %>
-          <%= link_to '編集', edit_work_path(@work), class: "btn btn-success" %>
-          <%= link_to '削除',work_path(@work.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } , class: "btn btn-danger"%>
-        <% end %>
-          <%= link_to '戻る', works_path %>
-          <br>
-          <%= link_to user_path(@work.user) do %>
-            <%= @work.user.username %> さんのページへ
-          <% end %>
-      </div>
+<% if @work.user.id == current_user.id %>
+  <%= link_to '編集', edit_work_path(@work), class: "btn btn-success" %>
+  <%= link_to '削除',work_path(@work.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } , class: "btn btn-danger"%>
+<% end %>
+  <%= link_to '戻る', works_path %>
+  <br>
+  <%= link_to user_path(@work.user) do %>
+    <%= @work.user.username %> さんのページへ
+  <% end %>
     </div>
   </div>
+</div>
 </div>
