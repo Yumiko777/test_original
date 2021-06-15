@@ -1,5 +1,10 @@
-<h1>ユーザ一覧Users#index</h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h2>ユーザ一覧Users#index</h2>
 
-<% @users.each do |user| %>
-  <%=link_to user.username, user_path(user) %>
-<% end %>
+      <% @users.each do |user| %>
+        <div class="form-group">
+          <label>ユーザー名</label>
+            <%=link_to user.username, user_path(user) %>
+      <% end %>

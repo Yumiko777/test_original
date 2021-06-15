@@ -1,8 +1,14 @@
-<h1>マイページUsers#show</h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h2>マイページUsers#index</h2>
 
-<strong><%= @user.username %></strong>
+      <strong><%= @user.username %></strong>
 
-<% if @user.id == current_user.id %>
-  <%= @user.email %>
-    <%= link_to "編集", edit_user_path(@user), class: "button is-primary" %>
-<% end %>
+      <% if @user.id == current_user.id %>
+        <%= @user.email %>
+          <%= link_to "編集", edit_user_path(@user), class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
