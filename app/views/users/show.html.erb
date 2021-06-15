@@ -9,6 +9,31 @@
         <%= @user.email %>
           <%= link_to "編集", edit_user_path(@user), class: "btn btn-success" %>
       <% end %>
+
+
     </div>
   </div>
 </div>
+
+<div class="col-9 mx-auto mt-5">
+      <table class="table table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">タイトル</th>
+            <th scope="col">内容</th>
+            <th scope="col">日程</th>
+            <th scope="col">状況</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% current_user.works.each do |work| %>
+            <tr>
+              <td><%= link_to work.title, work_path(work) %></td>
+              <td><%= work.content %></td>
+              <td><%= work.start_time.strftime("%m-%d") %></td>
+              <td><%= work.status %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
