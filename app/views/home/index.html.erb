@@ -4,9 +4,13 @@
       <i class="fas fa-calendar-alt" style="font-size: 200px; margin-bottom: 50px;"></i>
       <h3>Welcome to <strong>TeamWORK</strong>!</h3>
 
-      <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-success btn-lg btn-block" %>
-      <br>
-      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-success btn-lg btn-block" %>
+      <% if user_signed_in? %>
+        <%#= link_to "マイページ", user_path(current_user) %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-success btn-lg btn-block" %>
+        <br>
+        <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-success btn-lg btn-block" %>
+      <% end %>
     </div>
   </div>
 </div>

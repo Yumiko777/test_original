@@ -3,7 +3,8 @@ class WorksController < ApplicationController
   before_action :set_work, only: [:show, :edit, :update, :destroy]
 
   def index
-    @works = Work.where(status: "未済" ).page(params[:page]).order(start_time: "DESC").per(3)
+    @works = current_user.works
+    @works = @works.where(status: "未済" ).page(params[:page]).order(start_time: "DESC").per(3)
     @work = Work.new
   end
 
@@ -50,6 +51,6 @@ class WorksController < ApplicationController
   end
 
   def set_work
-    @work = Work.find(params[:id])
+    @work = current_user.works.find(params[:id])
   end
 end
