@@ -27,8 +27,22 @@
  .pagination>li>a:hover {
    border-radius: 15px;
  }
-
 /* アラート */
 .alert:not(:last-child){
   margin-bottom: 0;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #ebb2c2;
+}
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
 }
