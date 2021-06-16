@@ -4,7 +4,11 @@
       <h2>ユーザ一覧Users#index</h2>
 
       <% @users.each do |user| %>
-        <div class="form-group">
+        <div class="form-group">  </div>
           <label>ユーザー名</label>
             <%=link_to user.username, user_path(user) %>
       <% end %>
+
+    </div>
+  </div>
+</div>
