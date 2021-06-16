@@ -18,7 +18,7 @@
   <%= link_to '編集', edit_work_path(@work), class: "btn btn-success" %>
   <%= link_to '削除',work_path(@work.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } , class: "btn btn-danger"%>
 <% end %>
-  <%= link_to '戻る', works_path %>
+  <%= link_to '戻る', works_path, class: "btn btn-outline-success" %>
   <br>
   <%= link_to user_path(@work.user) do %>
     <%= @work.user.username %> さんのページへ
