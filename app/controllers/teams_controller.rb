@@ -8,6 +8,7 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    @team.users << current_user
   end
 
   def create
@@ -27,6 +28,7 @@ class TeamsController < ApplicationController
   end
 
   def show
+    # @works = Work.includes(:user).where(use_id: @team.users.ids)
     redirect_to teams_path, alert: "権限がありません!" unless @team.is_member?(current_user)
   end
 
