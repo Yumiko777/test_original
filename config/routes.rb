@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :works
   resources :users
   resources :teams
+  resources :members
 
   namespace :admin do
-    resources :users, only: [:index, :show, :new, :create, :destroy, :edit, :update] do
-    end
+    resources :users
   end
 end
