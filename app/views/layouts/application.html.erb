@@ -41,6 +41,11 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+            <%= link_to "チーム一覧", teams_path,  class: "nav-link" %>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
             <%= link_to "ユーザ一覧", users_path,  class: "nav-link" %>
           </li>
         </ul>
@@ -55,11 +60,6 @@
           </li>
         </ul>
       <% else %>
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <%= link_to "ユーザ一覧", users_path, class: "nav-link" %>
-          </li>
-        </ul>
         <ul class="navbar-nav ml-auto"">
           <li class="nav-item">
             <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>

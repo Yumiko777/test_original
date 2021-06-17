@@ -19,7 +19,7 @@
 
   <tbody>
 
-    <% @works.each do |work| %>
+    <% @pending_works.each do |work| %>
 		  <% if work.status == "未済" %>
       <tr>
         <td><%= link_to work.title , work %></td>
