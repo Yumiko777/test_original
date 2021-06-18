@@ -27,6 +27,7 @@ class TeamsController < ApplicationController
   end
 
   def show
+    @members = @team.members
     # @works = Work.includes(:username).where(member_id: @member.id)
     # redirect_to teams_path, alert: "権限がありません!" unless @team.is_member?(current_user)
   end

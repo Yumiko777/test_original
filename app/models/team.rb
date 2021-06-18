@@ -19,10 +19,13 @@ class Team < ApplicationRecord
   end
 
   def create_members
-    self.selected_user_ids.each do |id|
-      user = User.find(id)
-      Member.find_by(user_id: user.id, team_id: self.id) || Member.create(user_id: user.id, team_id: self.id)
+    self.safe_selected_user_ids.each do |id|
+      Member.find_by(user_id: id, team_id: self.id) || Member.create(user_id: id, team_id: self.id)
     end
     self.selected_user_ids = []
+  end
+
+  def safe_selected_user_ids
+    self.selected_user_ids.select { |id| id != "" && id.to_i != 0 }
   end
 end
