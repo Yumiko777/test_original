@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_06_14_011739) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_members_on_team_id"
+    t.index ["user_id", "team_id"], name: "index_members_on_user_id_and_team_id", unique: true
     t.index ["user_id"], name: "index_members_on_user_id"
   end
 
