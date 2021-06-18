@@ -8,7 +8,6 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
-    @team.users << current_user
   end
 
   def create
@@ -28,8 +27,8 @@ class TeamsController < ApplicationController
   end
 
   def show
-    # @works = Work.includes(:user).where(use_id: @team.users.ids)
-    redirect_to teams_path, alert: "権限がありません!" unless @team.is_member?(current_user)
+    # @works = Work.includes(:username).where(member_id: @member.id)
+    # redirect_to teams_path, alert: "権限がありません!" unless @team.is_member?(current_user)
   end
 
   def update
@@ -47,7 +46,7 @@ class TeamsController < ApplicationController
 
   private
   def team_params
-    params.require(:team).permit(:teamname)
+    params.require(:team).permit(:teamname,user_ids:[])
   end
   def set_team
     @team = Team.find(params[:id])

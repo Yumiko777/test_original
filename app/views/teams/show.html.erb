@@ -7,25 +7,29 @@
 </div>
 
 <div class="col-9 mx-auto mt-5">
-      <table class="table table-hover">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">チーム名</th>
-            <th scope="col">ユーザー名</th>
-            <th scope="col">メールアドレス</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr>
-              <td><%= @team.teamname %></td>
-              <td><%= @team.user.username %></td>
-              <td><%= @team.user.email %></td>
-            </tr>
-        </tbody>
-      </table>
-      <% if current_user == @team.user %>
-        <%= link_to "編集", edit_team_path(@team), class: "btn btn-success" %>
-      <% end %>
-        <%= link_to "戻る", teams_path, class: "btn btn-outline-success" %>
-        <%= link_to '削除',team_path(@team.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } , class: "btn btn-danger"%>
-    </div>
+  <table class="table table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">チーム名</th>
+        <th scope="col">ユーザー名</th>
+        <th scope="col">メールアドレス</th>
+        <th scope="col">作業内容</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @team.teamname %></td>
+        <td><%= @team.user.username %></td>
+        <td><%= @team.user.email %></td>
+        <td>作業内容</td>
+      </tr>
+    </tbody>
+  </table>
+  <% if current_user == @team.user %>
+    <%= link_to "メンバー追加", new_team_member_path(team_id: @team.id), class: "btn btn-success" %>
+    <%= link_to "編集", edit_team_path(@team), class: "btn btn-success" %>
+    <%= link_to '削除',team_path(@team.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } , class: "btn btn-danger"%>
+  <% end %>
+  <%= link_to "戻る", teams_path, class: "btn btn-outline-success" %>
+
+</div>
