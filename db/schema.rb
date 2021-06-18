@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_06_14_011739) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.string "teamname", null: false
+    t.string "name", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -7,7 +7,7 @@
       <% @teams.each do |team| %>
         <div class="form-group"></div>
           <label>チーム名</label>
-            <%=link_to team.teamname, team_path(team) %>
+            <%=link_to team.name, team_path(team) %>
       <% end %>
     </div>
   </div>

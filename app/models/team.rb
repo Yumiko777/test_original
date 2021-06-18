@@ -14,13 +14,15 @@ class Team < ApplicationRecord
   end
 
   def none_member_users
-    ids = member_user_ids
+    ids = self.member_user_ids
     User.all.select { |user| !ids.include?(user.id)  }
   end
 
   def create_members
-    self.selected_user_ids.each do |user|
+    self.selected_user_ids.each do |id|
+      user = User.find(id)
       Member.find_by(user_id: user.id, team_id: self.id) || Member.create(user_id: user.id, team_id: self.id)
     end
+    self.selected_user_ids = []
   end
 end
