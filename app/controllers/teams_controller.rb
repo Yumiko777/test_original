@@ -50,9 +50,11 @@ class TeamsController < ApplicationController
   def team_params
     params.require(:team).permit(:name,user_ids:[])
   end
+
   def set_team
     @team = Team.find(params[:id])
   end
+
   def authorized_user?
      unless @team.is_member?(current_user) || current_user.admin
       redirect_to teams_path, alert: "権限がありません!"

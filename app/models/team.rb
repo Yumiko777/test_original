@@ -7,6 +7,7 @@ class Team < ApplicationRecord
 
   validates :name, presence: true
 
+
   def is_member?(target_user)
     self.member_users.select { |user| user.id == target_user.id }.length > 0
   end
