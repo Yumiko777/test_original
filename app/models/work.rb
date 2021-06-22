@@ -7,5 +7,3 @@ class Work < ApplicationRecord
   # enum status: { 未済: 0,  済: 1 }
   enum status: { false: 0,  true: 1 }
 end
-
-# belongs_to :member, -> { order(start_time: "ASC") }

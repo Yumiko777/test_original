@@ -14,14 +14,14 @@
       <tr><td><strong>備考</strong></td><td><%= @work.remarks %></td></tr>
 </table>
 
-<% if @work.user.id == current_user.id %>
+<% if @work.member.user_id == current_user.id %>
   <%= link_to '編集', edit_work_path(@work), class: "btn btn-success" %>
   <%= link_to '削除',work_path(@work.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } , class: "btn btn-danger"%>
 <% end %>
   <%= link_to '戻る', works_path, class: "btn btn-outline-success" %>
   <br>
-  <%= link_to user_path(@work.user) do %>
-    <%= @work.user.username %> さんのページへ
+  <%= link_to user_path(@work.member.user_id) do %>
+    <%= @work.member.user.username %> さんのページへ
   <% end %>
     </div>
   </div>

@@ -3,13 +3,8 @@ class WorksController < ApplicationController
   before_action :set_work, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @works = current_user.works.page(params[:page]).order(start_time: "ASC").per(3)
-
-    # @works = Work.where(status: 0 ).order(start_time: "ASC").page(params[:page]).per(5)
-    @works = Work.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(3)
-    @pending_works = @works.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(3)
-
-
+    @works = Work.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(5)
+    @pending_works = @works.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(5)
   end
 
   def new
@@ -26,7 +21,6 @@ class WorksController < ApplicationController
     @work.member = Member.find_by(user_id: current_user.id)
       # binding.irb
     if @work.save
-
       redirect_to works_path(@work), notice: "作成しました！"
     else
       render :new
@@ -34,7 +28,7 @@ class WorksController < ApplicationController
   end
 
   def edit
-    if @work.user != current_user
+    if @work.member.user_id != current_user.id
       redirect_to works_path, alert: "不正なアクセスです!"
     end
   end
@@ -58,7 +52,6 @@ class WorksController < ApplicationController
   end
 
   def set_work
-    # @work = Works.find(params[:id])
-    @work = Works.find(params[:member_id])
+    @work = Work.find(params[:id])
   end
 end
