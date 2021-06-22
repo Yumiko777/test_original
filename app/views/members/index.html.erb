@@ -16,7 +16,6 @@
       </tr>
     </thead>
     <tbody>
-
       <% @members.each do |member| %>
         <tr>
           <td><%=link_to @team.name, teams_path %></td>
@@ -25,9 +24,7 @@
           <td><%= link_to "メンバー削除", team_member_path(team_id: member.team.id , id: member.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } ,class: "btn btn-danger" %></td>
         </tr>
       <% end %>
-
     </tbody>
-
   </table>
   <%= link_to "戻る", teams_path, class: "btn btn-outline-success" %>
   </div>
