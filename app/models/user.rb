@@ -11,11 +11,11 @@ class User < ApplicationRecord
 
   has_many :works, dependent: :destroy
 
-  def works
-    @works = Work.none
-    self.members.each do |member|
-      @works.merge(member.works)
-    end
-    return @works
-  end
+  # def works
+  #   @works = Work.none
+  #   self.members.each do |member|
+  #     @works.merge(member.works)
+  #   end
+  #   return @works
+  # end
 end

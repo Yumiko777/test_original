@@ -3,7 +3,8 @@ class WorksController < ApplicationController
   before_action :set_work, only: [:show, :edit, :update, :destroy]
 
   def index
-    @works = current_user.works
+    @user = User.find(params[:user])
+    @works = @user.works
     # @works = @works.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(3)
     # @pending_works = @works.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(3)
     # binding.irb
@@ -24,8 +25,8 @@ class WorksController < ApplicationController
   end
 
   def create
-    @work = Work.new(work_params)
-    @work.member = Member.find_by(user_id: current_user.id)
+    @work = current_user.works.build(work_params)
+    # @work.member = Member.find_by(user_id: current_user.id)
       # binding.irb
     if @work.save
       redirect_to works_path(@work), notice: "作成しました！"
@@ -35,7 +36,7 @@ class WorksController < ApplicationController
   end
 
   def edit
-    if @work.member.user_id != current_user.id
+    if @work.user_id != current_user.id
       redirect_to works_path, alert: "不正なアクセスです!"
     end
   end
@@ -55,10 +56,12 @@ class WorksController < ApplicationController
 
   private
   def work_params
-    params.require(:work).permit(:title, :content, :start_time, :status, :remarks, :member_id).merge(status: params[:status])
+    params.require(:work).permit(:title, :content, :start_time, :status, :remarks, :user_id, :member_id).merge(status: params[:status])
   end
 
   def set_work
-    @work = Work.find(params[:id])
+    @work = current_user.works.find(params[:id])
   end
+
+
 end

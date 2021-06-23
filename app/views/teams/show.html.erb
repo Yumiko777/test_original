@@ -20,8 +20,10 @@
         <tr>
           <td><%= member.user.username %></td>
           <td><%= member.user.email %></td>
-          <td><%=link_to member.works, works_path %></td>
+
+          <td><%= link_to "作業内容一覧", works_path(user: member.user) %></td>
         </tr>
+
       <% end %>
     </tbody>
   </table>

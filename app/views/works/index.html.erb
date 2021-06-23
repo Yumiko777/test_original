@@ -17,8 +17,7 @@
   </thead>
   <tbody>
     <% @works.each do |work| %>
-		  <%# if work.status == "false" %>
-
+		  <% if work.status == "false" %>
       <tr>
         <td><%= link_to work.title , work %></td>
         <td><%= work.content %></td>
@@ -31,7 +30,7 @@
         <td><%= link_to '削除',work_path(work.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } %></td>
       </tr>
 
-      <%# end %>
+      <% end %>
     <% end %>
   </tbody>
 </table>

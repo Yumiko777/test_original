@@ -54,16 +54,13 @@ ActiveRecord::Schema.define(version: 2021_06_14_011739) do
     t.integer "status"
     t.text "remarks"
     t.bigint "user_id"
-    t.bigint "member_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["member_id"], name: "index_works_on_member_id"
     t.index ["user_id"], name: "index_works_on_user_id"
   end
 
   add_foreign_key "members", "teams"
   add_foreign_key "members", "users"
   add_foreign_key "teams", "users"
-  add_foreign_key "works", "members"
   add_foreign_key "works", "users"
 end
