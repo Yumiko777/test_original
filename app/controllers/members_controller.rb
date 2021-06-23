@@ -2,6 +2,7 @@ class MembersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_member, only: [:show, :edit, :update, :destroy]
   before_action :set_team, only: [:index, :new, :create]
+
   def index
     @members = Member.all
   end

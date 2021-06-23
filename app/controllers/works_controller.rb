@@ -3,8 +3,16 @@ class WorksController < ApplicationController
   before_action :set_work, only: [:show, :edit, :update, :destroy]
 
   def index
-    @works = Work.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(5)
-    @pending_works = @works.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(5)
+    @works = current_user.works
+    # @works = @works.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(3)
+    # @pending_works = @works.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(3)
+    # binding.irb
+    # members = current_user.members
+    # @works = []
+    # members.map { |n| @works << n.works.where(status: "false" ) }
+    # binding.irb
+    @works = @works.page(params[:page]).order(start_time: "ASC").per(3)
+    # @works = Kaminari.paginate_array(@works).page(params[:page]).per(3)
   end
 
   def new
@@ -17,7 +25,6 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(work_params)
-    # @work.member_id = Member.find_by(user_id: @user_id)
     @work.member = Member.find_by(user_id: current_user.id)
       # binding.irb
     if @work.save

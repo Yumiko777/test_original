@@ -17,7 +17,8 @@
   </thead>
   <tbody>
     <% @works.each do |work| %>
-		  <% if work.status == "false" %>
+		  <%# if work.status == "false" %>
+
       <tr>
         <td><%= link_to work.title , work %></td>
         <td><%= work.content %></td>
@@ -29,7 +30,8 @@
         <td><%= link_to '詳細', work_path(work.id) %></td>
         <td><%= link_to '削除',work_path(work.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } %></td>
       </tr>
-			<% end %>
+
+      <%# end %>
     <% end %>
   </tbody>
 </table>
@@ -38,12 +40,15 @@
 <br>
 <div class="col-md-6">
 <%= month_calendar events: @works do |date, works| %>
+
   <%= date.day %>
 
   <% works.each do |work| %>
+
     <div>
       <%= link_to work.title, work %>
     </div>
+
   <% end %>
 <% end %>
     </div>

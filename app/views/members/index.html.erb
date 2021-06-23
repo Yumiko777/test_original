@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-6 mx-auto">
       <h2>メンバー一覧Members#index</h2>
+      <h2>Team: <%=link_to @team.name, team_path(@team) %></h2>
     </div>
   </div>
 </div>
@@ -10,15 +11,13 @@
   <table class="table table-hover">
     <thead class="thead-light">
       <tr>
-        <th scope="col">チーム名</th>
         <th scope="col">ユーザー名</th>
         <th scope="col">メールアドレス</th>
       </tr>
     </thead>
     <tbody>
-      <% @members.each do |member| %>
+      <% @team.members.each do |member| %>
         <tr>
-          <td><%=link_to @team.name, teams_path %></td>
           <td><%= member.user.username %></td>
           <td><%= member.user.email %></td>
           <td><%= link_to "メンバー削除", team_member_path(team_id: member.team.id , id: member.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } ,class: "btn btn-danger" %></td>
@@ -26,5 +25,5 @@
       <% end %>
     </tbody>
   </table>
-  <%= link_to "戻る", teams_path, class: "btn btn-outline-success" %>
+  <%= link_to "戻る", team_path(@team), class: "btn btn-outline-success" %>
   </div>
