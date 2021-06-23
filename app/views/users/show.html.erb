@@ -9,7 +9,7 @@
         <%= @user.email %>
           <%= link_to "編集", edit_user_path(@user), class: "btn btn-success" %>
       <% end %>
-<%# <% binding.irb %>
+
       <% if current_user.admin %>
           <%= link_to "管理画面へ", admin_user_path, class: "btn btn-outline-success" %>
       <% end %>
