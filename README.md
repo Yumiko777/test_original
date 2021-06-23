@@ -32,7 +32,7 @@ https://docs.google.com/spreadsheets/d/1R46RoTnxCjTJYMhK6GcQ1dz1FEVFkan8_gA_oo3z
 ## ER図
 
 https://cacoo.com/diagrams/byFTtCQ3HKtdB07W/19398
-![ER図](https://user-images.githubusercontent.com/82217866/123030404-bb830c80-d41d-11eb-98eb-d9281c5a79dc.png)
+![ER図](https://user-images.githubusercontent.com/82217866/123051931-3a3b7200-d43d-11eb-831c-acd6437f90e9.png)
 
 ## 画面遷移図
 
