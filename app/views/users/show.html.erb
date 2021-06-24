@@ -1,13 +1,16 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-6 mx-auto">
-      <h2>マイページUsers#show</h2>
+      <h2>Users#show本日の作業内容</h2>
 
       <strong><%= @user.username %></strong>
 
       <% if @user.id == current_user.id %>
         <%= @user.email %>
           <%= link_to "編集", edit_user_path(@user), class: "btn btn-success" %>
+          <%= link_to "戻る", teams_path(@team), class: "btn btn-outline-success" %>
+      <% else %>
+          <%= link_to "戻る", teams_path(@team), class: "btn btn-outline-success" %>
       <% end %>
 
       <% if current_user.admin %>
@@ -27,13 +30,16 @@
       </tr>
     </thead>
     <tbody>
-      <% current_user.works.each do |work| %>
+
+      <% @works.each do |work| %>
+        <% if work.start_time.strftime("%m-%d") == Date.current.strftime("%m-%d")%>
         <tr>
           <td><%= link_to work.title, work_path(work) %></td>
           <td><%= work.content %></td>
           <td><%= work.start_time.strftime("%m-%d") %></td>
           <td><%= work.status %></td>
         </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

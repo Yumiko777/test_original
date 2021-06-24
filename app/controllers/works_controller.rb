@@ -3,17 +3,10 @@ class WorksController < ApplicationController
   before_action :set_work, only: [:show, :edit, :update, :destroy]
 
   def index
-    @user = User.find(params[:user])
-    @works = @user.works
-    # @works = @works.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(3)
-    # @pending_works = @works.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(3)
-    # binding.irb
-    # members = current_user.members
-    # @works = []
-    # members.map { |n| @works << n.works.where(status: "false" ) }
-    # binding.irb
-    @works = @works.page(params[:page]).order(start_time: "ASC").per(3)
-    # @works = Kaminari.paginate_array(@works).page(params[:page]).per(3)
+    # @user = User.find(params[:user])
+    # @works = @user.works
+    @works = current_user.works
+    @works = @works.where(status: "false" ).page(params[:page]).order(start_time: "ASC").per(3)
   end
 
   def new
@@ -21,13 +14,10 @@ class WorksController < ApplicationController
   end
 
   def show
-    # @member = current_user.members.find_by(team_id: @team.id)
   end
 
   def create
     @work = current_user.works.build(work_params)
-    # @work.member = Member.find_by(user_id: current_user.id)
-      # binding.irb
     if @work.save
       redirect_to works_path(@work), notice: "作成しました！"
     else
@@ -62,6 +52,4 @@ class WorksController < ApplicationController
   def set_work
     @work = current_user.works.find(params[:id])
   end
-
-
 end

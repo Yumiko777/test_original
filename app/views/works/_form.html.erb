@@ -9,12 +9,12 @@
 
 <div class="title">
   <div class="form-tag">タイトル</div>
-    <%= form.text_field :title %>
+    <%= form.text_field :title ,:placeholder => "作業終了" %>
 </div>
 
 <div class="content">
   <div class="form-tag">内容</div>
-    <%= form.text_field :content %>
+    <%= form.text_field :content ,:placeholder => "本日の作業は終了しました！" %>
 </div>
 
 <div class="time">
@@ -24,8 +24,10 @@
 
 <div class="status">
 	<div class="form-tag">状態</div>
-    <%= check_box_tag :status , false, true, {}%>
-		<%= label_tag :status, '未済' %>
+    <%= radio_button_tag :status,false, {:checked => true}  %>
+    <%= label_tag :status, '未済' %>
+    <%= radio_button_tag :status,true %>
+		<%= label_tag :status, '済' %>
 </div>
 
 <div class="remarks">

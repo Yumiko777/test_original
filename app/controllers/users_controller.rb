@@ -7,9 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if @user != current_user
-      redirect_to users_path
-    end
+    @works = Work.where(user_id: @user.id)
   end
 
   def edit
