@@ -8,6 +8,9 @@ class UsersController < ApplicationController
 
   def show
     @works = Work.where(user_id: @user.id)
+    # if @user != current_user
+    #   redirect_to users_path
+    # end
   end
 
   def edit
@@ -28,7 +31,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email)
   end
-  
+
   def set_user
     @user = User.find(params[:id])
   end
