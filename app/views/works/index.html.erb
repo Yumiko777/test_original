@@ -17,7 +17,7 @@
   </thead>
   <tbody>
 
-    <% @works.each do |work| %>
+    <% @pending_works.each do |work| %>
 		  <% if work.status == "false" %>
       <tr>
         <td><%= link_to work.title , work %></td>
