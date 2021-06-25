@@ -2,15 +2,15 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update]
 
+
   def index
-    @users = User.all
+    # @users = User.all
+    @search = User.ransack(params[:q])
+    @users = @search.result(distinct: true)
   end
 
   def show
     @works = Work.where(user_id: @user.id)
-    # if @user != current_user
-    #   redirect_to users_path
-    # end
   end
 
   def edit
