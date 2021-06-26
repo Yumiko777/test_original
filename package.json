@@ -1,5 +1,7 @@
 {
   "name": "test_original",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
 }

@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_many :member_teams, through: :members, source: :team
   has_many :works, dependent: :destroy
 
+  has_many :blogs, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
   # def works
   #   @works = Work.none
   #   self.members.each do |member|
