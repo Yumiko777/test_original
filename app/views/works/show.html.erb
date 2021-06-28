@@ -10,7 +10,7 @@
       <tr><td><strong>タイトル</strong></td><td><%= @work.title %></td></tr>
       <tr><td><strong>内容</strong></td><td><%= @work.content %></td></tr>
       <tr><td><strong>日程</strong></td><td><%= @work.start_time.strftime("%m-%d") %></td></tr>
-      <tr><td><strong>状態</strong></td><td><%= @work.status %></td></tr>
+      <tr><td><strong>状態</strong></td><td><%= @work.status_i18n %></td></tr>
       <tr><td><strong>備考</strong></td><td><%= @work.remarks %></td></tr>
 </table>
 

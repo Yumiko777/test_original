@@ -23,7 +23,7 @@
         <td><%= link_to work.title , work %></td>
         <td><%= work.content %></td>
         <td><%= work.start_time.strftime("%m-%d") %></td>
-				<td><%= work.status %></td>
+				<td><%= work.status_i18n %></td>
         <td><%= work.remarks %></td>
 
         <td><%= link_to '編集', edit_work_path(work.id) %></td>

@@ -16,6 +16,8 @@ class WorksController < ApplicationController
 
   def create
     @work = current_user.works.build(work_params)
+    # binding.irb
+
     if @work.save
       redirect_to works_path(@work), notice: "作成しました！"
     else
