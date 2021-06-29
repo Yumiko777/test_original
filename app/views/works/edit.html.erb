@@ -3,8 +3,8 @@
     <div class="col-6 mx-auto">
       <h2>作業内容編集works#show</h2>
       <%= form_with(model: @work, local: true) do |form| %>
-        <br>
-        <%= render :partial => 'form', :locals => {:form => form, :edit_flag => true} %>
+      <br>
+      <%= render :partial => 'form', :locals => {:form => form, :edit_flag => true} %>
       <% end %>
     </div>
   </div>
