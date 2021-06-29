@@ -13,6 +13,7 @@
 ## カリキュラムで学んでいない技術
 
 - simple calender
+- ransack
 - Docker
 
 ## 実行手順

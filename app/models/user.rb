@@ -13,11 +13,21 @@ class User < ApplicationRecord
   has_many :blogs, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  # def works
-  #   @works = Work.none
-  #   self.members.each do |member|
-  #     @works.merge(member.works)
-  #   end
-  #   return @works
-  # end
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.username = "ゲスト"
+    end
+  end
+
+  def self.admin_guest
+    find_or_create_by!(email: 'admin_guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.username = "管理者"
+      user.admin = true
+      # user.save
+    end
+  end
+
+  enum admin: { 一般: false, 管理者: true }
 end

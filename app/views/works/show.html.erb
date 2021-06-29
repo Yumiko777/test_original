@@ -6,23 +6,23 @@
     <div class="col-6 mx-auto">
       <h2>作業内容詳細works#show</h2>
 
-<table class="table table-striped">
-      <tr><td><strong>タイトル</strong></td><td><%= @work.title %></td></tr>
-      <tr><td><strong>内容</strong></td><td><%= @work.content %></td></tr>
-      <tr><td><strong>日程</strong></td><td><%= @work.start_time.strftime("%m-%d") %></td></tr>
-      <tr><td><strong>状態</strong></td><td><%= @work.status %></td></tr>
-      <tr><td><strong>備考</strong></td><td><%= @work.remarks %></td></tr>
-</table>
+      <table class="table table-striped">
+            <tr><td><strong>タイトル</strong></td><td><%= @work.title %></td></tr>
+            <tr><td><strong>内容</strong></td><td><%= @work.content %></td></tr>
+            <tr><td><strong>日程</strong></td><td><%= @work.start_time.strftime("%m-%d") %></td></tr>
+            <tr><td><strong>状態</strong></td><td><%= @work.status_i18n %></td></tr>
+            <tr><td><strong>備考</strong></td><td><%= @work.remarks %></td></tr>
+      </table>
 
-<% if @work.user_id == current_user.id %>
-  <%= link_to '編集', edit_work_path(@work), class: "btn btn-success" %>
-  <%= link_to '削除',work_path(@work.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } , class: "btn btn-danger"%>
-<% end %>
-  <%= link_to '戻る', works_path, class: "btn btn-outline-success" %>
-  <br>
-  <%= link_to user_path(@work.user_id) do %>
-    <%= @work.user.username %> さんのページへ
-  <% end %>
+      <% if @work.user_id == current_user.id %>
+        <%= link_to '編集', edit_work_path(@work), class: "btn btn-success" %>
+        <%= link_to '削除',work_path(@work.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } , class: "btn btn-danger"%>
+      <% end %>
+        <%= link_to '戻る', works_path, class: "btn btn-outline-success" %>
+        <br>
+        <%= link_to user_path(@work.user_id) do %>
+          <%= @work.user.username %> さんのページへ
+        <% end %>
     </div>
   </div>
 </div>

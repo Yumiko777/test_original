@@ -3,14 +3,14 @@
     <div class="col-6 mx-auto">
       <h2>ユーザー編集Users#edit</h2>
 
-<% if @user.errors.any? %>
-  <h2><%= pluralize(@user.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% if @user.errors.any? %>
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
       <% end %>
-    </ul>
-<% end %>
 
       <%= form_with(model: @user, local: true) do |f| %>
         <div class="form-group">

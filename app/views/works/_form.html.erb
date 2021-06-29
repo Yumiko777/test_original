@@ -35,7 +35,7 @@
     <%= form.text_field :remarks %>
 </div>
 
- <% if local_assigns[:edit_flag].present? %>
+<% if local_assigns[:edit_flag].present? %>
   <div class="submit">
     <%= form.submit "編集", class: "btn btn-success" %>
     <%= link_to "戻る", works_path, class: "btn btn-outline-success" %>
@@ -45,4 +45,4 @@
   <div class="submit">
     <%= form.submit "新規作成", class: "btn btn-success" %>
 <% end %>
-  </div>
+</div>

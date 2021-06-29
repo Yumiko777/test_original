@@ -5,6 +5,7 @@
 <div class="row">
   <div class="col-md-6">
   	<div class="schedule">スケジュール一覧</div>
+
 <table class="table">
   <thead class="thead-light">
     <tr>
@@ -16,14 +17,13 @@
     </tr>
   </thead>
   <tbody>
-
     <% @pending_works.each do |work| %>
 		  <% if work.status == "false" %>
       <tr>
         <td><%= link_to work.title , work %></td>
         <td><%= work.content %></td>
         <td><%= work.start_time.strftime("%m-%d") %></td>
-				<td><%= work.status %></td>
+				<td><%= work.status_i18n %></td>
         <td><%= work.remarks %></td>
 
         <td><%= link_to '編集', edit_work_path(work.id) %></td>
@@ -34,7 +34,8 @@
     <% end %>
   </tbody>
 </table>
-<%= paginate @works %>
+
+<%= paginate @pending_works %>
 </div>
 <br>
 <div class="col-md-6">
