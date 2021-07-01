@@ -15,19 +15,19 @@ ja:
     work_new: 新規投稿
     work_show: 作業内容詳細
     work: 作業内容
+    today_work: 本日の作業内容
     edit: 編集
     show: 詳細
     delete: 削除
     back: 戻る
+    submit: 更新
     Are you sure?: 本当に削除してもよろしいでしょうか?
     user_edit: ユーザー編集
     username: ユーザー名
     email: メールアドレス
-    submit: 更新
     user_index: ユーザー一覧
     user_search: ユーザー検索
     search: 検索
-    today_work: 本日の作業内容
     admin_screen: 管理画面へ
     team_name: チーム名
     create: 新規作成
@@ -35,7 +35,8 @@ ja:
     team_index: チーム一覧
     team_create: 新規チーム作成
     team_edit: チーム名編集
+    team_delete: チーム削除
     member_list: メンバー一覧
     member_add: メンバー追加
-    team_name_edit: チーム名編集
-    team_delete: チーム削除
+    member_delete: メンバー削除
+    member_name: メンバー名
