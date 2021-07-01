@@ -1,7 +1,7 @@
 <%= form_with(model: [blog, comment]) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <h2><%= comment.errors.count %> <%= t('view.error') %></h2>
       <ul>
       <% comment.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,11 +11,11 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :内容 %><br />
+    <%= form.label t('view.comment_content') %><br />
     <%= form.text_area :content, class:"input", placeholder:"コメント" %>
     <%= form.hidden_field :blog_id, value: @blog.id %>
   </div>
   <div class="actions">
-    <%= form.submit "コメントをする", class: "btn btn-success" %>
+    <%= form.submit t('view.comment_submit'), class: "btn btn-success" %>
   </div>
 <% end %>
