@@ -29,8 +29,7 @@ ActiveRecord::Schema.define(version: 2021_06_26_020355) do
     t.bigint "user_id"
     t.text "content"
     t.datetime "created_at", null: false
-    t.datetime "
-    ", null: false
+    t.datetime "updated_at", null: false
     t.index ["blog_id"], name: "index_comments_on_blog_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
