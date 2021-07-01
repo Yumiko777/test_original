@@ -19,3 +19,12 @@ ja:
     delete: 削除
     back: 戻る
     Are you sure?: 本当に削除してもよろしいでしょうか?
+    user_edit: ユーザー編集
+    username: ユーザー名
+    email: メールアドレス
+    submit: 更新
+    user_list: ユーザー一覧
+    user_search: ユーザー検索
+    search: 検索
+    today_work: 本日の作業内容
+    admin_screen: 管理画面へ

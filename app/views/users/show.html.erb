@@ -1,20 +1,20 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-6 mx-auto">
-      <h2>Users#show本日の作業内容</h2>
+      <h2><%= t('view.today_work') %></h2>
 
       <strong><%= @user.username %></strong>
 
       <% if @user.id == current_user.id %>
         <%= @user.email %>
-          <%= link_to "編集", edit_user_path(@user), class: "btn btn-success" %>
-          <%= link_to "戻る", teams_path(@team), class: "btn btn-outline-success" %>
+          <%= link_to t('view.edit'), edit_user_path(@user), class: "btn btn-success" %>
+          <%= link_to t('view.back'), teams_path(@team), class: "btn btn-outline-success" %>
       <% else %>
-        <%= link_to "戻る", teams_path(@team), class: "btn btn-outline-success" %>
+        <%= link_to t('view.back'), teams_path(@team), class: "btn btn-outline-success" %>
       <% end %>
 
       <% if current_user.admin %>
-        <%= link_to "管理画面へ", admin_user_path, class: "btn btn-outline-success" %>
+        <%= link_to t('view.admin_screen'), admin_user_path, class: "btn btn-outline-success" %>
       <% end %>
     </div>
   </div>
@@ -23,10 +23,10 @@
   <table class="table table-hover">
     <thead class="thead-light">
       <tr>
-        <th scope="col">タイトル</th>
-        <th scope="col">内容</th>
-        <th scope="col">日程</th>
-        <th scope="col">状況</th>
+        <th scope="col"><%= t('view.work_title') %></th>
+        <th scope="col"><%= t('view.work_content') %></th>
+        <th scope="col"><%= t('view.work_start_time') %></th>
+        <th scope="col"><%= t('view.work_status') %></th>
       </tr>
     </thead>
     <tbody>
