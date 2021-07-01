@@ -11,12 +11,9 @@ RSpec.describe Blog, type: :model do
     expect(blog).not_to be_valid
   end
 
-  before do
-    @user = create(:user)
-  end
   it "titleとcontentが記載の場合バリデーションが通る" do
-    user = @user
-    blog = Blog.new(title: "成功テスト", content: "成功テスト",  user_id: 1 )
+    @user = create(:user)
+    blog = Blog.new(title: "成功テスト", content: "成功テスト",  user: @user )
     expect(blog).to be_valid
   end
 end
