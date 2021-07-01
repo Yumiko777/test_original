@@ -8,7 +8,7 @@ FactoryBot.define do
     association :user
   end
 
-  factory :second_work, class: Work do
+  factory :work2, class: Work do
     title { 'Factoryで作ったデフォルトのタイトル2' }
     content { 'Factoryで作ったデフォルトのコンテント2' }
     start_time { Date.yesterday }

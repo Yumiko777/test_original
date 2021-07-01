@@ -4,7 +4,7 @@ FactoryBot.define do
     association :user
   end
 
-  factory :second_team, class: Team do
+  factory :team2, class: Team do
     name { 'テストチーム2' }
     association :user
   end
