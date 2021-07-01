@@ -3,35 +3,32 @@ ja:
     models:
       blog: ブログ
       user: ユーザー
+      comment: コメント
+      member: メンバー
+      team: チーム
+      work: 作業
     attributes:
       blog:
         title: タイトル
         content: 内容
       user:
-        title: タイトル
-        name: 名前
+        username: 名前
         email: メールアドレス
         current_password: 現在のパスワード
         password: パスワード
         password_confirmation: 確認用パスワード
         remember_me: ログインを記憶
-
-
-
-ja:
-  view:
-    task_name: タスク名
-    task_detail: タスク詳細
-    task_list: タスクリスト
-    back_task_list: タスク一覧に戻る
-    check_task_detail: タスク詳細を確認する
-    edit_task: タスクを編集する
-    delete_task: タスクを削除する
-    create_task: 新しくタスクを登録する
-    new_task: タスクを作成する
-    show_task: タスク詳細画面
-    error: 件のエラーがあります
-    confirm: 本当に削除していいですか？
-    task_deadline: 終了期限
-    task_status: ステータス
-    task_priority: 優先度
+        admin: 管理者
+      comment:
+        content: 内容
+      team:
+        name: 名前
+      work:
+        title: タイトル
+        content: 内容
+        start_time: 日程
+        status: 状態
+        remarks: 備考
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日

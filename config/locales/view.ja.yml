@@ -1,0 +1,21 @@
+ja:
+  view:
+    error: 件のエラーがあります
+    work_false: 未済
+    work_true: 済
+    work_submit: 新規作成
+    work_title: タイトル
+    work_content: 内容
+    work_start_time: 日程
+    work_status: 状態
+    work_remarks: 備考
+    work_edit: 作業内容編集
+    work_my_schedule: My スケジュール
+    work_my_schedule_list: スケジュール一覧
+    work_new: 新規投稿
+    work_show: 作業内容詳細
+    edit: 編集
+    show: 詳細
+    delete: 削除
+    back: 戻る
+    Are you sure?: 本当に削除してもよろしいでしょうか?
