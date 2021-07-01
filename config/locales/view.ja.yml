@@ -14,6 +14,7 @@ ja:
     work_my_schedule_list: スケジュール一覧
     work_new: 新規投稿
     work_show: 作業内容詳細
+    work: 作業内容
     edit: 編集
     show: 詳細
     delete: 削除
@@ -23,8 +24,18 @@ ja:
     username: ユーザー名
     email: メールアドレス
     submit: 更新
-    user_list: ユーザー一覧
+    user_index: ユーザー一覧
     user_search: ユーザー検索
     search: 検索
     today_work: 本日の作業内容
     admin_screen: 管理画面へ
+    team_name: チーム名
+    create: 新規作成
+    team_new: チーム新規作成
+    team_index: チーム一覧
+    team_create: 新規チーム作成
+    team_edit: チーム名編集
+    member_list: メンバー一覧
+    member_add: メンバー追加
+    team_name_edit: チーム名編集
+    team_delete: チーム削除
