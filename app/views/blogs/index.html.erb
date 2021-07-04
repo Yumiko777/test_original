@@ -3,15 +3,15 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-6 mx-auto">
-      <h2>コメント一覧blogs#index</h2>
+      <h2><%= t('view.blog_index') %></h2>
 
       <table class="table table-hover">
         <thead class="thead-light">
           <tr>
-            <th>投稿者</th>
-            <th>タイトル</th>
-            <th>内容</th>
-            <th>更新日</th>
+            <th><%= t('view.poster') %></th>
+            <th><%= t('view.blog_title') %></th>
+            <th><%= t('view.blog_content') %></th>
+            <th><%= t('view.update_date') %></th>
           </tr>
         </thead>
 
@@ -22,10 +22,10 @@
               <td><%= blog.title %></td>
               <td><%= blog.content %></td>
               <td><%= blog.updated_at.strftime("%m-%d %H:%M") %></td>
-              <td><%= link_to '詳細', blog %></td>
+              <td><%= link_to t('view.show'), blog %></td>
               <% if blog.user.id == current_user.id %>
-                <td><%= link_to '編集', edit_blog_path(blog) %></td>
-                <td><%= link_to '削除', blog, method: :delete, data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'%></td>
+                <td><%= link_to t('view.edit'), edit_blog_path(blog) %></td>
+                <td><%= link_to t('view.delete'), blog, method: :delete, data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'%></td>
               <% else %>
                 <td></td>
                 <td></td>
@@ -36,7 +36,7 @@
       </table>
       <%= paginate @blogs %>
       <br>
-      <%= link_to '新規投稿', new_blog_path , class: "btn btn-success" %>
+      <%= link_to t('view.blog_submit'), new_blog_path , class: "btn btn-success" %>
     </div>
   </div>
 </div>

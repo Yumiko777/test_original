@@ -6,7 +6,7 @@
     <div class="form">
       <%= form_with(model: @team ,url: team_members_path ,method: :post, local: true) do |form| %>
         <% if @team.errors.any? %>
-          <h2><%= @team.errors.count %> <%= t('view.error') %></h2>
+          <h2><%= @team.errors.count %><%= t('view.error') %></h2>
           <ul>
             <% @team.errors.full_messages.each do |message| %>
               <li><%= message %></li>

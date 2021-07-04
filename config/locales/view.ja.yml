@@ -46,3 +46,11 @@ ja:
     blog_date: 投稿日
     comment_edit: コメント編集
     comment_delete: コメント削除
+    blog_title: タイトル
+    blog_content: 内容
+    blog_submit: 新規投稿
+    blog_edit: コメント編集
+    blog_index: コメント一覧
+    poster: 投稿者
+    update_date: 更新日
+    blog_new: コメント新規投稿
