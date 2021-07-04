@@ -18,6 +18,8 @@ ja:
         password: パスワード
         password_confirmation: 確認用パスワード
         remember_me: ログインを記憶
+        # forgot_your_password: パスワードを忘れましたか？
+        # characters minimum: 文字以上
         admin: 管理者
       comment:
         content: 内容

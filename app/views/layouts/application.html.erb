@@ -4,6 +4,7 @@
     <title>Originalアプリ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
@@ -58,6 +59,7 @@
         <% end %>
       </div>
 
+      <div class="container">
       <% if user_signed_in? %>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -91,7 +93,9 @@
              </li>
            </ul> -->
          <% end %>
+      </div>
     </nav>
+
     <%= yield %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- Footer-->
@@ -104,6 +108,8 @@
         </ul>
           <p class="text-muted small mb-0">TeamWORK株式会社 © 2021 Copyright</p>
       </div>
+
     </footer>
+
   </body>
 </html>

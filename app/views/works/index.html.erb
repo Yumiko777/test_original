@@ -17,21 +17,21 @@
     </tr>
   </thead>
   <tbody>
-    <% @pending_works.each do |work| %>
-		  <% if work.status == "false" %>
-      <tr>
-        <td><%= link_to work.title , work %></td>
-        <td><%= work.content %></td>
-        <td><%= work.start_time.strftime("%m-%d") %></td>
-				<td><%= work.status_i18n %></td>
-        <td><%= work.remarks %></td>
+  <% @pending_works.each do |work| %>
+	  <% if work.status == "false" %>
+    <tr>
+      <td><%= link_to work.title , work %></td>
+      <td><%= work.content %></td>
+      <td><%= work.start_time.strftime("%m-%d") %></td>
+			<td><%= work.status_i18n %></td>
+      <td><%= work.remarks %></td>
 
-        <td><%= link_to t('view.edit'), edit_work_path(work.id) %></td>
-        <td><%= link_to t('view.show'), work_path(work.id) %></td>
-        <td><%= link_to t('view.delete'),work_path(work.id), method: :delete, data: { confirm: t('view.Are you sure?') } %></td>
-      </tr>
-      <% end %>
+      <td><%= link_to t('view.edit'), edit_work_path(work.id) %></td>
+      <td><%= link_to t('view.show'), work_path(work.id) %></td>
+      <td><%= link_to t('view.delete'),work_path(work.id), method: :delete,data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'  %></td>
+    </tr>
     <% end %>
+  <% end %>
   </tbody>
 </table>
 
