@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestOriginal</title>
+    <title>Originalアプリ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,10 +10,40 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/1741c2b470.js" crossorigin="anonymous"></script>
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Simple line icons-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
   </head>
 
   <body>
-
+    <!-- Navigation-->
+    <a class="menu-toggle rounded"><i class="fas fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-item"><%= link_to "Home", root_path, class: "navbar-brand" %></li>
+      <% if user_signed_in? %>
+        <li class="sidebar-nav-item"><%= link_to "作業内容新規作成", new_work_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to "作業内容一覧", works_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to "コメント新規投稿", new_blog_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to "チーム一覧", teams_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to "ユーザ一覧", users_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to "マイページ", user_path(current_user),  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+      <% else %>
+        <li class="sidebar-nav-item"><%= link_to "ログイン", new_user_session_path, class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to "新規登録", new_user_registration_path, class: "nav-link" %></li>
+      <% end %>
+      </ul>
+    </nav>
+    <!-- Header-->
     <% if flash[:notice] %>
       <div class="alert alert-warning" role="alert"><strong><%= notice %></strong></div>
     <% end %>
@@ -21,7 +51,7 @@
       <div class="alert alert-danger" role="alert"><strong><%= alert %></strong></div>
     <% end %>
 
-    <nav class="navbar navbar-light mb-2" style="background-color:#e3f2fd;">
+    <nav class="navbar navbar-light mb-2" style="background-color:#ffffff;">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-brand" do %>
           <h1 class="title" style="font-family: cursive;">TeamWORK</h1>
@@ -31,12 +61,12 @@
       <% if user_signed_in? %>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "作業内容一覧", works_path,  class: "nav-link" %>
+            <%= link_to "作業内容新規作成", new_work_path,  class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "作業内容新規作成", new_work_path,  class: "nav-link" %>
+            <%= link_to "作業内容一覧", works_path,  class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
@@ -44,47 +74,36 @@
             <%= link_to "コメント新規投稿", new_blog_path,  class: "nav-link" %>
           </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <%= link_to "チーム一覧", teams_path,  class: "nav-link" %>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <%= link_to "ユーザ一覧", users_path,  class: "nav-link" %>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <%= link_to "マイページ", user_path(current_user),  class: "nav-link" %>
           </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
-        </ul>
-      <% else %>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
-          </li>
-        </ul>
-      <% end %>
-
+          <%# <% else %>
+           <!-- <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+               <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+              </li>
+           </ul>
+           <ul class="navbar-nav ml-auto">
+             <li class="nav-item">
+               <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+             </li>
+           </ul> -->
+         <% end %>
     </nav>
     <%= yield %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Footer-->
+    <footer class="footer text-center">
+      <div class="container px-4 px-lg-5">
+        <ul class="list-inline mb-5">
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="fas fa-calendar-alt"></i></a>
+          </li>
+        </ul>
+          <p class="text-muted small mb-0">TeamWORK株式会社 © 2021 Copyright</p>
+      </div>
+    </footer>
   </body>
 </html>
-
-<!-- <footer class="footer">
-	<div class="container text-center">
-	  <p class="text-muted">TeamWORK株式会社 © 2021 Copyright</p>
-	</div> -->
-<!-- </footer> -->
