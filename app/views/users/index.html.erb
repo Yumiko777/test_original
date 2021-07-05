@@ -3,11 +3,13 @@
     <div class="col-6 mx-auto">
       <h2><%= t('view.user_index') %></h2>
       <h4><%= t('view.user_search') %></h4>
+      <dl class="searchbox">
       <%=  search_form_for @search do |form| %>
-        <%= form.label :name_cont, t('view.username') %>
-        <%= form.search_field :username_cont %>
-        <%= form.submit t('view.search'), class: "btn btn-success" %>
+        <%#= form.label :name_cont, t('view.username') %>
+        <dt><%= form.search_field :username_cont,placeholder: '検索するユーザー名を入力...' %></dt>
+        <dd><%= form.submit t('view.search'), class: 'search-btn' %></dd>
       <% end %>
+      </dl>
       <br>
       <table class="table table-bordered table-striped">
         <thead class="thead-light">
