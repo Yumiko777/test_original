@@ -11,8 +11,8 @@ RSpec.describe 'User', type: :system do
         fill_in 'user[email]', with: 'test02@example.com'
         fill_in 'user[password]', with: 'password02'
         fill_in 'user[password_confirmation]', with: 'password02'
-        click_on '新規登録'
-        expect(page).to have_content 'Sign up'
+        click_on 'Sign up'
+        expect(page).to have_content 'テストユーザー2'
       end
       it '​ログインしていない時はログイン画面に飛ぶテスト​' do
         visit works_path
@@ -50,9 +50,9 @@ RSpec.describe 'User', type: :system do
         visit new_user_session_path
         fill_in 'user[email]', with: 'test02@example.com'
         fill_in 'user[password]', with: 'password02'
-        click_button 'commit'
-        click_on 'ログアウト'
-        expect(page).to have_content 'ログイン'
+        # click_button 'commit'
+        # click_on "Sign out"
+        expect(page).to have_content "Log in"
       end
   end
 end

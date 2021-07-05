@@ -10,8 +10,8 @@ RSpec.describe 'Admin', type: :system do
         fill_in 'user[email]', with: 'test04@example.com'
         fill_in 'user[password]', with: 'password04'
         fill_in 'user[password_confirmation]', with: 'password04'
-        click_on '新規登録'
-        expect(page).to have_content 'Sign up'
+        click_on 'Sign up'
+        expect(page).to have_content 'テストアドミン'
       end
       it '​ログインしていない時はログイン画面に飛ぶテスト​' do
         visit works_path

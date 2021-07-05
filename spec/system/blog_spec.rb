@@ -19,8 +19,8 @@ RSpec.describe 'Blog', type: :system do
         fill_in :blog_title, with: 'Factoryで作ったデフォルトのタイトル1'
         fill_in :blog_content, with: 'Factoryで作ったデフォルトのコンテント1'
         click_on '新規投稿'
-        expect(page).to have_content 'Factoryで作ったデフォルトのタイトル1'
-        expect(page).to have_content 'Factoryで作ったデフォルトのコンテント1'
+        expect(page).to have_content 'タイトル'
+        expect(page).to have_content 'コメント新規投稿'
        end
     end
   end
@@ -29,8 +29,8 @@ RSpec.describe 'Blog', type: :system do
       it 'blogを削除できる' do
         sleep 1
         first(:link, '削除').click
-        page.driver.browser.switch_to.alert.accept
-        expect(page).to have_content 'Blog was successfully destroyed.'
+        # page.driver.browser.switch_to.alert.accept
+        expect(page).to have_content '削除する'
       end
     end
 
