@@ -1,6 +1,5 @@
 class Business < ApplicationRecord
-  validates :title,  presence: true
-  validates :status, presence: true
+  validates :title, :status, presence: true
 
   enum status: { start: 0,  end: 1 }
 

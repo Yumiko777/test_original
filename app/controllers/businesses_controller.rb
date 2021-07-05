@@ -1,5 +1,5 @@
 class BusinessesController < ApplicationController
-  before_action :set_business, only: %i[ show edit update destroy ]
+  before_action :set_business, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /businesses or /businesses.json
   def index
@@ -56,10 +56,15 @@ class BusinessesController < ApplicationController
     end
   end
 
+  def toggle_status
+    @business.toggle_status!
+    redirect_to @business, notice: 'business was successfully updated.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_business
-      @business = Business.find(params[:id])
+      @business = Business.find(params[:id] || params[:business_id])
     end
 
     # Only allow a list of trusted parameters through.
