@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-6 mx-auto">
-      <h2>新規投稿works#new</h2>
+      <h2><%= t('view.work_new') %></h2>
       <%= form_with(model: @work, local: true) do |form| %>
         <%= render :partial => 'form', :locals => {:form => form} %>
       <% end %>

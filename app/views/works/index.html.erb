@@ -1,37 +1,37 @@
 <p id="notice"><%= notice %></p>
 
 <div class="toppage">
-<h2 class="top"><%= @current_user.username %>:My スケジュール</h2>
+<h2 class="top"><%= @current_user.username %>:<%= t('view.work_my_schedule') %></h2>
 <div class="row">
   <div class="col-md-6">
-  	<div class="schedule">スケジュール一覧</div>
+  	<div class="schedule"><%= t('view.work_my_schedule_list') %></div>
 
 <table class="table">
   <thead class="thead-light">
     <tr>
-      <th>タイトル</th>
-      <th>内容</th>
-      <th>日程</th>
-			<th>状態</th>
-      <th>備考</th>
+      <th><%= t('view.work_title') %></th>
+      <th><%= t('view.work_content') %></th>
+      <th><%= t('view.work_start_time') %></th>
+			<th><%= t('view.work_status') %></th>
+      <th><%= t('view.work_remarks') %></th>
     </tr>
   </thead>
   <tbody>
-    <% @pending_works.each do |work| %>
-		  <% if work.status == "false" %>
-      <tr>
-        <td><%= link_to work.title , work %></td>
-        <td><%= work.content %></td>
-        <td><%= work.start_time.strftime("%m-%d") %></td>
-				<td><%= work.status_i18n %></td>
-        <td><%= work.remarks %></td>
+  <% @pending_works.each do |work| %>
+	  <% if work.status == "false" %>
+    <tr>
+      <td><%= link_to work.title , work %></td>
+      <td><%= work.content %></td>
+      <td><%= work.start_time.strftime("%m-%d") %></td>
+			<td><%= work.status_i18n %></td>
+      <td><%= work.remarks %></td>
 
-        <td><%= link_to '編集', edit_work_path(work.id) %></td>
-        <td><%= link_to '詳細', work_path(work.id) %></td>
-        <td><%= link_to '削除',work_path(work.id), method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか?' } %></td>
-      </tr>
-      <% end %>
+      <td><%= link_to t('view.edit'), edit_work_path(work.id) %></td>
+      <td><%= link_to t('view.show'), work_path(work.id) %></td>
+      <td><%= link_to t('view.delete'),work_path(work.id), method: :delete,data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'  %></td>
+    </tr>
     <% end %>
+  <% end %>
   </tbody>
 </table>
 

@@ -1,14 +1,14 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-6 mx-auto">
-      <h2>チーム一覧Teams#index</h2>
-      <%= link_to "新規チーム作成", new_team_path, class: "btn btn-success" %>
+      <h2><%= t('view.team_index') %></h2>
+      <%= link_to t('view.team_create'), new_team_path, class: "btn btn-success" %>
       <br>
       <br>
       <table class="table table-hover">
         <thead class="thead-light">
           <tr>
-            <th><div class="text-center">チーム名</div></th>
+            <th><div class="text-center"><%= t('view.team_name') %></div></th>
           </tr>
         </thead>
         <tbody>

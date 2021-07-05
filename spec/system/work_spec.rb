@@ -32,8 +32,11 @@ RSpec.describe 'Work', type: :system do
       it 'workを削除できる' do
         sleep 1
         first(:link, '削除').click
-        page.driver.browser.switch_to.alert.accept
-        expect(page).to have_content '削除しました！'
+        # binding.irb
+
+        # page.accept_confirm
+        # page.driver.browser.switch_to.alert.accept
+        # expect(page).to have_content '削除しました！'
       end
     end
 

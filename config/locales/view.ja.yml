@@ -1,0 +1,56 @@
+ja:
+  view:
+    error: 件のエラーがあります
+    work_false: 未済
+    work_true: 済
+    work_submit: 新規作成
+    work_title: タイトル
+    work_content: 内容
+    work_start_time: 日程
+    work_status: 状態
+    work_remarks: 備考
+    work_edit: 作業内容編集
+    work_my_schedule: My スケジュール
+    work_my_schedule_list: スケジュール一覧
+    work_new: 新規投稿
+    work_show: 作業内容詳細
+    work: 作業内容
+    today_work: 本日の作業内容
+    edit: 編集
+    show: 詳細
+    delete: 削除
+    back: 戻る
+    submit: 更新
+    Are you sure?: 本当に削除してもよろしいでしょうか?
+    user_edit: ユーザー編集
+    username: ユーザー名
+    email: メールアドレス
+    user_index: ユーザー一覧
+    user_search: ユーザー検索
+    search: 検索
+    admin_screen: 管理画面へ
+    team_name: チーム名
+    create: 新規作成
+    team_new: チーム新規作成
+    team_index: チーム一覧
+    team_create: 新規チーム作成
+    team_edit: チーム名編集
+    team_delete: チーム削除
+    member_list: メンバー一覧
+    member_add: メンバー追加
+    member_delete: メンバー削除
+    member_name: メンバー名
+    comment_content: 内容
+    comment_submit: コメントをする
+    comment: コメント
+    blog_date: 投稿日
+    comment_edit: コメント編集
+    comment_delete: コメント削除
+    blog_title: タイトル
+    blog_content: 内容
+    blog_submit: 新規投稿
+    blog_edit: コメント編集
+    blog_index: コメント一覧
+    poster: 投稿者
+    update_date: 更新日
+    blog_new: コメント新規投稿

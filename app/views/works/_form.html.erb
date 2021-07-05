@@ -1,5 +1,5 @@
 <% if @work.errors.any? %>
-  <h2><%= pluralize(@work.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+  <h2><%= @work.errors.count %><%= t('view.error') %></h2>
     <ul>
       <% @work.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -8,41 +8,41 @@
 <% end %>
 
 <div class="title">
-  <div class="form-tag">タイトル</div>
+  <div class="form-tag"><%= t('view.work_title') %></div>
     <%= form.text_field :title ,:placeholder => "作業終了" %>
 </div>
 
 <div class="content">
-  <div class="form-tag">内容</div>
+  <div class="form-tag"><%= t('view.work_content') %></div>
     <%= form.text_field :content ,:placeholder => "本日の作業は終了しました！" %>
 </div>
 
 <div class="time">
-  <div class="form-tag">日程</div>
+  <div class="form-tag"><%= t('view.work_start_time') %></div>
     <%= form.date_select :start_time %>
 </div>
 
 <div class="status">
-	<div class="form-tag">状態</div>
+	<div class="form-tag"><%= t('view.work_status') %></div>
     <%= radio_button_tag :status,false, {:checked => true}  %>
-    <%= label_tag :status, '未済' %>
+    <%= label_tag :status, t('view.work_false') %>
     <%= radio_button_tag :status,true %>
-		<%= label_tag :status, '済' %>
+		<%= label_tag :status, t('view.work_true') %>
 </div>
 
 <div class="remarks">
-  <div class="form-tag">備考</div>
+  <div class="form-tag"><%= t('view.work_remarks') %></div>
     <%= form.text_field :remarks %>
 </div>
 
 <% if local_assigns[:edit_flag].present? %>
   <div class="submit">
-    <%= form.submit "編集", class: "btn btn-success" %>
-    <%= link_to "戻る", works_path, class: "btn btn-outline-success" %>
+    <%= form.submit t('view.edit'), class: "btn btn-success" %>
+    <%= link_to t('view.back'), works_path, class: "btn btn-outline-success" %>
   </div>
 <% else %>
   <br>
   <div class="submit">
-    <%= form.submit "新規作成", class: "btn btn-success" %>
+    <%= form.submit t('view.work_submit'), class: "btn btn-success" %>
 <% end %>
 </div>

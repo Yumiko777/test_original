@@ -7,4 +7,12 @@ class Work < ApplicationRecord
   validates :status, presence: true
 
   enum status: { false: 0,  true: 1 }
+
+  def toggle_status!
+    if false?
+      true!
+    else
+      false!
+    end
+  end
 end
