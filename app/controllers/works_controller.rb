@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_work, only: [:show, :edit, :update, :destroy]
+  before_action :set_work, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   def index
     @works = current_user.works.page(params[:page]).order(start_time: "ASC").per(3)
@@ -43,12 +43,17 @@ class WorksController < ApplicationController
     redirect_to works_path, notice: "削除しました！"
   end
 
+  def toggle_status
+    @work.toggle_status!
+    redirect_to @work, notice: "状態を更新しました！"
+  end
+
   private
   def work_params
     params.require(:work).permit(:title, :content, :start_time, :status, :remarks, :user_id, :member_id).merge(status: params[:status])
   end
 
   def set_work
-    @work = current_user.works.find(params[:id])
+    @work = current_user.works.find(params[:id] || params[:work_id])
   end
 end
