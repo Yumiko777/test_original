@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Status</th>
-      <th>更新日</th>
+      <th><%= t('view.title') %></th>
+      <th><%= t('view.business_status') %></th>
+      <th><%= t('view.update') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +18,9 @@
         <td><%= business.title %></td>
         <td><%= link_to business.status_i18n , business_toggle_status_path(business), method: :patch%></td>
         <td><%= business.updated_at.strftime("%m-%d %H:%M") %></td>
-        <td><%= link_to 'Show', business %></td>
-        <td><%= link_to 'Edit', edit_business_path(business) %></td>
-        <td><%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('view.show'), business %></td>
+        <td><%= link_to t('view.edit'), edit_business_path(business) %></td>
+        <td><%= link_to t('view.delete'), business,  method: :delete, data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'%></td>
       </tr>
     <% end %>
   </tbody>

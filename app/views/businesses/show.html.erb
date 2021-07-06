@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%= t('view.title') %>:</strong>
   <%= @business.title %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong><%= t('view.business_status') %>:</strong>
   <%= link_to @business.status_i18n , business_toggle_status_path(@business), method: :patch%>
 </p>
 
-<%= link_to 'Edit', edit_business_path(@business) %> |
-<%= link_to 'Back', businesses_path %>
+<p>
+  <strong><%= t('view.update') %>:</strong>
+  <%= @business.updated_at.strftime("%m-%d %H:%M") %>
+</p>
+
+<%= link_to t('view.edit'), edit_business_path(@business) %> |
+<%= link_to t('view.back'), businesses_path %>

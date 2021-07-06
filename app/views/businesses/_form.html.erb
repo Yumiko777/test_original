@@ -16,7 +16,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :出勤状況 %>
+    <%= form.label t('view.business_status') %>
     <%= form.select :status, Business.statuses.keys.map {|k| [I18n.t("enums.businesses.status.#{k}"), k]}, include_blank: "選択して下さい" %>
   </div>
 
