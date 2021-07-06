@@ -1,5 +1,9 @@
-<h1>New Business</h1>
-
-<%= render 'form', business: @business %>
-
-<%= link_to t('view.back'), businesses_path %>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h2><%= t('view.business_status') %></h2>
+      <%= render 'form', business: @business %><br />
+      <%= link_to t('view.back'), businesses_path, class: "btn btn-outline-success" %>
+    </div>
+  </div>
+</div>
