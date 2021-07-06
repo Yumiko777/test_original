@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <div class="toppage">
-<h2 class="top"><%= @current_user.username %>:<%= t('view.work_my_schedule') %></h2>
+<h2 class="top"><%= @current_user.username %>:<%= t('view.my_schedule') %></h2>
 <div class="row">
   <div class="col-md-6">
-  	<div class="schedule"><%= t('view.work_my_schedule_list') %></div>
+  	<div class="schedule"><%= t('view.my_schedule_list') %></div>
 
 <table class="table">
   <thead class="thead-light">
     <tr>
-      <th><%= t('view.work_title') %></th>
-      <th><%= t('view.work_content') %></th>
-      <th><%= t('view.work_start_time') %></th>
+      <th><%= t('view.title') %></th>
+      <th><%= t('view.content') %></th>
+      <th><%= t('view.start_time') %></th>
 			<th><%= t('view.work_status') %></th>
-      <th><%= t('view.work_remarks') %></th>
+      <th><%= t('view.remarks') %></th>
     </tr>
   </thead>
   <tbody>

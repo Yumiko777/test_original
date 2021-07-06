@@ -8,17 +8,17 @@
 <% end %>
 
 <div class="title">
-  <div class="form-tag"><%= t('view.work_title') %></div>
-    <%= form.text_field :title ,:placeholder => "作業終了" %>
+  <div class="form-tag"><%= t('view.title') %></div>
+    <%= form.text_field :title %>
 </div>
 
 <div class="content">
-  <div class="form-tag"><%= t('view.work_content') %></div>
-    <%= form.text_field :content ,:placeholder => "本日の作業は終了しました！" %>
+  <div class="form-tag"><%= t('view.content') %></div>
+    <%= form.text_field :content %>
 </div>
 
 <div class="time">
-  <div class="form-tag"><%= t('view.work_start_time') %></div>
+  <div class="form-tag"><%= t('view.start_time') %></div>
     <%= form.date_select :start_time %>
 </div>
 
@@ -31,7 +31,7 @@
 </div>
 
 <div class="remarks">
-  <div class="form-tag"><%= t('view.work_remarks') %></div>
+  <div class="form-tag"><%= t('view.remarks') %></div>
     <%= form.text_field :remarks %>
 </div>
 

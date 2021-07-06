@@ -11,7 +11,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label t('view.comment_content') %><br />
+    <%= form.label t('view.content') %><br />
     <%= form.text_area :content, class:"input", placeholder:"コメント" %>
     <%= form.hidden_field :blog_id, value: @blog.id %>
   </div>
