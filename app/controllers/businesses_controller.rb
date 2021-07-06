@@ -1,4 +1,5 @@
 class BusinessesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_business, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /businesses or /businesses.json
@@ -58,7 +59,7 @@ class BusinessesController < ApplicationController
 
   def toggle_status
     @business.toggle_status!
-    redirect_to @business, notice: 'business was successfully updated.'
+    redirect_to @business, notice: "勤務状態を更新しました！"
   end
 
   private
