@@ -1,33 +1,40 @@
 <p id="notice"><%= notice %></p>
+
 <div class="container mt-5">
   <div class="row">
     <div class="col-6 mx-auto">
-      <h1>Businesses</h1>
+      <h2><%= @current_user.username %>:<%= t('view.business_index') %></h2>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t('view.title') %></th>
-      <th><%= t('view.business_status') %></th>
-      <th><%= t('view.update') %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @businesses.each do |business| %>
-      <tr>
-        <td><%= business.title %></td>
-        <td><%= link_to business.status_i18n , business_toggle_status_path(business), method: :patch%></td>
-        <td><%= business.updated_at.strftime("%m-%d %H:%M") %></td>
-        <td><%= link_to t('view.show'), business %></td>
-        <td><%= link_to t('view.edit'), edit_business_path(business) %></td>
-        <td><%= link_to t('view.delete'), business,  method: :delete, data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Business', new_business_path %>
+      <table class="table table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th><%= t('view.title') %></th>
+            <th><%= t('view.business_status') %></th>
+            <th><%= t('view.update') %></th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @businesses.each do |business| %>
+            <tr>
+              <td><%= business.title %></td>
+              <td><%= link_to business.status_i18n , business_toggle_status_path(business), method: :patch%></td>
+              <td><%= business.updated_at.strftime("%m-%d %H:%M") %></td>
+              <% if business.user_id == current_user.id %>
+                <td><%= link_to t('view.show'), business %></td>
+                <td><%= link_to t('view.edit'), edit_business_path(business) %></td>
+                <td><%= link_to t('view.delete'), business,  method: :delete, data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'%></td>
+              <% else %>
+                <td></td>
+                <td></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @businesses %>
+      <br>
+      <%= link_to t('view.business_new'), new_business_path ,class: "btn btn-success"%>
+    </div>
+  </div>
+</div>

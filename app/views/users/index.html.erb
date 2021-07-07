@@ -19,9 +19,17 @@
         </thead>
         <tbody>
           <% @users.each do |user| %>
+            <%# if @business.user_id == currentuser.id %>
           <tr>
             <td ><div class="text-center"><%= user.username %></div></td>
-          </tr>
+            <td ><%#= link_to "出勤状況", businesses_path %></td>
+            <td ><%#= link_to "出勤状況", business_path(business.id) %></td>
+            <td ><%= link_to "出勤状況", businesses_path(@business) %></td>
+            <td ><%#= link_to "出勤状況", business_path(user) %></td>
+            <td ><%#= link_to "出勤状況", business_path(user_id: @user.id) %></td>
+
+<%# end %>
+          <tr>
           <% end %>
         </tbody>
       </table>

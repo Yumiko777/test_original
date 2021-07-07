@@ -14,7 +14,6 @@
             <th><%= t('view.update') %></th>
           </tr>
         </thead>
-
         <tbody>
           <% @blogs.each do |blog| %>
             <tr>
@@ -36,7 +35,7 @@
       </table>
       <%= paginate @blogs %>
       <br>
-      <%= link_to t('view.blog_submit'), new_blog_path , class: "btn btn-success" %>
+      <%= link_to t('view.blog_submit'), new_blog_path ,class: "btn btn-success" %>
     </div>
   </div>
 </div>

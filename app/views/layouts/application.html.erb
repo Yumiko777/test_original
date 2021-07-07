@@ -79,6 +79,16 @@
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
+            <%= link_to "出勤状況", businesses_path,  class: "nav-link" %>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to "チーム一覧", teams_path,  class: "nav-link" %>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
             <%= link_to "マイページ", user_path(current_user),  class: "nav-link" %>
           </li>
         </ul>

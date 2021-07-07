@@ -4,7 +4,9 @@ class BusinessesController < ApplicationController
 
   # GET /businesses or /businesses.json
   def index
-    @businesses = Business.all
+    # @user = User.find(params[:user])
+    # businesses = @user.businesses
+    @businesses = current_user.businesses.all.page(params[:page]).per(5)
   end
 
   # GET /businesses/1 or /businesses/1.json
@@ -18,15 +20,19 @@ class BusinessesController < ApplicationController
 
   # GET /businesses/1/edit
   def edit
+    if @business.user_id != current_user.id
+      redirect_to businesses_path, alert: "不正なアクセスです!"
+    end
   end
 
   # POST /businesses or /businesses.json
   def create
-    @business = Business.new(business_params)
+    @business = current_user.businesses.build(business_params)
+    # @business.user = User.find_by(user_id: business.user_id)
 
     respond_to do |format|
       if @business.save
-        format.html { redirect_to @business, notice: "Business was successfully created." }
+        format.html { redirect_to @business, notice: "作成しました！" }
         format.json { render :show, status: :created, location: @business }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +45,7 @@ class BusinessesController < ApplicationController
   def update
     respond_to do |format|
       if @business.update(business_params)
-        format.html { redirect_to @business, notice: "Business was successfully updated." }
+        format.html { redirect_to @business, notice: "更新しました！" }
         format.json { render :show, status: :ok, location: @business }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +58,7 @@ class BusinessesController < ApplicationController
   def destroy
     @business.destroy
     respond_to do |format|
-      format.html { redirect_to businesses_url, notice: "Business was successfully destroyed." }
+      format.html { redirect_to businesses_url, notice: "削除しました！" }
       format.json { head :no_content }
     end
   end
@@ -65,7 +71,7 @@ class BusinessesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_business
-      @business = Business.find(params[:id] || params[:business_id])
+      @business = current_user.businesses.find(params[:id] || params[:business_id])
     end
 
     # Only allow a list of trusted parameters through.

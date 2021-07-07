@@ -51,5 +51,8 @@ ja:
     poster: 投稿者
     update: 更新日
     blog_new: コメント新規投稿
+    business_new: 出勤状況登録
     business_status: 出勤状況
     business_edit: 出勤状況編集
+    business_index: 出勤状況一覧
+    business_show: 出勤状況詳細
