@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 
   def show
     @works = Work.where(user_id: @user.id)
-    # binding.irb
     @businesses = Business.where(user_id: @user.id)
   end
 

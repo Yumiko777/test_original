@@ -21,6 +21,22 @@
         <td><%= member.user.username %></td>
         <td><%= member.user.email %></td>
         <td><%= link_to t('view.today_work'), user_path(member.user_id) %></td>
+
+        <% @businesses.each do |business| %>
+
+          <tr>
+            <td><%=  business.title %></td>
+            <td><%=  business.status_i18n %></td>
+            <td><%=  business.updated_at.strftime("%m-%d %H:%M") %></td>
+            <td></td>
+          </tr>
+          <% end %>
+
+
+
+
+
+
       </tr>
     <% end %>
     </tbody>
