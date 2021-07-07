@@ -3,10 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def index
-    # @users = User.all
     @search = User.ransack(params[:q])
     @users = @search.result
-
     @businesses = Business.where(user_id: @users.ids)
   end
 
