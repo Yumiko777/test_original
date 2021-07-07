@@ -32,4 +32,8 @@ class User < ApplicationRecord
   end
 
   enum admin: { 一般: false, 管理者: true }
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[username]
+  end
 end

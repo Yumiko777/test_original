@@ -11,22 +11,26 @@
       <% end %>
       </dl>
       <br>
-      <table class="table table-bordered table-striped">
+      <table class="table table-hover">
         <thead class="table-success">
           <tr>
             <th><div class="text-center"><%= sort_link(@search, :username, t('view.username'), hide_indicator: true) %></div></th>
+            <th><div class="text-center"><%= t('view.title') %></div></th>
+            <th><div class="text-center"><%= t('view.business_status') %></div></th>
+            <th><div class="text-center"><%= t('view.update') %></div></th>
           </tr>
         </thead>
         <tbody>
-          <% @users.each do |user| %>
-            <%# if @business.user_id == currentuser.id %>
+          <%# @users.each do |user| %>
+          <% @businesses.each do |business| %>
+          <% if business.updated_at.strftime("%m-%d") == Date.current.strftime("%m-%d")%>
           <tr>
-            <td ><div class="text-center"><%= user.username %></div></td>
-            <td ><%#= link_to "出勤状況", businesses_path %></td>
-            <td ><%#= link_to "出勤状況", business_path(business.id) %></td>
-            <td ><%= link_to "出勤状況", businesses_path(@business) %></td>
-            <td ><%#= link_to "出勤状況", business_path(user) %></td>
-            <td ><%#= link_to "出勤状況", business_path(user_id: @user.id) %></td>
+            <td ><div class="text-center"><%= business.user.username %></div></td>
+            <td ><div class="text-center"><%= business.title %></div></td>
+            <td ><div class="text-center"><%= business.status_i18n %></div></td>
+            <td ><div class="text-center"><%= business.updated_at.strftime("%m-%d %H:%M") %></div></td>
+
+  <% end %>
 
 <%# end %>
           <tr>
