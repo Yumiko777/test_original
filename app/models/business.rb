@@ -12,5 +12,5 @@ class Business < ApplicationRecord
     end
   end
 
-  scope :latest, -> (number = 5){order(created_at: :desc).limit(number)}
+  include CommonModule
 end
