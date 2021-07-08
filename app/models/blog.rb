@@ -4,4 +4,6 @@ class Blog < ApplicationRecord
 
   validates :title,  presence: true
   validates :content, presence: true
+
+  scope :latest, -> (number = 7){order(created_at: :desc).limit(number)}
 end

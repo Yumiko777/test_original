@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs or /blogs.json
   def index
-    @blogs = Blog.all.page(params[:page]).per(3)
+    @blogs = Blog.latest
   end
 
   # GET /blogs/1 or /blogs/1.json
