@@ -6,7 +6,7 @@ class BusinessesController < ApplicationController
   def index
     # @user = User.find(params[:user])
     # businesses = @user.businesses
-    @businesses = current_user.businesses.all.page(params[:page]).per(5)
+    @businesses = current_user.businesses.latest
   end
 
   # GET /businesses/1 or /businesses/1.json

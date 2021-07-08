@@ -11,4 +11,6 @@ class Business < ApplicationRecord
       start!
     end
   end
+
+  scope :latest, -> (number = 5){order(created_at: :desc).limit(number)}
 end
