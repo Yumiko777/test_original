@@ -5,7 +5,6 @@
       <h4><%= t('view.user_search') %></h4>
       <dl class="searchbox">
       <%=  search_form_for @search do |form| %>
-        <%#= form.label :name_cont, t('view.username') %>
         <dt><%= form.search_field :username_cont,placeholder: '検索するユーザー名を入力...' %></dt>
         <dd><%= form.submit t('view.search'), class: 'search-btn' %></dd>
       <% end %>
@@ -21,7 +20,6 @@
           </tr>
         </thead>
         <tbody>
-          <%# @users.each do |user| %>
           <% @businesses.each do |business| %>
           <% if business.updated_at.strftime("%m-%d") == Date.current.strftime("%m-%d")%>
           <tr>
@@ -29,11 +27,8 @@
             <td ><div class="text-center"><%= business.title %></div></td>
             <td ><div class="text-center"><%= business.status_i18n %></div></td>
             <td ><div class="text-center"><%= business.updated_at.strftime("%m-%d %H:%M") %></div></td>
-
-  <% end %>
-
-<%# end %>
           <tr>
+          <% end %>
           <% end %>
         </tbody>
       </table>
