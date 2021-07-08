@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :works do
     patch :toggle_status
   end
+
   resources :users
   resources :teams do
     resources :members
