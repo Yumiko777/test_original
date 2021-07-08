@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs or /blogs.json
   def index
-    @blogs = Blog.latest
+    @blogs = Blog.latest.includes(:user)
   end
 
   # GET /blogs/1 or /blogs/1.json
