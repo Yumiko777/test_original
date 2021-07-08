@@ -89,6 +89,12 @@ GEM
     crass (1.0.6)
     data-confirm-modal (1.6.3)
       railties (>= 3.0)
+    database_cleaner (2.0.1)
+      database_cleaner-active_record (~> 2.0.0)
+    database_cleaner-active_record (2.0.1)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     debug_inspector (1.1.0)
     devise (4.8.0)
       bcrypt (~> 3.0)
@@ -324,6 +330,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
   data-confirm-modal
+  database_cleaner
   devise
   devise-i18n
   devise-i18n-views

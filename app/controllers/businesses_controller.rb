@@ -4,8 +4,6 @@ class BusinessesController < ApplicationController
 
   # GET /businesses or /businesses.json
   def index
-    # @user = User.find(params[:user])
-    # businesses = @user.businesses
     @businesses = current_user.businesses.latest
   end
 
@@ -28,7 +26,6 @@ class BusinessesController < ApplicationController
   # POST /businesses or /businesses.json
   def create
     @business = current_user.businesses.build(business_params)
-    # @business.user = User.find_by(user_id: business.user_id)
 
     respond_to do |format|
       if @business.save
