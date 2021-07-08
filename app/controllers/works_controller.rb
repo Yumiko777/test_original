@@ -45,7 +45,7 @@ class WorksController < ApplicationController
 
   def toggle_status
     @work.toggle_status!
-    redirect_to @work, notice: "状態を更新しました！"
+    redirect_to @work, notice: "作業状態を更新しました！"
   end
 
   private

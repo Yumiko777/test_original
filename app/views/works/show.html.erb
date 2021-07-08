@@ -6,11 +6,11 @@
     <div class="col-6 mx-auto">
       <h2><%= t('view.work_show') %></h2>
       <table class="table table-striped">
-        <tr><td><strong><%= t('view.work_title') %></strong></td><td><%= @work.title %></td></tr>
-        <tr><td><strong><%= t('view.work_content') %></strong></td><td><%= @work.content %></td></tr>
-        <tr><td><strong><%= t('view.work_start_time') %></strong></td><td><%= @work.start_time.strftime("%m-%d") %></td></tr>
+        <tr><td><strong><%= t('view.title') %></strong></td><td><%= @work.title %></td></tr>
+        <tr><td><strong><%= t('view.content') %></strong></td><td><%= @work.content %></td></tr>
+        <tr><td><strong><%= t('view.start_time') %></strong></td><td><%= @work.start_time.strftime("%m-%d") %></td></tr>
         <tr><td><strong><%= t('view.work_status') %></strong></td><td><%= link_to @work.status_i18n, work_toggle_status_path(@work), method: :patch %></td></tr>
-        <tr><td><strong><%= t('view.work_remarks') %></strong></td><td><%= @work.remarks %></td></tr>
+        <tr><td><strong><%= t('view.remarks') %></strong></td><td><%= @work.remarks %></td></tr>
       </table>
       <% if @work.user_id == current_user.id %>
         <%= link_to t('view.edit'), edit_work_path(@work), class: "btn btn-success" %>

@@ -2,15 +2,15 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update]
 
-
   def index
-    # @users = User.all
     @search = User.ransack(params[:q])
-    @users = @search.result(distinct: true)
+    @users = @search.result
+    @businesses = Business.where(user_id: @users.ids)
   end
 
   def show
     @works = Work.where(user_id: @user.id)
+    @businesses = Business.where(user_id: @user.id)
   end
 
   def edit

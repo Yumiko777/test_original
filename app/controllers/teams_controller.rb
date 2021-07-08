@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_team, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update]
   before_action :authorized_user?, only:[:show, :edit, :update, :destroy]
 
   def index
@@ -29,8 +30,7 @@ class TeamsController < ApplicationController
 
   def show
     @members = @team.members
-    # @works = Work.includes(:username).where(member_id: @member.id)
-    # redirect_to teams_path, alert: "権限がありません!" unless @team.is_member?(current_user)
+    @businesses = Business.where(user_id: @user.id)
   end
 
   def update
@@ -53,6 +53,10 @@ class TeamsController < ApplicationController
 
   def set_team
     @team = Team.find(params[:id])
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
   def authorized_user?

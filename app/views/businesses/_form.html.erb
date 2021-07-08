@@ -1,0 +1,26 @@
+<%= form_with(model: business, local: true) do |form| %>
+  <% if business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= business.errors.count %><%= t('view.error') %></h2>
+      <ul>
+      <% business.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label t('view.title') %><br />
+    <%= form.text_field :title, value: "勤怠管理" %>
+  </div>
+
+  <div class="field">
+    <%= form.label t('view.business_status') %><br />
+    <%= form.select :status, Business.statuses.keys.map {|k| [I18n.t("enums.businesses.status.#{k}"), k]}, include_blank: "選択して下さい" %>
+  </div>
+
+  <div class="actions"><br />
+    <%= form.submit class: "btn btn-success" %>
+  </div>
+<% end %>

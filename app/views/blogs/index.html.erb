@@ -6,15 +6,14 @@
       <h2><%= t('view.blog_index') %></h2>
 
       <table class="table table-hover">
-        <thead class="thead-light">
+        <thead class="table-success">
           <tr>
             <th><%= t('view.poster') %></th>
-            <th><%= t('view.blog_title') %></th>
-            <th><%= t('view.blog_content') %></th>
-            <th><%= t('view.update_date') %></th>
+            <th><%= t('view.title') %></th>
+            <th><%= t('view.content') %></th>
+            <th><%= t('view.update') %></th>
           </tr>
         </thead>
-
         <tbody>
           <% @blogs.each do |blog| %>
             <tr>
@@ -36,7 +35,7 @@
       </table>
       <%= paginate @blogs %>
       <br>
-      <%= link_to t('view.blog_submit'), new_blog_path , class: "btn btn-success" %>
+      <%= link_to t('view.blog_submit'), new_blog_path ,class: "btn btn-success" %>
     </div>
   </div>
 </div>

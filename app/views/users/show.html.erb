@@ -2,9 +2,7 @@
   <div class="row">
     <div class="col-6 mx-auto">
       <h2><%= t('view.today_work') %></h2>
-
-      <strong><%= @user.username %></strong>
-
+      <strong><%= @user.username %></strong>さん
       <% if @user.id == current_user.id %>
         <%= @user.email %>
           <%= link_to t('view.edit'), edit_user_path(@user), class: "btn btn-success" %>
@@ -12,7 +10,6 @@
       <% else %>
         <%= link_to t('view.back'), teams_path(@team), class: "btn btn-outline-success" %>
       <% end %>
-
       <% if current_user.admin %>
         <%= link_to t('view.admin_screen'), admin_user_path, class: "btn btn-outline-success" %>
       <% end %>
@@ -21,15 +18,34 @@
 </div>
 <div class="col-9 mx-auto mt-5">
   <table class="table table-hover">
-    <thead class="thead-light">
+    <thead class="table-success">
       <tr>
-        <th scope="col"><%= t('view.work_title') %></th>
-        <th scope="col"><%= t('view.work_content') %></th>
-        <th scope="col"><%= t('view.work_start_time') %></th>
-        <th scope="col"><%= t('view.work_status') %></th>
+        <th scope="col"><%= t('view.title') %></th>
+        <th scope="col"><%= t('view.business_status')  %></th>
+        <th scope="col"><%=  t('view.update') %></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
+      <% @businesses.each do |business| %>
+        <% if business.updated_at.strftime("%m-%d") == Date.current.strftime("%m-%d")%>
+        <tr>
+          <td><%=  business.title %></td>
+          <td><%=  business.status_i18n %></td>
+          <td><%=  business.updated_at.strftime("%m-%d %H:%M") %></td>
+          <td></td>
+        </tr>
+        <% end %>
+      <% end %>
+      <thead class="table-info">
+        <tr>
+          <th scope="col"><%= t('view.title') %></th>
+          <th scope="col"><%= t('view.content') %></th>
+          <th scope="col"><%= t('view.start_time') %></th>
+          <th scope="col"><%= t('view.work_status') %></th>
+        </tr>
+      </thead>
+      <tbody>
       <% @works.each do |work| %>
         <% if work.start_time.strftime("%m-%d") == Date.current.strftime("%m-%d")%>
         <tr>

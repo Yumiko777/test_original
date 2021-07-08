@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :blogs, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  has_many :businesses, dependent: :destroy
+
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
@@ -30,4 +32,8 @@ class User < ApplicationRecord
   end
 
   enum admin: { 一般: false, 管理者: true }
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[username]
+  end
 end

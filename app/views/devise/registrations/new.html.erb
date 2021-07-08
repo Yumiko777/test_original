@@ -22,7 +22,7 @@
           <i class="fas fa-lock"></i>
           <%= f.label :password %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %> <%= t('view.characters minimum') %>)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password", :placeholder => "password", class: "form-control" %>
         </div>

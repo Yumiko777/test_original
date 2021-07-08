@@ -19,6 +19,16 @@ ja:
         false: 未済
         true: 済
 
+    businesses:
+      status:
+        start: 出勤
+        end: 退勤
+
+    business:
+      status:
+        start: 出勤
+        end: 退勤
+
   date:
     abbr_day_names:
     - 日

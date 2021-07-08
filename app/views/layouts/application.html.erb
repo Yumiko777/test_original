@@ -34,6 +34,7 @@
         <li class="sidebar-nav-item"><%= link_to "作業内容新規作成", new_work_path,  class: "nav-link" %></li>
         <li class="sidebar-nav-item"><%= link_to "作業内容一覧", works_path,  class: "nav-link" %></li>
         <li class="sidebar-nav-item"><%= link_to "コメント新規投稿", new_blog_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to "出勤状況", businesses_path,  class: "nav-link" %></li>
         <li class="sidebar-nav-item"><%= link_to "チーム一覧", teams_path,  class: "nav-link" %></li>
         <li class="sidebar-nav-item"><%= link_to "ユーザ一覧", users_path,  class: "nav-link" %></li>
         <li class="sidebar-nav-item"><%= link_to "マイページ", user_path(current_user),  class: "nav-link" %></li>
@@ -63,33 +64,43 @@
       <% if user_signed_in? %>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "作業内容新規作成", new_work_path,  class: "nav-link" %>
+            <%= link_to "作業内容新規作成", new_work_path,  class: "nav-link" , data: {"turbolinks" => false}%>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "作業内容一覧", works_path,  class: "nav-link" %>
+            <%= link_to "作業内容一覧", works_path,  class: "nav-link" , data: {"turbolinks" => false}%>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "コメント新規投稿", new_blog_path,  class: "nav-link" %>
+            <%= link_to "コメント新規投稿", new_blog_path,  class: "nav-link", data: {"turbolinks" => false} %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "マイページ", user_path(current_user),  class: "nav-link" %>
+            <%= link_to "出勤状況", businesses_path,  class: "nav-link" , data: {"turbolinks" => false}%>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to "チーム一覧", teams_path,  class: "nav-link", data: {"turbolinks" => false} %>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to "マイページ", user_path(current_user),  class: "nav-link" , data: {"turbolinks" => false}%>
           </li>
         </ul>
           <%# <% else %>
            <!-- <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-               <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+               <%#= link_to "ログイン", new_user_session_path, class: "nav-link" %>
               </li>
            </ul>
            <ul class="navbar-nav ml-auto">
              <li class="nav-item">
-               <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+               <%#= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
              </li>
            </ul> -->
          <% end %>
