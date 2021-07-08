@@ -4,9 +4,7 @@ class BusinessesController < ApplicationController
 
   # GET /businesses or /businesses.json
   def index
-    # @user = User.find(params[:user])
-    # businesses = @user.businesses
-    @businesses = current_user.businesses.all.page(params[:page]).per(5)
+    @businesses = current_user.businesses.latest
   end
 
   # GET /businesses/1 or /businesses/1.json
@@ -28,8 +26,6 @@ class BusinessesController < ApplicationController
   # POST /businesses or /businesses.json
   def create
     @business = current_user.businesses.build(business_params)
-    # @business.user = User.find_by(user_id: business.user_id)
-
     respond_to do |format|
       if @business.save
         format.html { redirect_to @business, notice: "作成しました！" }

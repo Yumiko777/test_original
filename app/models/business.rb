@@ -11,4 +11,6 @@ class Business < ApplicationRecord
       start!
     end
   end
+
+  include CommonModule
 end
