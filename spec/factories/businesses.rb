@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :business do
-    title { "MyString" }
+    title { 'MyString' }
     status { 1 }
   end
 end

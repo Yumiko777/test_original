@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :username, presence: true, length: { maximum: 30}
+  validates :username, presence: true, length: { maximum: 30 }
 
   has_many :teams, dependent: :destroy
   has_many :members, dependent: :destroy
@@ -18,22 +18,21 @@ class User < ApplicationRecord
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
-      user.username = "ゲスト"
+      user.username = 'ゲスト'
     end
   end
 
   def self.admin_guest
     find_or_create_by!(email: 'admin_guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
-      user.username = "管理者"
+      user.username = '管理者'
       user.admin = true
-      # user.save
     end
   end
 
   enum admin: { 一般: false, 管理者: true }
 
-  def self.ransackable_attributes(auth_object = nil)
+  def self.ransackable_attributes(_auth_object = nil)
     %w[username]
   end
 end

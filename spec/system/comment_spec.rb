@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Comment', type: :system do
-
   before do
     @user = create(:user)
     @blog = create(:blog, user: @user)
@@ -16,7 +15,7 @@ RSpec.describe 'Comment', type: :system do
   describe '投稿に対してコメントを投稿機能' do
     context '投稿にコメントした場合' do
       it '投稿にコメントが投稿される' do
-        fill_in "comment[content]", with: 'おはよう'
+        fill_in 'comment[content]', with: 'おはよう'
         click_on 'コメントをする'
         expect(page).to have_content '投稿日'
       end

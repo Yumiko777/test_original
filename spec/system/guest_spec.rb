@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'guest_login', type: :system do
-
   describe 'ゲストログイン機能' do
     context 'ゲストログインの場合' do
       it 'ゲストユーザーとしてログインできる' do
