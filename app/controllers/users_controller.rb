@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: %i[show edit update]
 
   def index
     @search = User.ransack(params[:q])
@@ -14,20 +14,19 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if @user != current_user
-      redirect_to user_path(current_user), alert: "不正なアクセスです!"
-    end
+    redirect_to user_path(current_user), alert: '不正なアクセスです!' if @user != current_user
   end
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: "ユーザー情報を更新しました!"
+      redirect_to user_path(@user), notice: 'ユーザー情報を更新しました!'
     else
       render :edit
     end
   end
 
   private
+
   def user_params
     params.require(:user).permit(:username, :email)
   end

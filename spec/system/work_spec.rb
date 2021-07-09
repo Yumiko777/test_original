@@ -1,12 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Work', type: :system do
-
   before do
     work = create(:work)
     visit new_user_session_path
-    fill_in 'user[email]', with:'test01@example.com'
-    fill_in 'user[password]', with:'password01'
+    fill_in 'user[email]', with: 'test01@example.com'
+    fill_in 'user[password]', with: 'password01'
     click_on 'Log in'
     visit works_path
   end
@@ -20,15 +19,15 @@ RSpec.describe 'Work', type: :system do
         select '2021', from: :work_start_time_1i
         select '7月', from: :work_start_time_2i
         select '31', from: :work_start_time_3i
-        choose "status_false"
+        choose 'status_false'
         fill_in :work_remarks, with: 'Factoryで作ったデフォルトの備考2'
         click_on '新規作成'
         expect(page).to have_content 'Factoryで作ったデフォルトのタイトル1'
         expect(page).to have_content 'Factoryで作ったデフォルトのコンテント1'
-       end
-     end
+      end
+    end
 
-    context "ユーザーが本人の場合" do
+    context 'ユーザーが本人の場合' do
       it 'workを削除できる' do
         sleep 1
         first(:link, '削除').click
@@ -40,12 +39,12 @@ RSpec.describe 'Work', type: :system do
       end
     end
 
-    context "ユーザーが本人の場合" do
+    context 'ユーザーが本人の場合' do
       it 'workを編集できる' do
         sleep 2
         first(:link, '編集').click
-        fill_in "work[title]", with: 'Factoryで作ったデフォルトのタイトル1'
-        fill_in "work[content]", with: 'Factoryで作ったデフォルトのコンテント1'
+        fill_in 'work[title]', with: 'Factoryで作ったデフォルトのタイトル1'
+        fill_in 'work[content]', with: 'Factoryで作ったデフォルトのコンテント1'
         click_button '編集'
         expect(page).to have_content 'Factoryで作ったデフォルトのタイトル1'
         expect(page).to have_content 'Factoryで作ったデフォルトのコンテント1'
@@ -63,14 +62,11 @@ RSpec.describe 'Work', type: :system do
   end
 
   describe '詳細表示機能' do
-     context '任意のwork詳細画面に遷移した場合' do
-       it '該当workの内容が表示される' do
-         visit works_path
-         expect(page).to have_content '編集'
-       end
-     end
+    context '任意のwork詳細画面に遷移した場合' do
+      it '該当workの内容が表示される' do
+        visit works_path
+        expect(page).to have_content '編集'
+      end
+    end
   end
-
-
-
 end

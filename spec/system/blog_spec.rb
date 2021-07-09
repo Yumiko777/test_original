@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Blog', type: :system do
-
   before do
     @user = create(:user2)
     @blog = create(:blog, user: @user)
@@ -21,18 +20,18 @@ RSpec.describe 'Blog', type: :system do
         click_on '新規投稿'
         expect(page).to have_content 'タイトル'
         expect(page).to have_content 'コメント新規投稿'
-       end
+      end
     end
   end
 
-    context "ユーザーが本人の場合" do
-      it 'blogを削除できる' do
-        sleep 1
-        first(:link, '削除').click
-        # page.driver.browser.switch_to.alert.accept
-        expect(page).to have_content '削除する'
-      end
+  context 'ユーザーが本人の場合' do
+    it 'blogを削除できる' do
+      sleep 1
+      first(:link, '削除').click
+      # page.driver.browser.switch_to.alert.accept
+      expect(page).to have_content '削除する'
     end
+  end
 
   describe '一覧表示機能' do
     context '一覧画面に遷移した場合' do
@@ -44,11 +43,11 @@ RSpec.describe 'Blog', type: :system do
   end
 
   describe '詳細表示機能' do
-     context '任意のblog詳細画面に遷移した場合' do
-       it '該当blogの内容が表示される' do
-         visit blogs_path
-         expect(page).to have_content '詳細'
-       end
-     end
+    context '任意のblog詳細画面に遷移した場合' do
+      it '該当blogの内容が表示される' do
+        visit blogs_path
+        expect(page).to have_content '詳細'
+      end
+    end
   end
 end

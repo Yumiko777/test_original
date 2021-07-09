@@ -6,7 +6,6 @@ RSpec.describe User, type: :model do
   end
 
   describe 'バリデーションのテスト' do
-
     it '全ての項目が記載されている場合バリデーションが通る' do
       expect(@user).to be_valid
     end
@@ -17,7 +16,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'usernameが30文字以上の場合バリデーションが通らない' do
-      @user.username = 'a'*31
+      @user.username = 'a' * 31
       expect(@user.valid?).to eq(false)
     end
 

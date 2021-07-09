@@ -1,8 +1,7 @@
 class MembersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_member, only: [:show, :edit, :update, :destroy]
-  before_action :set_team, only: [:index, :new, :create]
-
+  before_action :set_member, only: %i[show edit update destroy]
+  before_action :set_team, only: %i[index new create]
 
   def index
     @members = Member.all
@@ -16,7 +15,7 @@ class MembersController < ApplicationController
   def create
     @team.selected_user_ids = team_params[:selected_user_ids]
     if @team.create_members
-      redirect_to teams_path(@team), notice: "メンバーを追加しました！"
+      redirect_to teams_path(@team), notice: 'メンバーを追加しました！'
     else
       @member = @team.members.build
       @users = @team.none_member_users
@@ -24,15 +23,13 @@ class MembersController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @member.update(member_params)
-      redirect_to team_path(@team), notice: "メンバー情報を更新しました!"
+      redirect_to team_path(@team), notice: 'メンバー情報を更新しました!'
     else
       render :edit
     end
@@ -40,10 +37,11 @@ class MembersController < ApplicationController
 
   def destroy
     @member.destroy
-    redirect_to teams_path, notice: "チームから外れました！"
+    redirect_to teams_path, notice: 'チームから外れました！'
   end
 
   private
+
   def member_params
     params.require(:member).permit(:team_id, :user_id)
   end
