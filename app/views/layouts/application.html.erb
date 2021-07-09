@@ -23,7 +23,6 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <!-- <link href="css/styles.css" rel="stylesheet" /> -->
   </head>
-
   <body>
     <!-- Navigation-->
     <a class="menu-toggle rounded"><i class="fas fa-bars"></i></a>
@@ -52,14 +51,12 @@
     <% if flash[:alert] %>
       <div class="alert alert-danger" role="alert"><strong><%= alert %></strong></div>
     <% end %>
-
     <nav class="navbar navbar-light mb-2" style="background-color:#ffffff;">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-brand" do %>
           <h1 class="title" style="font-family: cursive;">TeamWORK</h1>
         <% end %>
       </div>
-
       <div class="container">
       <% if user_signed_in? %>
         <ul class="navbar-nav mr-auto">
@@ -106,7 +103,6 @@
          <% end %>
       </div>
     </nav>
-
     <%= yield %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- Footer-->
@@ -114,13 +110,11 @@
       <div class="container px-4 px-lg-5">
         <ul class="list-inline mb-5">
           <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="fas fa-calendar-alt"></i></a>
+            <a class="social-link rounded-circle text-white mr-3" href="#page-top"><i class="fas fa-calendar-alt"></i></a>
           </li>
         </ul>
           <p class="text-muted small mb-0">TeamWORK株式会社 © 2021 Copyright</p>
       </div>
-
     </footer>
-
   </body>
 </html>
