@@ -16,6 +16,5 @@
 //= require rails-ujs
 //= require data-confirm-modal
 //= require activestorage
-
 //= require jquery/dist/jquery.js
 //= require_tree .
