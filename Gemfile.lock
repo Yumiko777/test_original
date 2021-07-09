@@ -99,6 +99,11 @@ GEM
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
     debug_inspector (1.1.0)
+    delayed_job (4.1.9)
+      activesupport (>= 3.0, < 6.2)
+    delayed_job_active_record (4.1.6)
+      activerecord (>= 3.0, < 6.2)
+      delayed_job (>= 3.0, < 5)
     devise (4.8.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -347,6 +352,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   data-confirm-modal
   database_cleaner
+  delayed_job_active_record
   devise
   devise-i18n
   devise-i18n-views
