@@ -4,7 +4,7 @@
       <h2><%= t('view.user_index') %></h2>
       <h4><%= t('view.user_search') %></h4>
       <dl class="searchbox">
-      <%=  search_form_for @search do |form| %>
+      <%=  search_form_for @q do |form| %>
         <dt><%= form.search_field :username_cont,placeholder: '検索するユーザー名を入力...' %></dt>
         <dd><%= form.submit t('view.search'), class: 'search-btn' %></dd>
       <% end %>
@@ -13,7 +13,7 @@
       <table class="table table-hover">
         <thead class="table-success">
           <tr>
-            <th><div class="text-center"><%= sort_link(@search, :username, t('view.username'), hide_indicator: true) %></div></th>
+            <th><div class="text-center"><%=  t('view.username') %></div></th>
             <th><div class="text-center"><%= t('view.title') %></div></th>
             <th><div class="text-center"><%= t('view.business_status') %></div></th>
             <th><div class="text-center"><%= t('view.update') %></div></th>
