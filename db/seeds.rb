@@ -6,17 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.create!(
-#   username: "管理者",
-#   email: "admin@example.jp" ,
-#   password: "password",
-#   admin: true
-#  )
+User.create!(
+  username: "管理者",
+  email: "admin@example.jp" ,
+  password: "password",
+  admin: true
+ )
 
 start_time = Faker::Date.between(from: Date.tomorrow, to: 7.days.since)
 status = ["0","1"]
 
-10.times do |n|
+15.times do |n|
   User.create!(
     username: "User_name#{n + 1}",
     email: "User_email#{n + 1}@sample.com" ,
