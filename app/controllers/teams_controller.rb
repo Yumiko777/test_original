@@ -27,7 +27,7 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @members = @team.members
+    @members = @team.members.includes(:user)
     @businesses = Business.where(user_id: @user.id)
   end
 
