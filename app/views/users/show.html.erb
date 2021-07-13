@@ -10,9 +10,6 @@
       <% else %>
         <%= link_to t('view.back'), teams_path(@team), class: "btn btn-outline-success" %>
       <% end %>
-      <% if current_user.admin %>
-        <%= link_to t('view.admin_screen'), admin_user_path, class: "btn btn-outline-success" %>
-      <% end %>
     </div>
   </div>
 </div>

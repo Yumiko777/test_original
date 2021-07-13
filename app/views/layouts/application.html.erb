@@ -30,6 +30,9 @@
       <ul class="sidebar-nav">
         <li class="sidebar-nav-item"><%= link_to "Home", root_path, class: "navbar-brand" %></li>
       <% if user_signed_in? %>
+        <% if current_user.admin? %>
+        <li class="sidebar-nav-item"><%= link_to t('view.admin_screen'), rails_admin_path, class: "nav-link" %></li>
+      <% end %>
         <li class="sidebar-nav-item"><%= link_to "作業内容新規作成", new_work_path,  class: "nav-link" %></li>
         <li class="sidebar-nav-item"><%= link_to "作業内容一覧", works_path,  class: "nav-link" %></li>
         <li class="sidebar-nav-item"><%= link_to "雑談新規投稿", new_blog_path,  class: "nav-link" %></li>
