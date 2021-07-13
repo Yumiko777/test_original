@@ -46,8 +46,8 @@ ja:
     comment_edit: コメント編集
     comment_delete: コメント削除
     blog_submit: 新規投稿
-    blog_edit: コメント編集
-    blog_index: コメント一覧
+    blog_edit: 雑談編集
+    blog_index: 雑談一覧
     poster: 投稿者
     update: 更新日
     blog_new: 雑談新規投稿
