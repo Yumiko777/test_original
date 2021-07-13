@@ -38,6 +38,7 @@ https://cacoo.com/diagrams/byFTtCQ3HKtdB07W/19398
 ![ER図](https://user-images.githubusercontent.com/82217866/124841731-e72ef680-dfc8-11eb-9617-7a06d04bc76d.png)
 
 ## 画面遷移図
+![画面遷移図](https://user-images.githubusercontent.com/82217866/125406675-0c21d000-e3f4-11eb-88de-5b56daf9a9cb.png)
 https://cacoo.com/diagrams/dj12UCBd5EJO88UZ/B3478
 ![画面遷移図](https://user-images.githubusercontent.com/82217866/121706002-2c6a2080-cb10-11eb-9c62-fa1d317060a8.png)
 
