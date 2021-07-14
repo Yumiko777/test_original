@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   resources :users
   resources :teams do
     resources :members
-    resources :users
   end
 
   resources :blogs do
