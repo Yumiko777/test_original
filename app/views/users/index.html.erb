@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-6 mx-auto">
       <h2><%= t('view.user_index') %></h2>
-      <h4><%= t('view.user_search') %></h4>
+      <h5><%= t('view.user_search') %></h5>
       <dl class="searchbox">
       <%=  search_form_for @q do |form| %>
         <dt><%= form.search_field :username_cont,placeholder: '検索するユーザー名を入力...' %></dt>
