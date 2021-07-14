@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_team, only: %i[show edit update destroy]
-  before_action :set_user, only: %i[show edit update]
+  before_action :set_user, only: %i[edit update]
   before_action :authorized_user?, only: %i[show edit update destroy]
 
   def index
@@ -28,7 +28,6 @@ class TeamsController < ApplicationController
 
   def show
     @members = @team.members.includes(:user)
-    @businesses = Business.where(user_id: @user.id)
   end
 
   def update
