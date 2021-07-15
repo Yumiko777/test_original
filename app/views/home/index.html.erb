@@ -26,8 +26,8 @@
           <% if user_signed_in? %>
             <%#= link_to "マイページ", user_path(current_user) %>
           <% else %>
-            <a href="#!"><%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: "btn btn-primary btn-xl" %></a>
-            <a href="#!"><%= link_to "ゲストログイン（管理者用）", users_admin_guest_sign_in_path, method: :post, class: "btn btn-primary btn-xl" %></a>
+            <a href="#!"><%= link_to t('view.users_guest_sign_in'), users_guest_sign_in_path, method: :post, class: "btn btn-primary btn-xl" %></a>
+            <a href="#!"><%= link_to t('view.users_admin_guest_sign_in'), users_admin_guest_sign_in_path, method: :post, class: "btn btn-primary btn-xl" %></a>
           <% end %>
       </div>
     </header>

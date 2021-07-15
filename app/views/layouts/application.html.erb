@@ -33,20 +33,20 @@
         <% if current_user.admin? %>
         <li class="sidebar-nav-item"><%= link_to t('view.admin_screen'), rails_admin_path, class: "nav-link" %></li>
       <% end %>
-        <li class="sidebar-nav-item"><%= link_to "作業内容新規作成", new_work_path,  class: "nav-link" %></li>
-        <li class="sidebar-nav-item"><%= link_to "作業内容一覧", works_path,  class: "nav-link" %></li>
-        <li class="sidebar-nav-item"><%= link_to "雑談新規投稿", new_blog_path,  class: "nav-link" %></li>
-        <li class="sidebar-nav-item"><%= link_to "雑談一覧", blogs_path, class: "nav-link" %></li>
-        <li class="sidebar-nav-item"><%= link_to "出勤状況登録", new_business_path,  class: "nav-link" %></li>
-        <li class="sidebar-nav-item"><%= link_to "出勤状況", businesses_path,  class: "nav-link" %></li>
-        <li class="sidebar-nav-item"><%= link_to "新規チーム作成", new_team_path,  class: "nav-link" %></li>
-        <li class="sidebar-nav-item"><%= link_to "チーム一覧", teams_path, class: "nav-link" %></li>
-        <li class="sidebar-nav-item"><%= link_to "ユーザー一覧", users_path,  class: "nav-link" %></li>
-        <li class="sidebar-nav-item"><%= link_to "マイページ", user_path(current_user),  class: "nav-link" %></li>
-        <li class="sidebar-nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.work_new'), new_work_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.work_index'), works_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.blog_new'), new_blog_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.blog_index'), blogs_path, class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.business_new'), new_business_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.business_status'), businesses_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.team_create'), new_team_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.team_index'), teams_path, class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.user_index'), users_path,  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.user_show'), user_path(current_user),  class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.log_out'), destroy_user_session_path, method: :delete, class: "nav-link" %></li>
       <% else %>
-        <li class="sidebar-nav-item"><%= link_to "ログイン", new_user_session_path, class: "nav-link" %></li>
-        <li class="sidebar-nav-item"><%= link_to "新規登録", new_user_registration_path, class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.log_in'), new_user_session_path, class: "nav-link" %></li>
+        <li class="sidebar-nav-item"><%= link_to t('view.sign_up'), new_user_registration_path, class: "nav-link" %></li>
       <% end %>
       </ul>
     </nav>
@@ -67,37 +67,37 @@
       <% if user_signed_in? %>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "作業内容新規作成", new_work_path, class: "nav-link" %>
+            <%= link_to t('view.work_new'), new_work_path, class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "作業内容一覧", works_path, class: "nav-link" %>
+            <%= link_to t('view.work_index'), works_path, class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "雑談一覧", blogs_path, class: "nav-link" %>
+            <%= link_to t('view.blog_index'), blogs_path, class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "出勤状況", businesses_path, class: "nav-link" %>
+            <%= link_to t('view.business_status'), businesses_path, class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "チーム一覧", teams_path, class: "nav-link" %>
+            <%= link_to t('view.team_index'), teams_path, class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "ユーザー一覧", users_path, class: "nav-link" %>
+            <%= link_to t('view.user_index'), users_path, class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "マイページ", user_path(current_user), class: "nav-link" %>
+            <%= link_to t('view.user_show'), user_path(current_user), class: "nav-link" %>
           </li>
         </ul>
           <%# <% else %>

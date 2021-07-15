@@ -15,6 +15,7 @@ ja:
     work_new: 作業内容新規作成
     work_show: 作業内容詳細
     work: 作業内容
+    work_index: 作業内容一覧
     today_work: 本日の作業内容
     edit: 編集
     show: 詳細
@@ -27,6 +28,7 @@ ja:
     email: メールアドレス
     user_index: ユーザー一覧
     user_search: ユーザー検索
+    user_show: マイページ
     search: 検索
     admin_screen: 管理画面
     team_name: チーム名
@@ -59,3 +61,8 @@ ja:
     characters minimum: 文字以上
     forgot_your_password?: パスワードを忘れましたか？
     Send me reset password instructions: パスワード再発行
+    users_guest_sign_in: ゲストログイン（閲覧用）
+    users_admin_guest_sign_in: ゲストログイン（管理者用）
+    log_in: ログイン
+    log_out: ログアウト
+    sign_up: アカウント新規登録
