@@ -6,7 +6,7 @@ ja:
     work_submit: 新規作成
     title: タイトル
     content: 内容
-    start_time: 日程
+    start_time: 作業日
     work_status: 状態
     remarks: 備考
     work_edit: 作業内容編集
