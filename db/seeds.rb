@@ -91,6 +91,10 @@ Team.create!(
 )
 
 Member.create!(
+  team_id: 1,
+  user_id: 1
+)
+Member.create!(
   team_id: 2,
   user_id: 2
 )
@@ -122,6 +126,11 @@ Blog.create!(
   content: "本日は早帰り日のため、遅くとも18時までに退社をお願いいたします。",
   user_id: 5
 )
+Blog.create!(
+  title: "献血のご案内",
+  content: "来週水曜日14時から献血バスが来ます。献血にご協力いただける方はよろしくお願いいたします。",
+  user_id: 1
+)
 
 Comment.create!(
   blog_id: 1,
@@ -142,6 +151,11 @@ Comment.create!(
   blog_id: 3,
   user_id: 4,
   content: "周知連絡ありがとうございます!定時退社目指して本日も頑張ります。"
+)
+Comment.create!(
+  blog_id: 4,
+  user_id: 2,
+  content: "了解です!"
 )
 
 Business.create!(
