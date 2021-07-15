@@ -1,7 +1,7 @@
 class NoticeMailer < ApplicationMailer
-  default from: 'admin@example.jp'
+  default from: 'from@example.com'
   def sendmail_blog(blog)
     @blog = blog
-    mail to: @blog.user.email, subject: 'コメント新規投稿'
+    mail to: 'hogehoge@gmail.com', subject: '【blogapp】blog send'
   end
 end
