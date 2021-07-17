@@ -1,10 +1,9 @@
 # README
 
-## Heroku URL
-https://morning-castle-65325.herokuapp.com/
+## [Heroku URL](https://morning-castle-65325.herokuapp.com/)
 
 ## 製品名
-本日の作業内容をチームで共有する「Teamwork」
+本日の作業内容をチームで共有する*「Teamwork」*
 
 ## 製品概要
 「Teamwork」はチームの本日の作業内容を把握できます。
