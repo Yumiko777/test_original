@@ -39,7 +39,7 @@ $ rails s
 
 ## 画面遷移図
 ![画面遷移図](https://user-images.githubusercontent.com/82217866/125406675-0c21d000-e3f4-11eb-88de-5b56daf9a9cb.png)
-https://cacoo.com/diagrams/dj12UCBd5EJO88UZ/B3478
+
 ![画面遷移図](https://user-images.githubusercontent.com/82217866/121706002-2c6a2080-cb10-11eb-9c62-fa1d317060a8.png)
 
 ## [ワイヤーフレーム](https://cacoo.com/diagrams/IUvs4UAAj9RIth6n/8780F)
