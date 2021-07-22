@@ -22,6 +22,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.8'
   gem 'spring-commands-rspec'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -57,5 +58,6 @@ gem 'rails_admin', '~> 2.0'
 gem 'ransack'
 gem 'simple_calendar', '~> 2.0', '>= 2.0.6'
 gem 'delayed_job_active_record'
-gem 'omniauth', '1.9.1'
+gem 'omniauth-oauth2'
 gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
