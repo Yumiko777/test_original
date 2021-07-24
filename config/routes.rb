@@ -14,13 +14,13 @@ Rails.application.routes.draw do
     patch :toggle_status
   end
 
-  resources :users
+  resources :users, only: [:index, :show, :edit, :update]
   resources :teams do
     resources :members
   end
 
   resources :blogs do
-    resources :comments
+    resources :comments, only: [:create, :edit, :update, :destroy]
   end
 
   resources :businesses do
