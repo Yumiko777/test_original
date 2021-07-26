@@ -12,12 +12,12 @@
 
   <div class="field">
     <%= form.label t('view.title') %><br />
-    <%= form.text_field :title, value: "勤怠管理" %>
+    <%= form.text_field :title, value: "勤怠管理" , class: "form-control"%>
   </div>
 
   <div class="field">
     <%= form.label t('view.business_status') %><br />
-    <%= form.select :status, Business.statuses.keys.map {|k| [I18n.t("enums.businesses.status.#{k}"), k]} %>
+    <%= form.select :status, Business.statuses.keys.map {|k| [I18n.t("enums.businesses.status.#{k}"), k]} , class: "form-control"%>
   </div>
 
   <div class="actions"><br />
