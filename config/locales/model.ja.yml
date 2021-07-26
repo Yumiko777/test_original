@@ -26,7 +26,7 @@ ja:
       work:
         title: タイトル
         content: 内容
-        start_time: 日程
+        start_time: 作業日
         status: 状態
         remarks: 備考
   attributes:
