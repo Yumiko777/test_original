@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @q = User.ransack(params[:q])
     @users = @q.result
-    @businesses = Business.where(user_id: @users.ids)
+    @businesses = Business.where(user_id: @users.ids).includes(:user)
   end
 
   def show
