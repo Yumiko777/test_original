@@ -26,7 +26,7 @@ ja:
     user_edit: ユーザー編集
     username: ユーザー名
     email: メールアドレス
-    user_index: ユーザー一覧
+    user_index: 出勤状況一覧（登録者のみ）
     user_search: ユーザー検索
     user_show: マイページ
     search: 検索
