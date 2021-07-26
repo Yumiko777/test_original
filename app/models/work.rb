@@ -18,7 +18,7 @@ class Work < ApplicationRecord
 
   validate :date_check
   def date_check
-    errors.add(:start_time, "は今日以降のものを選択してください!") if start_time < Date.yesterday
+    errors.add(:start_time, "は今日以降の日付を選択してください") if start_time < Date.yesterday
   end
 
 end
