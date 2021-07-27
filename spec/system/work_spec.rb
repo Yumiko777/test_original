@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'Work', type: :system do
   before do
-    work = create(:work)
+    @user = create(:user2)
+    @work = create(:work, user: @user)
     visit new_user_session_path
-    fill_in 'user[email]', with: 'test01@example.com'
-    fill_in 'user[password]', with: 'password01'
+    fill_in 'user[email]', with: @user.email
+    fill_in 'user[password]', with: @user.password
     click_on 'Log in'
     visit works_path
   end
@@ -31,11 +32,7 @@ RSpec.describe 'Work', type: :system do
       it 'workを削除できる' do
         sleep 1
         first(:link, '削除').click
-        # binding.irb
-
-        # page.accept_confirm
-        # page.driver.browser.switch_to.alert.accept
-        # expect(page).to have_content '削除しました！'
+        expect(page).to have_content '削除確認'
       end
     end
 
@@ -64,7 +61,7 @@ RSpec.describe 'Work', type: :system do
   describe '詳細表示機能' do
     context '任意のwork詳細画面に遷移した場合' do
       it '該当workの内容が表示される' do
-        visit works_path
+        visit work_path(@work)
         expect(page).to have_content '編集'
       end
     end

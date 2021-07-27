@@ -28,7 +28,6 @@ RSpec.describe 'Blog', type: :system do
     it 'blogを削除できる' do
       sleep 1
       first(:link, '削除').click
-      # page.driver.browser.switch_to.alert.accept
       expect(page).to have_content '削除する'
     end
   end
@@ -46,8 +45,8 @@ RSpec.describe 'Blog', type: :system do
   describe '詳細表示機能' do
     context '任意のblog詳細画面に遷移した場合' do
       it '該当blogの内容が表示される' do
-        visit blogs_path
-        expect(page).to have_content '詳細'
+        visit blog_path(@blog)
+        expect(page).to have_content 'Factoryで作ったデフォルトのタイトル１'
       end
     end
   end

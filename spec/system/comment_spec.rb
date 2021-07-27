@@ -33,7 +33,7 @@ RSpec.describe 'Comment', type: :system do
     context '投稿したコメントの削除ボタンを押した場合' do
       it 'コメントを削除できる' do
         click_on 'コメント削除', match: :first
-        # page.driver.browser.switch_to.alert.accept
+        page.driver.browser.switch_to.alert.accept
         expect(page).to have_content '削除する'
       end
     end

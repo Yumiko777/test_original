@@ -27,11 +27,7 @@ RSpec.describe 'Business', type: :system do
       it 'bisinessを削除できる' do
         sleep 1
         first(:link, '削除').click
-        # binding.irb
-
-        # page.accept_confirm
-        # page.driver.browser.switch_to.alert.accept
-        # expect(page).to have_content '削除しました！'
+        expect(page).to have_content '削除確認'
       end
     end
 
@@ -58,7 +54,7 @@ RSpec.describe 'Business', type: :system do
   describe '詳細表示機能' do
     context '任意のbisiness詳細画面に遷移した場合' do
       it '該当bisinessの内容が表示される' do
-        visit businesses_path
+        visit business_path(@business)
         expect(page).to have_content '編集'
       end
     end

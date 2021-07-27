@@ -23,7 +23,7 @@ RSpec.describe 'User', type: :system do
   describe 'session機能テスト' do
     before do
       @user = create(:user)
-      @user2 = create(:user2)
+      # @user2 = create(:user2)
     end
 
     context 'ログインしていない状態でユーザデータがある場合' do
@@ -49,8 +49,6 @@ RSpec.describe 'User', type: :system do
       visit new_user_session_path
       fill_in 'user[email]', with: 'test02@example.com'
       fill_in 'user[password]', with: 'password02'
-      # click_button 'commit'
-      # click_on "Sign out"
       expect(page).to have_content 'Log in'
     end
   end

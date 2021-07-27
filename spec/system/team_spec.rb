@@ -26,7 +26,6 @@ RSpec.describe 'Team', type: :system do
       it 'teamを削除できる' do
         sleep 1
         click_on 'チーム削除', match: :first
-        # page.driver.browser.switch_to.alert.accept
         expect(page).to have_content 'チーム削除'
       end
     end
@@ -44,7 +43,7 @@ RSpec.describe 'Team', type: :system do
   describe '詳細表示機能' do
     context '任意のteam詳細画面に遷移した場合' do
       it '該当teamの内容が表示される' do
-        visit teams_path
+        visit team_path(@team)
         expect(page).to have_content 'テストチーム1'
       end
     end
@@ -55,7 +54,6 @@ RSpec.describe 'Team', type: :system do
       it 'メンバーを追加できる' do
         visit team_path(Team.first.id)
         click_on 'メンバー追加'
-        # check 'team[selected_user_ids][]'
         click_on "更新"
         expect(page).to have_content 'メンバーを追加しました！'
       end
