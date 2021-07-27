@@ -9,31 +9,36 @@ User.create!(
   username: "管理者",
   email: "admin@example.jp" ,
   password: "password01",
-  admin: true
+  admin: true,
+  uid: uid = SecureRandom.uuid
  )
 User.create!(
   username: "佐藤太郎",
   email: "satou@example.jp" ,
   password: "password02",
-  admin: false
+  admin: false,
+  uid: uid = SecureRandom.uuid
 )
 User.create!(
   username: "高橋次郎",
   email: "takahashi@example.jp" ,
   password: "password03",
-  admin: false
+  admin: false,
+  uid: uid = SecureRandom.uuid
  )
 User.create!(
   username: "小林三郎",
   email: "kobayashi@example.jp" ,
   password: "password04",
-  admin: false
+  admin: false,
+  uid: uid = SecureRandom.uuid
 )
 User.create!(
   username: "森愛",
   email: "mori@example.jp" ,
   password: "password05",
-  admin: false
+  admin: false,
+  uid: uid = SecureRandom.uuid
 )
 
 Work.create!(
