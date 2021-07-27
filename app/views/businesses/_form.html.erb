@@ -17,7 +17,7 @@
 
   <div class="field">
     <%= form.label t('view.business_status') %><br />
-    <%= form.select :status, Business.statuses.keys.map {|k| [I18n.t("enums.businesses.status.#{k}"), k]} , class: "form-control"%>
+    <%= form.select :status, Business.statuses.keys.map {|k| [I18n.t("enums.businesses.status.#{k}"), k]} %>
   </div>
 
   <div class="actions"><br />

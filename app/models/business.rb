@@ -2,6 +2,7 @@ class Business < ApplicationRecord
   belongs_to :user
 
   validates :title, :status, presence: true
+  validates :status, inclusion: { in: %w(start),message: " 出勤を登録していないと退勤を入力できません" }, on: :create
 
   enum status: { start: 0, end: 1 }
 
