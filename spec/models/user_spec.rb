@@ -25,14 +25,6 @@ RSpec.describe User, type: :model do
       expect(@user.valid?).to eq(false)
     end
 
-    it '重複したEメールの場合NG' do
-      user_a = create(:admin)
-      user_b = build(:admin)
-      user_b.valid?
-      expect(user_a).to be_valid
-      expect(user_b.errors[:email]).to include('はすでに存在します')
-    end
-
     it 'パスワードが６文字以下の場合NG' do
       @user.password =  '12345'
       @user.valid?
