@@ -14,7 +14,7 @@
 
 <div class="content">
   <div class="form-tag"><%= t('view.content') %></div>
-    <%= form.text_field :content , :placeholder => "例）交通費",class: "form-control" %>
+    <%= form.text_field :content, :placeholder => "例）交通費",class: "form-control" %>
 </div>
 
 <div class="time">
@@ -32,7 +32,7 @@
 
 <div class="remarks">
   <div class="form-tag"><%= t('view.remarks') %></div>
-    <%= form.text_field :remarks ,class: "form-control" %>
+    <%= form.text_field :remarks, :placeholder => "例）午前中に処理が必要",class: "form-control" %>
 </div>
 
 <% if local_assigns[:edit_flag].present? %>
