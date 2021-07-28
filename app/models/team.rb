@@ -6,7 +6,8 @@ class Team < ApplicationRecord
   has_many :members, dependent: :destroy
   has_many :member_users, through: :members, source: :user
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
+
 
   def is_member?(target_user)
     member_users.select { |user| user.id == target_user.id }.length > 0
