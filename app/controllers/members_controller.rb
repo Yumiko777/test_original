@@ -4,7 +4,7 @@ class MembersController < ApplicationController
   before_action :set_team, only: %i[index new create]
 
   def index
-    @members = Member.all.includes(:user)
+    @members = Member.includes(:user).all
   end
 
   def new

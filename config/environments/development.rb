@@ -7,6 +7,10 @@ Rails.application.configure do
   # Bullet.growl         = true
     Bullet.rails_logger  = true
     Bullet.add_footer    = true
+
+    Bullet.add_whitelist type: :n_plus_one_query, class_name: 'Member', association: :user
+    Bullet.add_whitelist type: :unused_eager_loading, class_name: 'Member', association: :user
+    Bullet.add_whitelist type: :counter_cache, class_name: 'Member', association: :user
   end
 
   # Settings specified here will take precedence over those in config/application.rb.
