@@ -26,7 +26,7 @@
             <td ><div class="text-center"><%= business.user.username %></div></td>
             <td ><div class="text-center"><%= business.title %></div></td>
             <td ><div class="text-center"><%= business.status_i18n %></div></td>
-            <td ><div class="text-center"><%= business.updated_at.strftime("%m-%d %H:%M") %></div></td>
+            <td ><div class="text-center"><%= l business.updated_at %></div></td>
           <tr>
           <% end %>
           <% end %>

@@ -20,7 +20,7 @@
               <td><strong><%= blog.user.username %></strong></td>
               <td><%= blog.title %></td>
               <td><%= truncate(blog.content, length: 20) %></td>
-              <td><%= blog.updated_at.strftime("%m-%d %H:%M") %></td>
+              <td><%= l blog.updated_at %></td>
               <td><%= link_to t('view.show'), blog %></td>
               <% if blog.user.id == current_user.id %>
                 <td><%= link_to t('view.edit'), edit_blog_path(blog) %></td>

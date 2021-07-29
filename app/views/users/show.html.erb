@@ -29,7 +29,7 @@
         <tr>
           <td><%=  business.title %></td>
           <td><%=  business.status_i18n %></td>
-          <td><%=  business.updated_at.strftime("%m-%d %H:%M") %></td>
+          <td><%=  l business.updated_at, format: :short %></td>
           <td></td>
         </tr>
         <% end %>
@@ -48,7 +48,7 @@
         <tr>
           <td><%= link_to work.title, work_path(work) %></td>
           <td><%= work.content %></td>
-          <td><%= work.start_time.strftime("%m-%d") %></td>
+          <td><%= l work.start_time, format: :short %></td>
           <td><%= work.status_i18n %></td>
         </tr>
         <% end %>

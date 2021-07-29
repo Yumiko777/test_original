@@ -25,19 +25,19 @@ class Business < ApplicationRecord
   # def created_at_check
   #   errors.add(:created_at, " できません") if created_at ==Date.current && created_at.count > 1
   # end
-  def self.today
-    where("created_at >= ?", Time.zone.now.beginning_of_day)
-  end
+  # def self.today
+  #   where("created_at >= ?", Time.zone.now.beginning_of_day)
+  # end
 
   MAX_BUSINESSES_COUNT = 2
   validate :businesses_count_must_be_within_limit, on: :create
   private
   def businesses_count_must_be_within_limit
-    if self.today
+    # if self.today
     unless user.try(:admin?)
     errors.add(:created_at, "できません: #{MAX_BUSINESSES_COUNT}") if user.businesses.count >= MAX_BUSINESSES_COUNT
     # && created_at.strftime("%m-%d") == Date.current.strftime("%m-%d")
     end
   end
   end
-end
+# end

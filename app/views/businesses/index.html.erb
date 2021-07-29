@@ -19,7 +19,7 @@
             <tr>
               <td><%= business.title %></td>
               <td><%= link_to business.status_i18n , business_toggle_status_path(business), method: :patch%></td>
-              <td><%= business.updated_at.strftime("%m-%d %H:%M") %></td>
+              <td><%= l business.updated_at %></td>
               <% if business.user_id == current_user.id %>
                 <td><%= link_to t('view.show'), business %></td>
                 <td><%= link_to t('view.edit'), edit_business_path(business) %></td>
