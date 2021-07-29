@@ -21,12 +21,12 @@
         </thead>
         <tbody>
           <% @businesses.each do |business| %>
-          <% if business.updated_at.strftime("%m-%d") == Date.current.strftime("%m-%d")%>
+          <% if business.created_at.strftime("%m-%d") == Date.current.strftime("%m-%d")%>
           <tr>
             <td ><div class="text-center"><%= business.user.username %></div></td>
             <td ><div class="text-center"><%= business.title %></div></td>
             <td ><div class="text-center"><%= business.status_i18n %></div></td>
-            <td ><div class="text-center"><%= l business.updated_at %></div></td>
+            <td ><div class="text-center"><%= l business.created_at %></div></td>
           <tr>
           <% end %>
           <% end %>

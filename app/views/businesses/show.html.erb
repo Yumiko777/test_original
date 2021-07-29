@@ -8,7 +8,7 @@
       <table class="table table-striped">
         <tr><td><strong><%= t('view.title') %></strong></td><td><%= @business.title %></td></tr>
         <tr><td><strong><%= t('view.business_status') %></strong></td><td><%= link_to @business.status_i18n , business_toggle_status_path(@business), method: :patch%></td></tr>
-        <tr><td><strong><%= t('view.update') %></strong></td><td><%= l @business.updated_at %></td></tr>
+        <tr><td><strong><%= t('view.update') %></strong></td><td><%= l @business.created_at %></td></tr>
       </table>
       <% if @business.user_id == current_user.id %>
         <%= link_to t('view.edit'), edit_business_path(@business), class: "btn btn-success" %>
