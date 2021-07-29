@@ -15,4 +15,9 @@ class Business < ApplicationRecord
   end
 
   include CommonModule
+
+  # validate :status_check
+  # def status_check
+  #   errors.add(:status, " 出勤を登録していないと退勤を入力できません") if status == 'end'
+  # end
 end

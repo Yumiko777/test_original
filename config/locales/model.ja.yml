@@ -29,6 +29,8 @@ ja:
         start_time: 作業日
         status: 状態
         remarks: 備考
+      business:
+        status: 出勤状況
   attributes:
     created_at: 作成日
     updated_at: 更新日
