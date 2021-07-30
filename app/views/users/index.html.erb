@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-7 mx-auto">
+    <div class="col-9 mx-auto">
       <h2><%= t('view.user_index') %></h2>
       <h5><%= t('view.user_search') %></h5>
       <dl class="searchbox">
@@ -16,7 +16,8 @@
             <th><div class="text-center"><%=  t('view.username') %></div></th>
             <th><div class="text-center"><%= t('view.title') %></div></th>
             <th><div class="text-center"><%= t('view.business_status') %></div></th>
-            <th><div class="text-center"><%= t('view.update') %></div></th>
+            <th><div class="text-center"><%= t('view.business_create') %></div></th>
+            <th><div class="text-center"><%= t('view.business_update') %></div></th>
             <th></th>
             <th></th>
             <th></th>
@@ -30,6 +31,7 @@
               <td ><div class="text-center"><%= business.title %></div></td>
               <td ><div class="text-center"><%= business.status_i18n %></div></td>
               <td ><div class="text-center"><%= l business.created_at %></div></td>
+              <td ><div class="text-center"><%= l business.updated_at %></div></td>
             <% if current_user.admin %>
               <td ><div class="text-center"></div><%= link_to t('view.show'), business %></td>
               <td ><div class="text-center"></div><%= link_to t('view.edit'), edit_business_path(business) %></td>

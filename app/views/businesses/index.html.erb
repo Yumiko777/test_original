@@ -10,18 +10,22 @@
           <tr>
             <th><%= t('view.title') %></th>
             <th><%= t('view.business_status') %></th>
-            <th><%= t('view.update') %></th>
+            <th><%= t('view.business_create') %></th>
+            <th><%= t('view.business_update') %></th>
             <th><i class="fa fa-trash-alt"></i></th>
           </tr>
         </thead>
         <tbody>
           <% @businesses.each do |business| %>
+            <% if business.created_at.strftime("%m-%d") == Date.current.strftime("%m-%d")%>
             <tr>
               <td><%= business.title %></td>
               <td><%= link_to business.status_i18n , business_toggle_status_path(business), method: :patch%></td>
               <td><%= l business.created_at %></td>
+              <td><%= l business.updated_at %></td>
             <% if current_user.id == business.user_id %>
               <td><%= link_to t('view.delete'), business,  method: :delete, data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'%></td>
+            <% end %>
             <% end %>
             </tr>
           <% end %>

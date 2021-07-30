@@ -58,6 +58,8 @@ ja:
     business_edit: 出勤状況編集
     business_index: 出勤状況一覧
     business_show: 出勤状況詳細
+    business_create: 出勤打刻
+    business_update: 退勤打刻
     characters minimum: 文字以上
     forgot_your_password?: パスワードを忘れましたか？
     Send me reset password instructions: パスワード再発行
