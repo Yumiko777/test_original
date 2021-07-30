@@ -16,7 +16,7 @@ RSpec.describe Team, type: :model do
 
     context 'nameが記載の場合' do
       it 'バリデーションが通る' do
-        team = Team.new(name: 'テストチーム1', user: @user)
+        team = Team.new(name: 'テストチーム2', user: @user)
         expect(team).to be_valid
       end
     end

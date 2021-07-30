@@ -18,10 +18,11 @@ RSpec.describe 'Business', type: :system do
         fill_in :business_title, with: '勤怠管理'
         select '出勤', from: :business_status
         click_on '登録する'
-        expect(page).to have_content '勤怠管理'
         expect(page).to have_content '出勤'
+        expect(page).to have_content '退勤'
       end
     end
+  end
 
     context 'ユーザーが本人の場合' do
       it 'bisinessを削除できる' do
@@ -30,17 +31,6 @@ RSpec.describe 'Business', type: :system do
         expect(page).to have_content '削除確認'
       end
     end
-
-    context 'ユーザーが本人の場合' do
-      it 'bisinessを編集できる' do
-        sleep 2
-        first(:link, '編集').click
-        fill_in 'business_title', with: '勤怠管理'
-        click_on '更新する'
-        expect(page).to have_content '勤怠管理'
-      end
-    end
-  end
 
   describe '一覧表示機能' do
     context '一覧画面に遷移した場合' do

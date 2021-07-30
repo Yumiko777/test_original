@@ -16,9 +16,9 @@ RSpec.describe 'Team', type: :system do
     context 'チーム新規登録' do
       it 'チーム新規作成画面が表示される' do
         visit new_team_path
-        fill_in :team_name, with: 'テストチーム1'
+        fill_in :team_name, with: 'テストチーム2'
         click_on '新規作成'
-        expect(page).to have_content 'テストチーム1'
+        expect(page).to have_content 'テストチーム2'
       end
     end
 

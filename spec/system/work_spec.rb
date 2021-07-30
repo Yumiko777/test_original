@@ -24,7 +24,7 @@ RSpec.describe 'Work', type: :system do
         fill_in :work_remarks, with: 'Factoryで作ったデフォルトの備考2'
         click_on '新規作成'
         expect(page).to have_content 'Factoryで作ったデフォルトのタイトル1'
-        expect(page).to have_content 'Factoryで作ったデフォルトのコンテント1'
+        expect(page).to have_content 'Factoryで作ったデ...'
       end
     end
 
@@ -44,7 +44,7 @@ RSpec.describe 'Work', type: :system do
         fill_in 'work[content]', with: 'Factoryで作ったデフォルトのコンテント1'
         click_button '編集'
         expect(page).to have_content 'Factoryで作ったデフォルトのタイトル1'
-        expect(page).to have_content 'Factoryで作ったデフォルトのコンテント1'
+        expect(page).to have_content 'Factoryで作ったデ...'
       end
     end
   end
