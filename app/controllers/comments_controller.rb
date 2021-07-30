@@ -5,13 +5,12 @@ class CommentsController < ApplicationController
     @comment = @blog.comments.build(comment_params)
     @comment.user_id = current_user.id
     respond_to do |format|
-      if @comment.save
-        flash.now[:notice] = 'コメントが投稿されました!'
-        format.js { render :index }
-      else
-        flash.now[:notice] = 'コメントの投稿に失敗しました!'
-        format.js { render :index }
-      end
+      flash.now[:notice] = if @comment.save
+                             'コメントが投稿されました!'
+                           else
+                             'コメントの投稿に失敗しました!'
+                           end
+      format.js { render :index }
     end
   end
 

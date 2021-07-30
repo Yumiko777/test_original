@@ -5,7 +5,7 @@ class BusinessesController < ApplicationController
 
   # GET /businesses or /businesses.json
   def index
-    @businesses = current_user.businesses.where("created_at >= ?", Date.today).latest
+    @businesses = current_user.businesses.where('created_at >= ?', Date.today).latest
   end
 
   # GET /businesses/1 or /businesses/1.json

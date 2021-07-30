@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :lockable,:omniauthable, omniauth_providers: [:google_oauth2]
+         :lockable, :omniauthable, omniauth_providers: [:google_oauth2]
   validates :username, presence: true, length: { maximum: 30 }
 
   has_many :teams, dependent: :destroy
@@ -45,13 +45,10 @@ class User < ApplicationRecord
 
   def self.find_for_google(auth)
     user = User.find_by(email: auth.info.email)
-    unless user
-      user = User.new(email: auth.info.email,
+    user ||= User.new(email: auth.info.email,
                       provider: auth.provider,
-                      uid:      auth.uid,
-                      password: Devise.friendly_token[0, 20],
-                                 )
-    end
+                      uid: auth.uid,
+                      password: Devise.friendly_token[0, 20])
     user.save
     user
   end

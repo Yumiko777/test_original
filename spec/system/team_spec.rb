@@ -54,7 +54,7 @@ RSpec.describe 'Team', type: :system do
       it 'メンバーを追加できる' do
         visit team_path(Team.first.id)
         click_on 'メンバー追加'
-        click_on "更新"
+        click_on '更新'
         expect(page).to have_content 'メンバーを追加しました！'
       end
     end

@@ -2,17 +2,17 @@ require 'rails_helper'
 
 RSpec.describe Work, type: :model do
   it 'start_timeが過去日付の場合バリデーションが通らない' do
-    work = Work.new(title: '失敗テスト', content: '失敗テスト', start_time: "002021-07-01")
+    work = Work.new(title: '失敗テスト', content: '失敗テスト', start_time: '002021-07-01')
     expect(work).not_to be_valid
   end
 
   it 'titleが空の場合バリデーションが通らない' do
-    work = Work.new(title: nil, start_time: "002021-12-31")
+    work = Work.new(title: nil, start_time: '002021-12-31')
     expect(work).not_to be_valid
   end
 
   it 'contentが空の場合バリデーションが通らない' do
-    work = Work.new(content: nil, start_time: "002021-12-31")
+    work = Work.new(content: nil, start_time: '002021-12-31')
     expect(work).not_to be_valid
   end
 
