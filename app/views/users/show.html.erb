@@ -18,8 +18,9 @@
     <thead class="table-success">
       <tr>
         <th scope="col"><%= t('view.title') %></th>
-        <th scope="col"><%= t('view.business_status')  %></th>
+        <th scope="col"><%= t('view.business_status') %></th>
         <th scope="col"><%=  t('view.update') %></th>
+        <th></th>
         <th></th>
       </tr>
     </thead>
@@ -31,6 +32,7 @@
           <td><%=  business.status_i18n %></td>
           <td><%=  l business.created_at %></td>
           <td></td>
+          <td></td>
         </tr>
         <% end %>
       <% end %>
@@ -40,6 +42,7 @@
           <th scope="col"><%= t('view.content') %></th>
           <th scope="col"><%= t('view.start_time') %></th>
           <th scope="col"><%= t('view.work_status') %></th>
+          <th scope="col"><%= t('view.remarks') %></th>
         </tr>
       </thead>
       <tbody>
@@ -47,9 +50,10 @@
         <% if work.start_time.strftime("%m-%d") == Date.current.strftime("%m-%d")%>
         <tr>
           <td><%= link_to work.title, work_path(work) %></td>
-          <td><%= work.content %></td>
+          <td><%= truncate(work.content, length: 20) %></td>
           <td><%= l work.start_time, format: :short %></td>
           <td><%= work.status_i18n %></td>
+          <td><%= truncate(work.remarks, length: 10) %></td>
         </tr>
         <% end %>
       <% end %>

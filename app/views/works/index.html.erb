@@ -24,10 +24,10 @@
 	  <% if work.status == "false" %>
     <tr>
       <td><%= link_to work.title , work %></td>
-      <td><%= work.content %></td>
+      <td><%= truncate(work.content, length: 15) %></td>
       <td><%= l work.start_time, format: :short %></td>
 			<td><%= link_to work.status_i18n , work_toggle_status_path(work), method: :patch%></td>
-      <td><%= work.remarks %></td>
+      <td><%= truncate(work.remarks, length: 7) %></td>
       <td><%= link_to t('view.edit'), edit_work_path(work.id) %></td>
       <td><%= link_to t('view.show'), work_path(work.id) %></td>
       <td><%= link_to t('view.delete'),work_path(work.id), method: :delete,data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'  %></td>
