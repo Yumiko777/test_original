@@ -1,10 +1,11 @@
 class BusinessesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_business, only: %i[show edit update destroy toggle_status]
+  before_action :authorized_user?, only: %i[show edit update destroy]
 
   # GET /businesses or /businesses.json
   def index
-    @businesses = current_user.businesses.latest
+    @businesses = current_user.businesses.where("created_at >= ?", Date.today).latest
   end
 
   # GET /businesses/1 or /businesses/1.json
@@ -16,9 +17,7 @@ class BusinessesController < ApplicationController
   end
 
   # GET /businesses/1/edit
-  def edit
-    redirect_to businesses_path, alert: '不正なアクセスです!' if @business.user_id != current_user.id
-  end
+  def edit; end
 
   # POST /businesses or /businesses.json
   def create
@@ -58,18 +57,22 @@ class BusinessesController < ApplicationController
 
   def toggle_status
     @business.toggle_status!
-    redirect_to @business, notice: '勤務状態を更新しました！'
+    redirect_to businesses_path, notice: '勤務状態を更新しました！'
   end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_business
-    @business = current_user.businesses.find(params[:id] || params[:business_id])
+    @business = Business.find(params[:id] || params[:business_id])
   end
 
   # Only allow a list of trusted parameters through.
   def business_params
     params.require(:business).permit(:title, :status)
+  end
+
+  def authorized_user?
+    redirect_to businesses_path, alert: '権限がありません!' unless current_user || current_user.admin
   end
 end

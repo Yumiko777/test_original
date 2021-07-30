@@ -20,14 +20,9 @@
               <td><%= business.title %></td>
               <td><%= link_to business.status_i18n , business_toggle_status_path(business), method: :patch%></td>
               <td><%= l business.created_at %></td>
-              <% if business.user_id == current_user.id %>
-                <!-- <td><%= link_to t('view.show'), business %></td> -->
-                <!-- <td><%= link_to t('view.edit'), edit_business_path(business) %></td> -->
-                <td><%= link_to t('view.delete'), business,  method: :delete, data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'%></td>
-              <% else %>
-                <!-- <td></td> -->
-                <!-- <td></td> -->
-              <% end %>
+            <% if current_user.id == business.user_id %>
+              <td><%= link_to t('view.delete'), business,  method: :delete, data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'%></td>
+            <% end %>
             </tr>
           <% end %>
         </tbody>
