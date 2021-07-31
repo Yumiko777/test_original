@@ -5,7 +5,7 @@ class BusinessesController < ApplicationController
 
   # GET /businesses or /businesses.json
   def index
-    @businesses = current_user.businesses.where('created_at >= ?', Date.today).latest
+    @businesses = current_user.businesses.latest
   end
 
   # GET /businesses/1 or /businesses/1.json
@@ -17,7 +17,9 @@ class BusinessesController < ApplicationController
   end
 
   # GET /businesses/1/edit
-  def edit; end
+  def edit
+    redirect_to businesses_path, alert: '不正なアクセスです!' if @business.user_id != current_user.id
+  end
 
   # POST /businesses or /businesses.json
   def create

@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-9 mx-auto">
       <h2><%= t('view.user_index') %></h2>
+      <br>
       <h5><%= t('view.user_search') %></h5>
       <dl class="searchbox">
       <%=  search_form_for @q do |form| %>
@@ -18,25 +19,17 @@
             <th><div class="text-center"><%= t('view.business_status') %></div></th>
             <th><div class="text-center"><%= t('view.business_create') %></div></th>
             <th><div class="text-center"><%= t('view.business_update') %></div></th>
-            <th></th>
-            <th></th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
           <% @businesses.each do |business| %>
-            <% if business.created_at.strftime("%m-%d") == Date.current.strftime("%m-%d")%>
+            <% if business.created_at.strftime("%m-%d") == Date.current.strftime("%m-%d") || business.updated_at.strftime("%m-%d") == Date.current.strftime("%m-%d") %>
             <tr>
               <td ><div class="text-center"><%= business.user.username %></div></td>
               <td ><div class="text-center"><%= business.title %></div></td>
               <td ><div class="text-center"><%= business.status_i18n %></div></td>
               <td ><div class="text-center"><%= l business.created_at %></div></td>
               <td ><div class="text-center"><%= l business.updated_at %></div></td>
-            <% if current_user.admin %>
-              <td ><div class="text-center"></div><%= link_to t('view.show'), business %></td>
-              <td ><div class="text-center"></div><%= link_to t('view.edit'), edit_business_path(business) %></td>
-              <td ><div class="text-center"></div><%= link_to t('view.delete'), business,  method: :delete, data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'%></td>
-            <% end %>
             <tr>
             <% end %>
           <% end %>
