@@ -12,7 +12,7 @@
 
       <div class="form-group">
         <%= form.label t('view.team_name') %>
-        <%= form.text_field :name, class: "form-control" %>
+        <%= form.text_field :name, :placeholder => "例）チームA" ,class: "form-control" %>
       </div>
 
       <% if local_assigns[:edit_flag].present? %>
