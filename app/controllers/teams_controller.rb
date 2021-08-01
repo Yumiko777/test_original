@@ -39,8 +39,12 @@ class TeamsController < ApplicationController
   end
 
   def destroy
-    @team.destroy
-    redirect_to teams_path, notice: 'チームを削除しました！'
+    if @team.members.count <= 1
+      @team.destroy
+      redirect_to teams_path, notice: 'チームを削除しました!'
+    else
+      redirect_to teams_url, notice: 'メンバーがいるためチームを削除できません!'
+    end
   end
 
   private
