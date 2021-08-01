@@ -37,7 +37,7 @@ class MembersController < ApplicationController
 
   def destroy
     @member.destroy
-    redirect_to teams_path, notice: 'チームから外れました！'
+    redirect_to team_members_path, notice: 'チームから外れました！'
   end
 
   private
