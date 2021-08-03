@@ -22,12 +22,12 @@ ja:
     businesses:
       status:
         start: 出勤
-        end: 退勤
+        finish: 退勤
 
     business:
       status:
         start: 出勤
-        end: 退勤
+        finish: 退勤
 
   date:
     abbr_day_names:

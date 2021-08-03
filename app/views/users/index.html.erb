@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-9 mx-auto">
+    <div class="col-7 mx-auto">
       <h2><%= t('view.user_index') %></h2>
       <br>
       <h5><%= t('view.user_search') %></h5>
@@ -18,18 +18,16 @@
             <th><div class="text-center"><%= t('view.title') %></div></th>
             <th><div class="text-center"><%= t('view.business_status') %></div></th>
             <th><div class="text-center"><%= t('view.business_create') %></div></th>
-            <th><div class="text-center"><%= t('view.business_update') %></div></th>
           </tr>
         </thead>
         <tbody>
           <% @businesses.each do |business| %>
-            <% if business.created_at.strftime("%m-%d") == Date.current.strftime("%m-%d") || business.updated_at.strftime("%m-%d") == Date.current.strftime("%m-%d") %>
+            <% if business.created_at.strftime("%m-%d") == Date.current.strftime("%m-%d") %>
             <tr>
               <td ><div class="text-center"><%= business.user.username %></div></td>
               <td ><div class="text-center"><%= business.title %></div></td>
               <td ><div class="text-center"><%= business.status_i18n %></div></td>
               <td ><div class="text-center"><%= l business.created_at %></div></td>
-              <td ><div class="text-center"><%= l business.updated_at %></div></td>
             <tr>
             <% end %>
           <% end %>

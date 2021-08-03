@@ -14,7 +14,7 @@
         <%= link_to t('view.edit'), edit_business_path(@business), class: "btn btn-success" %>
         <%= link_to t('view.delete'),business_path(@business.id), method: :delete,data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認' , class: "btn btn-danger"%>
       <% end %>
-        <%= link_to t('view.back'), users_path, class: "btn btn-outline-success" %>
+        <%= link_to t('view.back'), businesses_path, class: "btn btn-outline-success" %>
     </div>
   </div>
 </div>

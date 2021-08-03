@@ -11,8 +11,6 @@
             <th><div class="text-center"><%= t('view.title') %></div></th>
             <th><div class="text-center"><%= t('view.business_status') %></div></th>
             <th><div class="text-center"><%= t('view.business_create') %></div></th>
-            <th><div class="text-center"><%= t('view.business_update') %></div></th>
-            <th><div class="text-center"><i class="fa fa-edit"></i></div></th>
             <th><div class="text-center"><i class="fa fa-trash-alt"></i></div></th>
           </tr>
         </thead>
@@ -22,9 +20,7 @@
               <td><div class="text-center"><%= business.title %></div></td>
               <td><div class="text-center"><%= business.status_i18n %></div></td>
               <td><div class="text-center"><%= l business.created_at %></div></td>
-              <td><div class="text-center"><%= l business.updated_at %></div></td>
             <% if current_user.id == business.user_id %>
-             <td ><div class="text-center"></div><%= link_to t('view.edit'), edit_business_path(business) %></td>
               <td><div class="text-center"><%= link_to t('view.delete'), business,  method: :delete, data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'%></div></td>
             <% end %>
             </tr>
