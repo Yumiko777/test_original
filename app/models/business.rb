@@ -3,13 +3,21 @@ class Business < ApplicationRecord
 
   validates :title, :status, presence: true
 
+  # def toggle_status!
+  #   if start?
+  #     finish!
+  #   else
+  #     start!
+  #   end
+  # end
   def toggle_status!
-    if start?
+    if status == "start"
       finish!
-    else
-      start!
+    # else
+    #   start!
     end
   end
+
 
   include CommonModule
 
