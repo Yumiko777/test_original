@@ -20,7 +20,7 @@
           <% @businesses.each do |business| %>
             <tr>
               <td><div class="text-center"><%= business.title %></div></td>
-              <td><div class="text-center"><%= link_to business.status_i18n , business_toggle_status_path(business), method: :patch%></div></td>
+              <td><div class="text-center"><%= business.status_i18n %></div></td>
               <td><div class="text-center"><%= l business.created_at %></div></td>
               <td><div class="text-center"><%= l business.updated_at %></div></td>
             <% if current_user.id == business.user_id %>

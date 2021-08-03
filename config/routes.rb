@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   end
 
   resources :businesses do
-    patch :toggle_status
   end
 
 

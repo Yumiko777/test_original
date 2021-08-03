@@ -5,13 +5,13 @@ class Business < ApplicationRecord
 
   enum status: { start: 0, end: 1 }
 
-  def toggle_status!
-    if start?
-      end!
-    else
-      start!
-    end
-  end
+  # def toggle_status!
+  #   if start?
+  #     end!
+  #   else
+  #     start!
+  #   end
+  # end
 
   include CommonModule
 
