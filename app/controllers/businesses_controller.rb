@@ -5,7 +5,7 @@ class BusinessesController < ApplicationController
 
   # GET /businesses or /businesses.json
   def index
-    @businesses = current_user.businesses.latest
+    @businesses = current_user.businesses.order(created_at: "ASC").latest
   end
 
   # GET /businesses/1 or /businesses/1.json
