@@ -61,3 +61,4 @@ gem 'omniauth-rails_csrf_protection'
 gem 'rails_admin', '~> 2.0'
 gem 'ransack'
 gem 'simple_calendar', '~> 2.0', '>= 2.0.6'
+gem 'whenever', require: false

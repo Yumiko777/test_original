@@ -5,7 +5,7 @@ class BusinessesController < ApplicationController
 
   # GET /businesses or /businesses.json
   def index
-    @businesses = current_user.businesses.order(created_at: "ASC").latest
+    @businesses = current_user.businesses.latest
   end
 
   # GET /businesses/1 or /businesses/1.json
@@ -57,11 +57,16 @@ class BusinessesController < ApplicationController
     end
   end
 
+  def toggle_status
+    @business.toggle_status!
+    redirect_to businesses_path, notice: '勤務状態を更新しました！'
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_business
-    @business = Business.find(params[:id])
+    @business = Business.find(params[:id] || params[:business_id])
   end
 
   # Only allow a list of trusted parameters through.

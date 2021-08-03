@@ -3,6 +3,14 @@ class Business < ApplicationRecord
 
   validates :title, :status, presence: true
 
+  def toggle_status!
+    if start?
+      finish!
+    else
+      start!
+    end
+  end
+
   include CommonModule
 
   MAX_BUSINESSES_COUNT = 1
@@ -14,6 +22,14 @@ class Business < ApplicationRecord
       errors.add(:status, " 出勤登録は1日#{MAX_BUSINESSES_COUNT}回のみです。間違えて入力した場合は削除してください")
     elsif self.status == "finish" && user.businesses.count > MAX_BUSINESSES_COUNT
       errors.add(:status, " 退勤登録は1日#{MAX_BUSINESSES_COUNT}回のみです。間違えて入力した場合は削除してください")
+    end
+  end
+
+  def self.created_at_check
+    Business.all.each do |business|
+      if business.created_at < Date.today
+        business.destroy
+      end
     end
   end
 end
