@@ -23,8 +23,8 @@ RSpec.describe 'Work', type: :system do
         choose 'status_false'
         fill_in :work_remarks, with: 'Factoryで作ったデフォルトの備考2'
         click_on '新規作成'
-        expect(page).to have_content 'Factoryで作ったデフォルトのタイトル1'
-        expect(page).to have_content 'Factoryで作ったデ...'
+        expect(page).to have_content '1件のエラーがあります'
+        expect(page).to have_content '作業日は今日以降の日付を選択してください'
       end
     end
 
