@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-6 mx-auto">
       <h2><%= t('view.business_new') %></h2>
+      <h6><font color="red">出退勤を管理するものではありません!</font></h6>
       <%= render 'form', business: @business %><br />
       <%= link_to t('view.back'), businesses_path, class: "btn btn-outline-success" %>
     </div>
