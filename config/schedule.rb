@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every '0 0 * * *' do
+every :day, at: "10:15 am" do
   runner "Business.created_at_check"
 end
