@@ -18,6 +18,21 @@ class Business < ApplicationRecord
     end
   end
 
+  validate :status_check, on: :create
+  def status_check
+    errors.add(:status, ' 出勤を登録していないと退勤を入力できません') if status == 'finish'
+  end
+
+  # validate :businesses_count_must_be_within_limit, on: :create
+  # MAX_BUSINESSES_COUNT = 1
+  # scope :created_today, -> { where(created_at: Time.zone.now.all_day) }
+  # def businesses_count_must_be_within_limit
+  #   if user.businesses.count >= MAX_BUSINESSES_COUNT
+  #     errors.add(:created_at,
+  #                " 出勤状況登録は1日#{MAX_BUSINESSES_COUNT}回までです。出勤から退勤へ変更するには、出勤状況一覧の出勤をクリックしてください ")
+  #   end
+  # end
+
 
   include CommonModule
 
@@ -26,10 +41,10 @@ class Business < ApplicationRecord
   validate :businesses_count_must_be_within_limit, on: :create
   scope :created_today, -> { where(created_at: Time.zone.now.all_day) }
   def businesses_count_must_be_within_limit
-    if self.status == "start" && user.businesses.count > MAX_BUSINESSES_COUNT
+    if self.status == "start" && user.businesses.count >= MAX_BUSINESSES_COUNT
       errors.add(:status, " 出勤登録は1日#{MAX_BUSINESSES_COUNT}回のみです。間違えて入力した場合は削除してください")
-    elsif self.status == "finish" && user.businesses.count > MAX_BUSINESSES_COUNT
-      errors.add(:status, " 退勤登録は1日#{MAX_BUSINESSES_COUNT}回のみです。間違えて入力した場合は削除してください")
+    elsif self.status == "finish"
+      errors.add(:status,  " 出勤から退勤へ変更するには、出勤状況一覧の出勤をクリックしてください ")
     end
   end
 

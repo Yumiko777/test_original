@@ -58,8 +58,12 @@ class BusinessesController < ApplicationController
   end
 
   def toggle_status
-    @business.toggle_status!
-    redirect_to businesses_path, notice: '勤務状態を更新しました！'
+    if @business.status == "start"
+      @business.toggle_status!
+      redirect_to businesses_path, notice: '勤務状態を更新しました！'
+    else
+      redirect_to businesses_path, notice: '既に出勤状況は退勤となっています！'
+    end
   end
 
   private
