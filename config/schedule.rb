@@ -7,18 +7,15 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 #
-# every 2.hours do
-#   command "/usr/bin/some_great_command"
-#   runner "MyModel.some_method"
-#   rake "some:great:rake:task"
-# end
-#
-# every 4.days do
-#   runner "AnotherModel.prune_old_records"
-# end
+require File.expand_path(File.dirname(__FILE__) + '/environment')
+rails_env = ENV['RAILS_ENV'] || :development
+# cronを実行する環境変数をセット
+set :environment, rails_env
+# cronのログの吐き出し場所
+set :output, "#{Rails.root}/log/cron.log"
 
-# Learn more: http://github.com/javan/whenever
-
-every :day, at: "10:15 am" do
+every :minute do
   runner "Business.created_at_check"
 end
+
+# Learn more: http://github.com/javan/whenever

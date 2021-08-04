@@ -50,7 +50,8 @@ class Business < ApplicationRecord
 
   def self.created_at_check
     Business.all.each do |business|
-      if business.created_at < Date.today
+      if business.created_at < Time.current
+      # if business.created_at < Date.today
         business.destroy
       end
     end
