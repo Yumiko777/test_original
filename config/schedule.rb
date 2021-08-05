@@ -14,7 +14,8 @@ set :environment, rails_env
 # cronのログの吐き出し場所
 set :output, "#{Rails.root}/log/cron.log"
 
-every :minute do
+every '0 0 * * *' do
+# every 1.minute do
   runner "Business.created_at_check"
 end
 

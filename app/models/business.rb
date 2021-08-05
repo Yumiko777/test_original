@@ -49,11 +49,13 @@ class Business < ApplicationRecord
   end
 
   def self.created_at_check
-    Business.all.each do |business|
-      if business.created_at < Time.current
+    # Business.all.each do |business|
+      # if business.created_at < Time.current
       # if business.created_at < Date.today
-        business.destroy
-      end
-    end
+      #   business.destroy
+
+      # end
+      Business.where("created_at<?", Date.today).destroy_all
+    # end
   end
 end
