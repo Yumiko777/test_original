@@ -3,25 +3,20 @@ class BusinessesController < ApplicationController
   before_action :set_business, only: %i[show edit update destroy toggle_status]
   before_action :authorized_user?, only: %i[show edit update destroy]
 
-  # GET /businesses or /businesses.json
   def index
     @businesses = current_user.businesses.order(created_at: "ASC").latest
   end
 
-  # GET /businesses/1 or /businesses/1.json
   def show; end
 
-  # GET /businesses/new
   def new
     @business = Business.new
   end
 
-  # GET /businesses/1/edit
   def edit
     redirect_to businesses_path, alert: '不正なアクセスです!' if @business.user_id != current_user.id
   end
 
-  # POST /businesses or /businesses.json
   def create
     @business = current_user.businesses.build(business_params)
     respond_to do |format|
@@ -35,7 +30,6 @@ class BusinessesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /businesses/1 or /businesses/1.json
   def update
     respond_to do |format|
       if @business.update(business_params)
@@ -48,7 +42,6 @@ class BusinessesController < ApplicationController
     end
   end
 
-  # DELETE /businesses/1 or /businesses/1.json
   def destroy
     @business.destroy
     respond_to do |format|
@@ -68,12 +61,10 @@ class BusinessesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_business
     @business = Business.find(params[:id] || params[:business_id])
   end
 
-  # Only allow a list of trusted parameters through.
   def business_params
     params.require(:business).permit(:title, :status)
   end
