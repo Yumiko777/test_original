@@ -4,7 +4,7 @@ class BusinessesController < ApplicationController
   before_action :authorized_user?, only: %i[show edit update destroy]
 
   def index
-    @businesses = current_user.businesses.order(created_at: "ASC").latest
+    @businesses = current_user.businesses.order(created_at: 'ASC').latest
   end
 
   def show; end
@@ -51,7 +51,7 @@ class BusinessesController < ApplicationController
   end
 
   def toggle_status
-    if @business.status == "start"
+    if @business.status == 'start'
       @business.toggle_status!
       redirect_to businesses_path, notice: '勤務状態を更新しました！'
     else

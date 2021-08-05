@@ -24,13 +24,13 @@ RSpec.describe 'Business', type: :system do
     end
   end
 
-    context 'ユーザーが本人の場合' do
-      it 'bisinessを削除できる' do
-        sleep 1
-        first(:link, '削除').click
-        expect(page).to have_content '削除確認'
-      end
+  context 'ユーザーが本人の場合' do
+    it 'bisinessを削除できる' do
+      sleep 1
+      first(:link, '削除').click
+      expect(page).to have_content '削除確認'
     end
+  end
 
   describe '一覧表示機能' do
     context '一覧画面に遷移した場合' do
