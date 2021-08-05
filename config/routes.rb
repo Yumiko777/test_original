@@ -27,7 +27,6 @@ Rails.application.routes.draw do
     patch :toggle_status
   end
 
-
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

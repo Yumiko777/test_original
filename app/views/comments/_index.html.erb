@@ -9,8 +9,8 @@
         <% if comment.user == current_user %>
           <p><%= link_to t('view.comment_edit'), edit_blog_comment_path(blog, comment), remote: true %></p>
           <p><%= link_to t('view.comment_delete'), blog_comment_path(comment.blog_id, comment.id), method: :delete, remote: true,data: { confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認'%></p>
-      </li>
         <% end %>
+      </li>
     <% end %>
   <% end %>
 </ul>

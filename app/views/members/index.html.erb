@@ -22,8 +22,8 @@
         <td><%= member.user.email %></td>
         <% if member.user != current_user %>
         <td><%= link_to t('view.member_delete'), team_member_path(team_id: member.team.id , id: member.id), method: :delete,data: {confirm: t('view.Are you sure?'),cancel: 'キャンセル',commit: '削除する'},title: '削除確認' , class: "btn btn-danger"%></td>
+        <% end %>
       </tr>
-    <% end %>
     <% end %>
     </tbody>
   </table>

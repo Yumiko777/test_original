@@ -12,19 +12,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/1741c2b470.js" crossorigin="anonymous"></script>
 
-    <!-- Favicon-->
-    <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
-    <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-    <!-- Simple line icons-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
-    <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
   </head>
   <body id="page-top">
-    <!-- Navigation-->
     <a class="menu-toggle rounded"><i class="fas fa-bars"></i></a>
     <nav id="sidebar-wrapper">
       <ul class="sidebar-nav">
@@ -32,7 +24,7 @@
       <% if user_signed_in? %>
         <% if current_user.admin? %>
         <li class="sidebar-nav-item"><%= link_to t('view.admin_screen'), rails_admin_path, class: "nav-link" %></li>
-      <% end %>
+        <% end %>
         <li class="sidebar-nav-item"><%= link_to t('view.work_new'), new_work_path,  class: "nav-link" %></li>
         <li class="sidebar-nav-item"><%= link_to t('view.work_index'), works_path,  class: "nav-link" %></li>
         <li class="sidebar-nav-item"><%= link_to t('view.blog_new'), new_blog_path,  class: "nav-link" %></li>
@@ -46,12 +38,10 @@
         <li class="sidebar-nav-item"><%= link_to t('view.log_out'), destroy_user_session_path, method: :delete, class: "nav-link" %></li>
       <% else %>
         <li class="sidebar-nav-item"><%= link_to t('view.log_in'), new_user_session_path, class: "nav-link" %></li>
-        <!-- <li class="sidebar-nav-item"><%= link_to 'Googleでサインアップしてね', user_google_oauth2_omniauth_authorize_path, method: :post, class: "nav-link" %></li> -->
         <li class="sidebar-nav-item"><%= link_to t('view.sign_up'), new_user_registration_path, class: "nav-link" %></li>
       <% end %>
       </ul>
     </nav>
-    <!-- Header-->
     <% if flash[:notice] %>
       <div class="alert alert-warning" role="alert"><strong><%= notice %></strong></div>
     <% end %>
@@ -101,23 +91,11 @@
             <%= link_to t('view.user_show'), user_path(current_user), class: "nav-link" %>
           </li>
         </ul>
-          <%# <% else %>
-           <!-- <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-               <%#= link_to "ログイン", new_user_session_path, class: "nav-link" %>
-              </li>
-           </ul>
-           <ul class="navbar-nav ml-auto">
-             <li class="nav-item">
-               <%#= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
-             </li>
-           </ul> -->
-         <% end %>
+      <% end %>
       </div>
     </nav>
     <%= yield %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <!-- Footer-->
     <footer class="footer text-center">
       <div class="container px-4 px-lg-5">
         <p class="text-muted small mb-0">TeamWORK株式会社 © 2021 Copyright</p>

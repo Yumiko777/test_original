@@ -5,7 +5,6 @@ RSpec.describe 'User', type: :system do
     context 'ユーザ登録がなくログインしていない場合' do
       it 'ユーザ新規登録のテスト' do
         visit new_user_registration_path
-
         fill_in 'user[username]', with: 'テストユーザー2'
         fill_in 'user[email]', with: 'test02@example.com'
         fill_in 'user[password]', with: 'password02'
@@ -23,7 +22,6 @@ RSpec.describe 'User', type: :system do
   describe 'session機能テスト' do
     before do
       @user = create(:user)
-      # @user2 = create(:user2)
     end
 
     context 'ログインしていない状態でユーザデータがある場合' do
