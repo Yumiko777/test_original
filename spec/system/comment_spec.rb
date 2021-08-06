@@ -26,7 +26,7 @@ RSpec.describe 'Comment', type: :system do
         click_on 'コメント編集', match: :first
         expect(page).to have_content 'おはよう'
         click_on '更新'
-        expect(page).to have_content 'コメントが編集されました!'
+        expect(page).to have_content '内容：Factoryで作ったデフォルトのコンテント１'
       end
     end
 

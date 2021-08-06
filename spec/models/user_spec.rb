@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
       expect(@user.valid?).to eq(false)
     end
 
-    it 'usernameが30文字以上の場合バリデーションが通らない' do
+    it 'usernameが31文字以上の場合バリデーションが通らない' do
       @user.username = 'a' * 31
       expect(@user.valid?).to eq(false)
     end
