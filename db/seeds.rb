@@ -164,27 +164,27 @@ Comment.create!(
 )
 
 Business.create!(
-  title: "勤怠管理",
+  title: "勤怠状況",
   status: 0,
   user_id: 1
 )
 Business.create!(
-  title: "勤怠管理",
+  title: "勤怠状況",
   status: 0,
   user_id: 2
 )
 Business.create!(
-  title: "勤怠管理",
+  title: "勤怠状況",
   status: 0,
   user_id: 3
 )
 Business.create!(
-  title: "勤怠管理",
+  title: "勤怠状況",
   status: 0,
   user_id: 4
 )
 Business.create!(
-  title: "勤怠管理",
+  title: "勤怠状況",
   status: 0,
   user_id: 5
 )
