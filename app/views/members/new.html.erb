@@ -16,6 +16,7 @@
 
         <div class="form-group">
           <%= form.label t('view.member_name') %>
+          <br>
           <%= form.collection_check_boxes(:selected_user_ids, @users, :id, :username) do |user| %>
             <% user.label { user.check_box + user.text } %>
           <% end %>
