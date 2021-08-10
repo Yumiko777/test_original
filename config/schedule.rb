@@ -8,14 +8,18 @@
 # set :output, "/path/to/my/cron_log.log"
 #
 require File.expand_path(File.dirname(__FILE__) + '/environment')
-rails_env = ENV['RAILS_ENV'] || :development
+# rails_env = ENV['RAILS_ENV'] || :development
 # cronを実行する環境変数をセット
-set :environment, rails_env
+# set :environment, rails_env
 # cronのログの吐き出し場所
-set :output, "#{Rails.root}/log/cron.log"
+# set :output, "#{Rails.root}/log/cron.log"
 
-every '0 0 * * *' do
-# every 1.minute do
+# env :PATH, ENV['PATH']
+set :output, 'log/cron.log'
+# set :environment, :development
+
+# every '0 0 * * *' do
+every 1.minute do
   runner "Business.created_at_check"
 end
 
