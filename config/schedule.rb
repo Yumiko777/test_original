@@ -13,13 +13,20 @@ require File.expand_path(File.dirname(__FILE__) + '/environment')
 # set :environment, rails_env
 # cronのログの吐き出し場所
 # set :output, "#{Rails.root}/log/cron.log"
-
+set :environment, :development
 # env :PATH, ENV['PATH']
-set :output, 'log/cron.log'
+# set :output, 'log/cron.log'
 # set :environment, :development
 
+
+
+set :environment, Rails.env
+set :output, { :error => 'log/whenever.log', :standard => 'log/cron.log' }
+
 # every '0 0 * * *' do
-every 1.minute do
+# every 10.seconds do
+# every :minute do
+every 1.day, at: '12:20 am' do
   runner "Business.created_at_check"
 end
 

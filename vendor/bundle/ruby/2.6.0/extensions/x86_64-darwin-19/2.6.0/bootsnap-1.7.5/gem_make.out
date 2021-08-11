@@ -1,0 +1,15 @@
+current directory: /Users/yumiko/Desktop/0712/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
+/Users/yumiko/.rbenv/versions/2.6.5/bin/ruby -I /Users/yumiko/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210811-21881-mw0hxa.rb extconf.rb
+creating Makefile
+
+current directory: /Users/yumiko/Desktop/0712/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/yumiko/Desktop/0712/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/yumiko/Desktop/0712/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210811-21881-48zjd5/bootsnap

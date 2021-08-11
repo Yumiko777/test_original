@@ -27,11 +27,12 @@ class Business < ApplicationRecord
   end
 
   def self.created_at_check
-    Business.all.each do |business|
-      if business.created_at < Time.current
-    # if business.created_at < Date.today
-        business.destroy
-      end
-    end
+    puts "こんにちは"
+
+    # Business.all.each do |business|
+    # # if business.created_at < Date.today
+    # puts "こんにちは"
+    #   business.destroy if business.created_at < Time.current
+    # end
   end
 end
