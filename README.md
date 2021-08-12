@@ -35,7 +35,7 @@ $ rails s
 ## [カタログ設計とテーブル定義書](https://docs.google.com/spreadsheets/d/1R46RoTnxCjTJYMhK6GcQ1dz1FEVFkan8_gA_oo3zCmw/edit?usp=sharing)
 
 ## [ER図](https://cacoo.com/diagrams/byFTtCQ3HKtdB07W/19398)
-![ER図](https://user-images.githubusercontent.com/82217866/124841731-e72ef680-dfc8-11eb-9617-7a06d04bc76d.png)
+![ER図](https://user-images.githubusercontent.com/82217866/129129856-6ef09957-8048-4d6d-b199-cb57b6e18212.png)
 
 ## 画面遷移図
 ![画面遷移図](https://user-images.githubusercontent.com/82217866/125406675-0c21d000-e3f4-11eb-88de-5b56daf9a9cb.png)
