@@ -26,7 +26,7 @@ set :output, { :error => 'log/whenever.log', :standard => 'log/cron.log' }
 # every '0 0 * * *' do
 # every 10.seconds do
 # every :minute do
-every 1.day, at: '12:20 am' do
+every 1.day, at: '17:04 pm' do
   runner "Business.created_at_check"
 end
 
