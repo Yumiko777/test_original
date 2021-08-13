@@ -7,27 +7,22 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 #
-require File.expand_path(File.dirname(__FILE__) + '/environment')
-# rails_env = ENV['RAILS_ENV'] || :development
-# cronを実行する環境変数をセット
-# set :environment, rails_env
-# cronのログの吐き出し場所
-# set :output, "#{Rails.root}/log/cron.log"
-set :environment, :development
-# env :PATH, ENV['PATH']
-# set :output, 'log/cron.log'
-# set :environment, :development
-
-
-
-set :environment, Rails.env
-set :output, { :error => 'log/whenever.log', :standard => 'log/cron.log' }
 
 # every '0 0 * * *' do
-# every 10.seconds do
-# every :minute do
-every 1.day, at: '17:04 pm' do
-  runner "Business.created_at_check"
-end
 
+# every :minute do
+# every 1.day, at: '17:04 pm' do
+#   runner "Business.created_at_check"
+# end
+
+env :PATH, ENV['PATH']
+set :output, 'log/crontab.log'
+set :environment, ENV['RAILS_ENV']
+# set :job_template, "/bin/zsh -l -c ':job'"
+# job_type :rake, "export PATH=\"$HOME/.rbenv/bin:$PATH\"; eval \"$(rbenv init -)\"; cd :path && RAILS_ENV=:environment bundle exec rake :task ：output"
+
+every 1.minute do
+  # bundle exec rake "created_at_check:test"
+  rake "created_at_check:test"
+end
 # Learn more: http://github.com/javan/whenever
