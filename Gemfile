@@ -62,4 +62,4 @@ gem 'rails_admin', '~> 2.0'
 gem 'ransack'
 gem 'simple_calendar', '~> 2.0', '>= 2.0.6'
 gem 'whenever', require: false
-gem 'racc', '~> 1.5', '>= 1.5.2'
+# gem 'racc', '~> 1.5', '>= 1.5.2'
