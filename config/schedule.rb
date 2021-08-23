@@ -15,14 +15,15 @@
 #   runner "Business.created_at_check"
 # end
 
-env :PATH, ENV['PATH']
+# env :PATH, ENV['PATH']
 set :output, 'log/crontab.log'
-set :environment, ENV['RAILS_ENV']
+ENV.each { |k, v| env(k, v) }
+# set :environment, ENV['RAILS_ENV']
 # set :job_template, "/bin/zsh -l -c ':job'"
 # job_type :rake, "export PATH=\"$HOME/.rbenv/bin:$PATH\"; eval \"$(rbenv init -)\"; cd :path && RAILS_ENV=:environment bundle exec rake :task ：output"
 
 every 1.minute do
   # bundle exec rake "created_at_check:test"
-  rake "created_at_check:test"
+  runner "Business.created_at_check"
 end
 # Learn more: http://github.com/javan/whenever

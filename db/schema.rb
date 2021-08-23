@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 2021_07_09_043208) do
     t.inet "last_sign_in_ip"
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "locked_at"
-    t.string "username"
+    t.string "username", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
