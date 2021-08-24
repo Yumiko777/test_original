@@ -44,44 +44,44 @@
     <nav class="navbar navbar-light mb-2" style="background-color:#ffffff;">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-brand" do %>
-          <h1 class="title" style="font-family: cursive;">TeamWORK</h1>
+          <h1><span class="text" data-html="true" data-toggle="tooltip" data-placement="bottom" title="Topページへ" style="font-family: cursive;">TeamWORK</span></h1>
         <% end %>
       </div>
       <div class="container">
       <% if user_signed_in? %>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to t('view.work_new'), new_work_path, class: "nav-link" %>
+            <%= link_to t('view.work_new'), new_work_path, class: "nav-link", 'data-toggle': :tooltip, title: "作業内容を新規作成" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to t('view.work_index'), works_path, class: "nav-link" %>
+            <%= link_to t('view.work_index'), works_path, class: "nav-link", 'data-toggle': :tooltip, title: "自分の作業内容一覧" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to t('view.blog_index'), blogs_path, class: "nav-link" %>
+            <%= link_to t('view.blog_index'), blogs_path, class: "nav-link", 'data-html': :true, 'data-toggle': :tooltip, title: "ユーザー同士で<br/>雑談ができます" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to t('view.business_status'), businesses_path, class: "nav-link" %>
+            <%= link_to t('view.business_status'), businesses_path, class: "nav-link", 'data-html': :true, 'data-toggle': :tooltip, title: "自分の出勤状況を登録" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to t('view.user_index'), users_path, class: "nav-link" %>
+            <%= link_to t('view.user_index'), users_path, class: "nav-link", 'data-html': :true, 'data-toggle': :tooltip, title: "ユーザーの本日の出勤状況を<br/>確認できます（登録者のみ）" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to t('view.team_index'), teams_path, class: "nav-link" %>
+            <%= link_to t('view.team_index'), teams_path, class: "nav-link", 'data-html': :true, 'data-toggle': :tooltip, title: "チームを新規作成" %>
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to t('view.user_show'), user_path(current_user), class: "nav-link" %>
+            <%= link_to t('view.user_show'), user_path(current_user), class: "nav-link", 'data-html': :true, 'data-toggle': :tooltip, title: "ユーザー編集と<br/>本日の作業内容と出勤状況を確認できます" %>
           </li>
         </ul>
       <% end %>
@@ -97,3 +97,5 @@
     </footer>
   </body>
 </html>
+
+<%= render partial: 'tool' %>
