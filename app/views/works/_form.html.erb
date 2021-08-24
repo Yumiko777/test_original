@@ -18,7 +18,8 @@
 </div>
 
 <div class="time">
-  <div class="form-tag"><%= t('view.start_time') %></div>
+  <span class="text" data-html="true" data-toggle="tooltip" data-placement="right" title="過去日付は入力不可。"><%= t('view.start_time') %></span>
+  <br>
     <%= form.date_field :start_time %>
 </div>
 
@@ -46,3 +47,10 @@
     <%= form.submit t('view.work_submit'), class: "btn btn-success" %>
 <% end %>
 </div>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script>$('[data-toggle="tooltip"]').tooltip()</script>
+</body>
