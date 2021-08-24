@@ -40,6 +40,41 @@ User.create!(
   admin: false,
   uid: uid = SecureRandom.uuid
 )
+User.create!(
+  username: "鈴木四郎",
+  email: "suzuki@example.jp" ,
+  password: "password06",
+  admin: false,
+  uid: uid = SecureRandom.uuid
+)
+User.create!(
+  username: "林さくら",
+  email: "hayashi@example.jp" ,
+  password: "password07",
+  admin: false,
+  uid: uid = SecureRandom.uuid
+)
+User.create!(
+  username: "岩田吾郎",
+  email: "iwata@example.jp" ,
+  password: "password08",
+  admin: false,
+  uid: uid = SecureRandom.uuid
+)
+User.create!(
+  username: "菊池夏子",
+  email: "kikuchi@example.jp" ,
+  password: "password09",
+  admin: false,
+  uid: uid = SecureRandom.uuid
+)
+User.create!(
+  username: "星なな",
+  email: "hoshi@example.jp" ,
+  password: "password10",
+  admin: false,
+  uid: uid = SecureRandom.uuid
+)
 
 Work.create!(
   title: "営業",
@@ -93,6 +128,14 @@ Team.create!(
 Team.create!(
   name: "チームC",
   user_id: 4
+)
+Team.create!(
+  name: "チームD",
+  user_id: 5
+)
+Team.create!(
+  name: "チームE",
+  user_id: 6
 )
 
 Member.create!(
@@ -187,4 +230,29 @@ Business.create!(
   title: "勤怠状況",
   status: 0,
   user_id: 5
+)
+Business.create!(
+  title: "勤怠状況",
+  status: 0,
+  user_id: 6
+)
+Business.create!(
+  title: "勤怠状況",
+  status: 0,
+  user_id: 7
+)
+Business.create!(
+  title: "勤怠状況",
+  status: 0,
+  user_id: 8
+)
+Business.create!(
+  title: "勤怠状況",
+  status: 0,
+  user_id: 9
+)
+Business.create!(
+  title: "勤怠状況",
+  status: 0,
+  user_id: 10
 )
