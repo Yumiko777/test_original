@@ -11,7 +11,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label t('view.title') %> <font color="red">勤怠状況のままでお願いします</font><br />
+    <span class="text-danger" data-html="true" data-toggle="tooltip" data-placement="right" title="「勤怠状況」のままで<br/>お願いします。"><%= form.label t('view.title') %></span> <br />
+
     <%= form.text_field :title, value: "勤怠状況" ,class: "form-control" %>
   </div>
 
@@ -24,3 +25,10 @@
     <%= form.submit data: { disable_with: "送信中" } ,class: "btn btn-success" %>
   </div>
 <% end %>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script>$('[data-toggle="tooltip"]').tooltip()</script>
+</body>
