@@ -6,7 +6,7 @@
       <h5><%= t('view.user_search') %></h5>
       <dl class="searchbox">
       <%=  search_form_for @q do |form| %>
-        <dt><%= form.search_field :username_cont,placeholder: '検索するユーザー名を入力...' %></dt>
+        <dt><%= form.search_field :username_cont,placeholder: '検索するユーザー名を入力' %></dt>
         <dd><%= form.submit t('view.search'), class: 'search-btn' %></dd>
       <% end %>
       </dl>
