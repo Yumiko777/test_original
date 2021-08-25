@@ -1,6 +1,7 @@
 # README
 
-## [Heroku URL](https://morning-castle-65325.herokuapp.com/)
+## 本番環境
+[Heroku URL](https://morning-castle-65325.herokuapp.com/)
 
 ## 製品名
 本日の作業内容をチームで共有する「TeamWORK」
