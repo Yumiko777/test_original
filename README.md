@@ -44,4 +44,5 @@ $ rails s
 
 ## [ワイヤーフレーム](https://cacoo.com/diagrams/IUvs4UAAj9RIth6n/8780F)
 
-[卒業発表のコピー.pdf](https://github.com/Yumiko777/test_original/files/7043248/default.pdf)
+## 卒業発表会資料
+[卒業発表.pdf](https://github.com/Yumiko777/test_original/files/7043268/default.pdf)
