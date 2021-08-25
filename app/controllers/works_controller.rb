@@ -4,7 +4,7 @@ class WorksController < ApplicationController
 
   def index
     @works = current_user.works.page(params[:page]).order(start_time: 'ASC').per(5)
-    @pending_works = @works.where(status: 'false').page(params[:page]).order(start_time: 'ASC').per(5)
+    @pending_works = @works.where(status: 'false').page(params[:page]).order(start_time: 'ASC').per(10)
   end
 
   def new
