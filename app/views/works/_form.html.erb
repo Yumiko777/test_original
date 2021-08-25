@@ -8,17 +8,17 @@
 <% end %>
 
 <div class="title">
-  <div class="form-tag"><%= t('view.title') %></div>
+  <span class="text-danger" data-html="true" data-toggle="tooltip" data-placement="right" title="入力必須"><%= t('view.title') %></span>
     <%= form.text_field :title , :placeholder => "例）経費申請",class: "form-control"  %>
 </div>
 
 <div class="content">
-  <div class="form-tag"><%= t('view.content') %></div>
+  <span class="text-danger" data-html="true" data-toggle="tooltip" data-placement="right" title="入力必須"><%= t('view.content') %></span>
     <%= form.text_field :content, :placeholder => "例）交通費",class: "form-control" %>
 </div>
 
 <div class="time">
-  <span class="text-danger" data-html="true" data-toggle="tooltip" data-placement="right" title="過去日付は入力不可。"><%= t('view.start_time') %></span>
+  <span class="text-danger" data-html="true" data-toggle="tooltip" data-placement="right" title="過去日付は入力不可"><%= t('view.start_time') %></span>
   <br>
     <%= form.date_field :start_time %>
 </div>
