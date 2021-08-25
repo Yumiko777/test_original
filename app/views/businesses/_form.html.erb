@@ -11,13 +11,13 @@
   <% end %>
 
   <div class="field">
-    <span class="text-danger" data-html="true" data-toggle="tooltip" data-placement="right" title="「勤怠状況」のままで<br/>お願いします。"><%= form.label t('view.title') %></span> <br />
+    <span class="text-danger" data-html="true" data-toggle="tooltip" data-placement="right" title="「勤怠状況」のままで<br/>お願いします"><%= form.label t('view.title') %></span> <br />
 
     <%= form.text_field :title, value: "勤怠状況" ,class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label t('view.business_status') %><br />
+    <span class="text-danger" data-html="true" data-toggle="tooltip" data-placement="right" title="「出勤」のみ登録可能"><%= form.label t('view.business_status') %></span> <br />
     <%= form.select :status, Business.statuses.keys.map {|k| [I18n.t("enums.businesses.status.#{k}"), k]} %>
   </div>
 
