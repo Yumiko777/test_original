@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_07_09_043208) do
   create_table "blogs", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
+    # バリデーションはきくが、DB上でもちゃんと成約をかけておきたい
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

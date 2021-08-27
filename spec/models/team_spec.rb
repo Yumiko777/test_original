@@ -21,4 +21,10 @@ RSpec.describe Team, type: :model do
       end
     end
   end
+
+  describe '#create_members' do
+    it 'メンバーが作成できること' do
+
+    end
+  end
 end
