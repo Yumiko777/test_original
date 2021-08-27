@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.boolean :admin
+      t.boolean :admin, default: false
       t.string :provider, null: false, default: ""
       t.string :uid, null: false, default: ""
 
