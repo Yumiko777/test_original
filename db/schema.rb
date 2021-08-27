@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_07_09_043208) do
   create_table "blogs", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_blogs_on_user_id"
@@ -26,16 +26,16 @@ ActiveRecord::Schema.define(version: 2021_07_09_043208) do
 
   create_table "businesses", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "status"
-    t.bigint "user_id"
+    t.integer "status", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "blog_id"
-    t.bigint "user_id"
+    t.bigint "blog_id", null: false
+    t.bigint "user_id", null: false
     t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 2021_07_09_043208) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.bigint "team_id"
-    t.bigint "user_id"
+    t.bigint "team_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_members_on_team_id"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2021_07_09_043208) do
 
   create_table "teams", force: :cascade do |t|
     t.string "name", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_teams_on_user_id"
@@ -104,9 +104,9 @@ ActiveRecord::Schema.define(version: 2021_07_09_043208) do
     t.string "title", null: false
     t.text "content", null: false
     t.datetime "start_time", null: false
-    t.integer "status"
+    t.integer "status", null: false
     t.text "remarks"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_works_on_user_id"
