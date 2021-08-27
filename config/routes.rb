@@ -10,17 +10,17 @@ Rails.application.routes.draw do
     post 'users/admin_guest_sign_in', to: 'users/sessions#admin_guest_sign_in'
   end
   root to: "home#index"
-  resources :works do
-    patch :toggle_status
-  end
+
 
   resources :users, only: [:index, :show, :edit, :update]
   resources :teams do
-    resources :members
-  end
-
-  resources :blogs do
-    resources :comments, only: [:create, :edit, :update, :destroy]
+    resources :members, module: :teams
+    resources :works, module: :teams do
+      patch :toggle_status
+    end
+    resources :blogs, module: :teams do
+      resources :comments, only: [:create, :edit, :update, :destroy]
+    end
   end
 
   resources :businesses do

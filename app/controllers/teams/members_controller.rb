@@ -1,4 +1,4 @@
-class MembersController < ApplicationController
+class MembersController < Teams::ApplicationController
   before_action :authenticate_user!
   before_action :set_member, only: %i[show edit update destroy]
   before_action :set_team, only: %i[index new create]

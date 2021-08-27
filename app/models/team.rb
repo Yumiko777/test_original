@@ -5,6 +5,8 @@ class Team < ApplicationRecord
 
   has_many :members, dependent: :destroy
   has_many :member_users, through: :members, source: :user
+  has_many :works, dependent: :destroy
+  has_many :blogs, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
 

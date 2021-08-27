@@ -1,4 +1,6 @@
 class BusinessesController < ApplicationController
+  # 認証をスキップする場合
+  # skip_before_action :authenticate_user!
   before_action :authenticate_user!
   before_action :set_business, only: %i[show edit update destroy toggle_status]
   before_action :authorized_user?, only: %i[show edit update destroy]

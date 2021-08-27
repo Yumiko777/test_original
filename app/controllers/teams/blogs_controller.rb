@@ -1,9 +1,9 @@
-class BlogsController < ApplicationController
+class BlogsController < Teams::ApplicationController
   before_action :authenticate_user!
   before_action :set_blog, only: %i[show edit update destroy]
 
   def index
-    @blogs = Blog.latest.includes(:user)
+    @blogs = @team.blogs.latest.includes(:user)
   end
 
   def show
@@ -12,7 +12,7 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @blog = Blog.new
+    @blog = @team.blogs.new
   end
 
   def edit
@@ -57,7 +57,7 @@ class BlogsController < ApplicationController
   private
 
   def set_blog
-    @blog = Blog.find(params[:id])
+    @blog = @team.blogs.find(params[:id])
   end
 
   def blog_params
