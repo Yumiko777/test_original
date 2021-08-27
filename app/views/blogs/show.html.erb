@@ -6,6 +6,7 @@
     <p><strong><%= t('view.content') %></strong>：<%= safe_join(@blog.content.split("\n"),tag(:br)) %></p>
   </div>
 
+  <hr>
   <p><%= t('view.blog_index') %></p>
   <div id="comments_area">
     <%= render partial: 'comments/index', locals: { comments: @comments, blog: @blog } %>
