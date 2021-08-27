@@ -1,5 +1,4 @@
 class WorksController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_work, only: %i[show edit update destroy toggle_status]
 
   def index
