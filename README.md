@@ -43,6 +43,3 @@ $ rails s
 ![画面遷移図](https://user-images.githubusercontent.com/82217866/125406675-0c21d000-e3f4-11eb-88de-5b56daf9a9cb.png)
 
 ## [ワイヤーフレーム](https://cacoo.com/diagrams/IUvs4UAAj9RIth6n/8780F)
-
-## 卒業発表会資料
-[卒業発表.pdf](https://github.com/Yumiko777/test_original/files/7043268/default.pdf)
