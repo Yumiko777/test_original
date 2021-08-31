@@ -75,6 +75,13 @@ User.create!(
   admin: false,
   uid: uid = SecureRandom.uuid
 )
+User.create!(
+  username: "平松有美子",
+  email: "hirahira@yahoo.co.jp" ,
+  password: "1234567",
+  admin: false,
+  uid: uid = SecureRandom.uuid
+)
 
 Work.create!(
   title: "営業",
